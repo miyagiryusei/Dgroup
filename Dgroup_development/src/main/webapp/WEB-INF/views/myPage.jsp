@@ -8,31 +8,31 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title><fmt:message key="title.myPage" /></title>
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
 	<h1>Myページ</h1>
 
-	<p>
+
     <a href="poker" class="btn"><fmt:message key="btn.poker" /></a>
-    </p>
+    <br><br>
 
-  	<p>
+
     <a href="blackjack" class="btn"><fmt:message key="btn.blackjack" /></a>
- 　 </p>
+ 　 <br><br>
 
-    <p>
-      <a href="itemShop" class="btn"><fmt:message key="btn.itemShop" /></a>
-    </p>
 
-    <p>
-      <a href="ranking" class="btn"><fmt:message key="btn.ranking" /></a>
-    </p>
+    <a href="itemShop" class="btn"><fmt:message key="btn.itemShop" /></a>
+    <br><br>
 
-    <p>
-      <a href="acount" class="btn"><fmt:message key="btn.acount" /></a>
-    </p>
+
+    <a href="ranking" class="btn"><fmt:message key="btn.ranking" /></a>
+    <br><br>
+
+
+    <a href="acount" class="btn"><fmt:message key="btn.acount" /></a>
+    <br><br>
 
 	<form action="logout" method="post">
     	<button type="submit">

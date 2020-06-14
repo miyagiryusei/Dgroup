@@ -37,4 +37,16 @@ public class TestControllerTeruya {
 		    return "myPage";
 		}
 
+	//ポーカー画面
+	  @RequestMapping("/poker")
+	  public String poker(Model model) {
+		  return "poker";
+	  }
+
+	//ブラックジャック画面
+	  @RequestMapping("/blackjack")
+	  public String blackjack(Model model) {
+		  return "blackjack";
+	  }
+
 }
