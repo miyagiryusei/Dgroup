@@ -80,3 +80,11 @@ a.btn {
 .button-right {
 	margin-right: 55px;
 }
+
+header {
+	text-align: right;
+}
+
+header.p {
+	color: #ffd700;
+}

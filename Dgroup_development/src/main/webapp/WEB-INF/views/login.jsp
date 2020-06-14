@@ -12,20 +12,30 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body class="login">
+
+	<header>
+			<br> <a href="insert" class="btn"><fmt:message
+					key="btn.begginer" /></a>
+	</header>
 	<c:if test="${not empty errMsg}">
 		<p>${fn:escapeXml(errMsg)}</p>
 	</c:if>
 
-	<form:form action="login" method="post" modelAttribute="loginForm" class="right">
+	<form:form action="login" method="post" modelAttribute="loginForm"
+		class="right">
 		<fieldset>
 			<div>
 				<label class="little-right"><fmt:message key="lbl.id" /></label>
-				<div><form:input path="loginId" /></div>
+				<div>
+					<form:input path="loginId" />
+				</div>
 				<form:errors path="loginId" class="required" />
 			</div>
 			<div>
 				<label><fmt:message key="lbl.pass" /></label>
-				<div><form:input type="password" path="password" /></div>
+				<div>
+					<form:input type="password" path="password" />
+				</div>
 				<form:errors path="password" class="required" />
 			</div>
 			<div>
