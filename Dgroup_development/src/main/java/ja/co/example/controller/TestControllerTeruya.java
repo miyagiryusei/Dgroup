@@ -31,4 +31,10 @@ public class TestControllerTeruya {
 	        return "login";
 	    }
 
+	//Myページ画面表示
+	    @RequestMapping("/myPage")
+		public String myPage(Model model) {
+		    return "myPage";
+		}
+
 }
