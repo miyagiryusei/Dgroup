@@ -13,7 +13,7 @@
 		<fmt:message key="title.ranking" />
 	</h1>
 
-<div class=center><h2>個人ランキング</h2></div>
+<h2><fmt:message key="btn.personal.ranking" /></h2>
 
 <table>
     <caption>検索結果</caption>
@@ -24,6 +24,16 @@
         <th><fmt:message key="|b|.coin.have" /></th>
       </tr>
     </thead>
+    <tr>
+        <th>1</th>
+        <th>田中</th>
+        <th>9999</th>
+      </tr>
+      <tr>
+        <th>2</th>
+        <th>axiz</th>
+        <th>9998</th>
+      </tr>
 </table>
 <br>
 	<a href="overallRanking" class="btn"><fmt:message
