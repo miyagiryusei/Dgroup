@@ -35,10 +35,6 @@
 			</div>
 		</fieldset>
 	</form:form>
-	<div class="right">
-		<a href="index">TOP画面に戻る</a>
-	</div>
-
 
 </body>
 </html>
