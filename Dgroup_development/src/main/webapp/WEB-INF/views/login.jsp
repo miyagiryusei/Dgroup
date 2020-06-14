@@ -11,15 +11,15 @@
 <title><fmt:message key="title.login" /></title>
 <link href="css/commons.css" rel="stylesheet">
 </head>
-<body class="center">
+<body>
 	<c:if test="${not empty errMsg}">
 		<p>${fn:escapeXml(errMsg)}</p>
 	</c:if>
 
-	<form:form action="login" method="post" modelAttribute="loginForm">
+	<form:form action="login" method="post" modelAttribute="loginForm" class="right">
 		<fieldset>
 			<div>
-				<label><fmt:message key="lbl.id" /></label>
+				<label class="little-right"><fmt:message key="lbl.id" /></label>
 				<div><form:input path="loginId" /></div>
 				<form:errors path="loginId" class="required" />
 			</div>
@@ -29,13 +29,13 @@
 				<form:errors path="password" class="required" />
 			</div>
 			<div>
-				<form:button>
+				<form:button class="button-right">
 					<fmt:message key="btn.login" />
 				</form:button>
 			</div>
 		</fieldset>
 	</form:form>
-	<div>
+	<div class="right">
 		<a href="index">TOP画面に戻る</a>
 	</div>
 
