@@ -23,7 +23,7 @@
  　 <br><br>
 
 
-    <a href="itemShop" class="btn"><fmt:message key="btn.itemShop" /></a>
+    <a href="item" class="btn"><fmt:message key="btn.item" /></a>
     <br><br>
 
 
