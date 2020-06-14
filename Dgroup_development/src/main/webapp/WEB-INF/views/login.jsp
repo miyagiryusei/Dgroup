@@ -11,7 +11,7 @@
 <title><fmt:message key="title.login" /></title>
 <link href="css/commons.css" rel="stylesheet">
 </head>
-<body>
+<body class="center">
 	<c:if test="${not empty errMsg}">
 		<p>${fn:escapeXml(errMsg)}</p>
 	</c:if>
@@ -20,12 +20,12 @@
 		<fieldset>
 			<div>
 				<label><fmt:message key="lbl.id" /></label>
-				<form:input path="loginId" />
+				<div><form:input path="loginId" /></div>
 				<form:errors path="loginId" class="required" />
 			</div>
 			<div>
 				<label><fmt:message key="lbl.pass" /></label>
-				<form:input type="password" path="password" />
+				<div><form:input type="password" path="password" /></div>
 				<form:errors path="password" class="required" />
 			</div>
 			<div>

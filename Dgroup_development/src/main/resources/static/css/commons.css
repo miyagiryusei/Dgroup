@@ -6,7 +6,7 @@ fieldset {
 
 fieldset label {
   display: inline-block;
-  width: 43px;
+  width: 80px;
 }
 
 fieldset.label-60 label {
@@ -58,4 +58,9 @@ a.btn {
   border: 0px;
   padding: 5px 20px 5px 20px;
   text-decoration:none
+}
+
+body {
+	font-family: 'メイリオ'
+	background-image: url("image/casino.jpg");
 }

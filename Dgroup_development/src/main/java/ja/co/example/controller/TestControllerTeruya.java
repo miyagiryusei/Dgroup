@@ -2,7 +2,10 @@ package ja.co.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ja.co.example.form.LoginForm;
 
 @Controller
 public class TestControllerTeruya {
@@ -27,7 +30,7 @@ public class TestControllerTeruya {
 
 	//ログイン画面へ
 		@RequestMapping("/login")
-	    public String login(Model model) {
+	    public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
 	        return "login";
 	    }
 
