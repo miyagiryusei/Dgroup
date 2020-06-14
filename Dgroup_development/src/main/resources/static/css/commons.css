@@ -61,7 +61,7 @@ a.btn {
   text-decoration:none
 }
 
-body {
+.login {
 	background-image: url("casino.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;

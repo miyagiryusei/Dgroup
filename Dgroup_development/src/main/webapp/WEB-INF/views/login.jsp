@@ -11,7 +11,7 @@
 <title><fmt:message key="title.login" /></title>
 <link href="css/commons.css" rel="stylesheet">
 </head>
-<body>
+<body class="login">
 	<c:if test="${not empty errMsg}">
 		<p>${fn:escapeXml(errMsg)}</p>
 	</c:if>
