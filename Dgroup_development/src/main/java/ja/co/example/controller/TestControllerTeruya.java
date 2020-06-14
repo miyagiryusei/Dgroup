@@ -2,7 +2,10 @@ package ja.co.example.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import ja.co.example.form.LoginForm;
 
 @Controller
 public class TestControllerTeruya {
@@ -25,12 +28,11 @@ public class TestControllerTeruya {
 		return "personalRanking";
 	}
 
-		//エラー表示されてるので一旦コメントアウトします。多分、フォーム作ってないからです。
-	//ログイン画面へ
-	//		@RequestMapping("/login")
-	//	    public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
-	//	        return "login";
-	//	    }
+	//	ログイン画面へ
+	@RequestMapping("/login")
+	public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+		return "login";
+	}
 
 	//Myページ画面表示
 	@RequestMapping("/myPage")
