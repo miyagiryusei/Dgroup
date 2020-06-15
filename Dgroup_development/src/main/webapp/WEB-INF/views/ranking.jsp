@@ -18,7 +18,6 @@
 			key="btn.personal.ranking" /></a>
 	<br>
 	<br>
-	<br>
 	<a href="overallRanking" class="btn"><fmt:message
 			key="btn.overall.ranking" /></a>
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
