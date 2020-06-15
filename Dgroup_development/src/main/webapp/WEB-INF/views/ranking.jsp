@@ -18,15 +18,13 @@
 			key="btn.personal.ranking" /></a>
 	<br>
 	<br>
+	<br>
+	<a href="overallRanking" class="btn"><fmt:message
+			key="btn.overall.ranking" /></a>
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>
 	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
-
-a<br>
-a<br>
-a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>a<br>
-
 
 </body>
 </html>
