@@ -34,7 +34,7 @@ public class TestControllerTeruya {
 	        return "login";
 	    }
 
-	//確認画面へ
+	//完了画面へ
 		@RequestMapping("/result")
 	    public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
 	        return "result";
@@ -57,5 +57,12 @@ public class TestControllerTeruya {
 	  public String blackjack(Model model) {
 		  return "blackjack";
 	  }
+	  //確認画面へ
+	//完了画面へ
+			@RequestMapping("/check")
+		    public String check(@ModelAttribute("checkForm") LoginForm loginForm, Model model) {
+		        return "check";
+		    }
+
 
 }

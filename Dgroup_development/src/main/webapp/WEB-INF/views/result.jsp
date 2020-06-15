@@ -12,9 +12,9 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
-	<h1>確認画面</h1>
 
-	 <p>登録情報の変更が完了しました。</p>
+
+	 <p>正常に登録できました。</p>
     <a href="myPage" class="btn"><fmt:message key="btn.menu" /></a>
 
 
