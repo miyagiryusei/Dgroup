@@ -30,6 +30,7 @@
 			key="btn.personal.ranking" /></a>
 	<br><br>
 	<a href="ranking" class="btn"><fmt:message key="btn.back" /></a>
+
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>

@@ -14,11 +14,6 @@
 		<fmt:message key="title.ranking" />
 	</h1>
 
-	<a href="overallRanking" class="btn"><fmt:message
-			key="btn.overall.ranking" /></a>
-	<br>
-	<br>
-
 	<a href="personalRanking" class="btn"><fmt:message
 			key="btn.personal.ranking" /></a>
 	<br>
