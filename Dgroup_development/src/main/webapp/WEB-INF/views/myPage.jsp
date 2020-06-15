@@ -31,7 +31,7 @@
     <br><br>
 
 
-    <a href="acount" class="btn"><fmt:message key="btn.acount" /></a>
+    <a href="account_edit" class="btn"><fmt:message key="btn.acount" /></a>
     <br><br>
 
 	<form action="logout" method="post">

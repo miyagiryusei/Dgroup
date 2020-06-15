@@ -82,4 +82,16 @@ public class TestControllerTeruya {
 		return "byResult";
 	}
 
+	//アカウント編集確認画面へ
+	@RequestMapping("/account_edit")
+	public String account_edit(Model model) {
+		return "account_edit";
+	}
+
+	//アカウント編集確認画面へ
+	@RequestMapping("/account")
+	public String account(Model model) {
+		return "account";
+	}
+
 }
