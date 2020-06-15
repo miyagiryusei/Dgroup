@@ -13,7 +13,7 @@
 		<fmt:message key="title.ranking" />
 	</h1>
 
-<div class=center><h2>個人ランキング</h2></div>
+<div class=center><h2><fmt:message key="btn.personal.ranking" /></h2></div>
 
 <table>
     <caption>検索結果</caption>
