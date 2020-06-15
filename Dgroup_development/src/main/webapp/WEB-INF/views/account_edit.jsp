@@ -14,7 +14,7 @@
 	<form action="account_edit.jsp" method="post">
 		<h1>アカウント編集</h1>
 		<div>
-			<label>※名前</label> <input type="text" name="loginName">
+			<label>ID</label> <input type="text" name="loginName">
 		</div>
 		<div>
 			<label>※PASS</label> <input type="password" name="pass">
@@ -22,7 +22,10 @@
 		<button type="submit">変更する</button>
 	</form>
 	<div>
-		<a href="mypage.jsp">TOP画面に戻る</a>
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+
+	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+
 	</div>
 </body>
 </html>

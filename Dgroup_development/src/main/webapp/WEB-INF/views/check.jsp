@@ -19,7 +19,7 @@
 	<p class ="checkp">以下の内容でよろしいですか？</p>
 
 		<div>
-			<label>名前</label> <input type="text" name="loginame"
+			<label>ID</label> <input type="text" name="loginame"
 				value="${loginname}" readonly>
 		</div>
 		<div>
