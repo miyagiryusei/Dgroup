@@ -18,51 +18,68 @@ public class TestControllerTeruya {
 
 	//全体ランキング遷移
 	@RequestMapping("/overallRanking")
-    public String overallRanking(Model model) {
-        return "overallRanking";
-    }
+	public String overallRanking(Model model) {
+		return "overallRanking";
+	}
 
 	//全体ランキング遷移
-		@RequestMapping("/personalRanking")
-	    public String personalRanking(Model model) {
-	        return "personalRanking";
-	    }
+	@RequestMapping("/personalRanking")
+	public String personalRanking(Model model) {
+		return "personalRanking";
+	}
 
 	//ログイン画面へ
-		@RequestMapping("/login")
-	    public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
-	        return "login";
-	    }
+	@RequestMapping("/login")
+	public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+		return "login";
+	}
 
 	//完了画面へ
-		@RequestMapping("/result")
-	    public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
-	        return "result";
-	    }
+	@RequestMapping("/result")
+	public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+		return "result";
+	}
 
 	//Myページ画面表示
-	    @RequestMapping("/myPage")
-		public String myPage(Model model) {
-		    return "myPage";
-		}
+	@RequestMapping("/myPage")
+	public String myPage(Model model) {
+		return "myPage";
+	}
 
 	//ポーカー画面
-	  @RequestMapping("/poker")
-	  public String poker(Model model) {
-		  return "poker";
-	  }
+	@RequestMapping("/poker")
+	public String poker(Model model) {
+		return "poker";
+	}
 
 	//ブラックジャック画面
-	  @RequestMapping("/blackjack")
-	  public String blackjack(Model model) {
-		  return "blackjack";
-	  }
-	  //確認画面へ
-	//完了画面へ
-			@RequestMapping("/check")
-		    public String check(@ModelAttribute("checkForm") LoginForm loginForm, Model model) {
-		        return "check";
-		    }
+	@RequestMapping("/blackjack")
+	public String blackjack(Model model) {
+		return "blackjack";
+	}
 
+	//確認画面へ
+	@RequestMapping("/check")
+	public String check(@ModelAttribute("checkForm") LoginForm loginForm, Model model) {
+		return "check";
+	}
+
+	//ログアウト画面
+	@RequestMapping("/logout")
+	public String logout(Model model) {
+		return "logout";
+	}
+
+	//ショップ画面
+	@RequestMapping("/item")
+	public String item(Model model) {
+		return "item";
+	}
+
+	//購入確認画面
+	@RequestMapping("/byResult")
+	public String byResult(Model model) {
+		return "byResult";
+	}
 
 }

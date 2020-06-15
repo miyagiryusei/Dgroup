@@ -15,7 +15,7 @@
 
 
 	 <p>正常に登録できました。</p>
-    <a href="myPage" class="btn"><fmt:message key="btn.menu" /></a>
+    <a href="myPage" class="btn"><fmt:message key="title.myPage" /></a>
 
 
 
