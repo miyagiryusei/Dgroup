@@ -16,6 +16,7 @@
 
 	 <p>正常に登録できました。</p>
     <a href="myPage" class="btn"><fmt:message key="title.myPage" /></a>
+	 <a href="logout" class="btn"><fmt:message key="btn.logout" /></a>
 
 
 
