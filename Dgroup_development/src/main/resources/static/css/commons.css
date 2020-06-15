@@ -68,7 +68,7 @@ a.btn {
 }
 
 .right {
-	text-align: right;
+	text-align: center;
 	margin-right: 70px;
 	margin-top: 100px
 }
@@ -87,4 +87,38 @@ header {
 
 header.p {
 	color: #ffd700;
+}
+.logoutBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 13px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}
+
+.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}
 }

@@ -32,8 +32,9 @@
 			</div>
 	</form:form>
 
-  	  <a href="myPage" class="btn"><fmt:message key="title.myPage" /></a>
-	 <a href="login" class="btn"><fmt:message key="btn.logout" /></a>
+  	  <a href="myPage" class="myPageBtn"><fmt:message key="title.myPage" /></a><br><br>
+
+	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 
 
