@@ -13,22 +13,13 @@
 		<fmt:message key="title.ranking" />
 	</h1>
 
-<div class=center><h2>個人ランキング</h2></div>
-
-<table>
-    <caption>検索結果</caption>
-    <thead>
-      <tr>
-        <th><fmt:message key="|b|.ranking" /></th>
-        <th><fmt:message key="lbl.user.name" /></th>
-        <th><fmt:message key="|b|.coin.have" /></th>
-      </tr>
-    </thead>
-</table>
-<br>
 	<a href="overallRanking" class="btn"><fmt:message
 			key="btn.overall.ranking" /></a>
 	<br><br>
-	<a href="ranking" class="btn"><fmt:message key="btn.back" /></a>
+
+	<a href="personalRanking" class="btn"><fmt:message
+			key="btn.personal.ranking" /></a>
+	<br><br>
+<%-- 	<a href="login" class="btn"><fmt:message key="btn.back" /></a> --%>
 </body>
 </html>
