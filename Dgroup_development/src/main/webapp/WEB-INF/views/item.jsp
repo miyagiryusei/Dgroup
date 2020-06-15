@@ -50,14 +50,17 @@
 		</tr>
 
 </table>
+
 <br>
 
-	<a href="buy" class="btn"><fmt:message
-			key="btn.buy" /></a>
+	<a href="buy" class="btn">購入</a>
 	<br><br>
+<%-- 	<fmt:message --%>
+<%-- 			key="btn.buy" /> --%>
 
 
-	<a href="item" class="btn"><fmt:message key="btn.back" /></a>
+	<a href="item" class="btn">Myページに戻る</a>
+<%-- 	<fmt:message key="btn.back" /> --%>
 	<br>
 
 	<form action="logout" method="post">
