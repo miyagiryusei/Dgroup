@@ -34,6 +34,12 @@ public class TestControllerTeruya {
 	        return "login";
 	    }
 
+	//確認画面へ
+		@RequestMapping("/result")
+	    public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+	        return "result";
+	    }
+
 	//Myページ画面表示
 	    @RequestMapping("/myPage")
 		public String myPage(Model model) {

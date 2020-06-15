@@ -15,7 +15,7 @@
 	<h1>確認画面</h1>
 
 	 <p>登録情報の変更が完了しました。</p>
-    <a href="login" class="btn"><fmt:message key="btn.login" /></a>
+    <a href="myPage" class="btn"><fmt:message key="btn.menu" /></a>
 
 
 
