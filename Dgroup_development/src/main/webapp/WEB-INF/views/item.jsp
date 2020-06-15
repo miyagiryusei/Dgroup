@@ -61,7 +61,7 @@
 
 
 	<a href="item" class="btn"><fmt:message key="btn.back" /></a>
-	<br>
+<br>
 
 	<form action="logout" method="post">
 		<button type="submit">
