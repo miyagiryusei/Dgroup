@@ -19,7 +19,7 @@
 			<label>ID</label> <input type="text" name="loginName">
 		</div>
 		<div>
-			<label>PASS</label> <input type="password" name="pass">
+			<label>パスワード</label> <input type="password" name="pass">
 		</div>
 		<button type="submit">変更する</button>
 	</form>
