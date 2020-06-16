@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link href="css/commons.css" rel="stylesheet">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -17,12 +19,12 @@
 			<label>ID</label> <input type="text" name="loginName">
 		</div>
 		<div>
-			<label>※PASS</label> <input type="password" name="pass">
+			<label>PASS</label> <input type="password" name="pass">
 		</div>
 		<button type="submit">変更する</button>
 	</form>
 	<div>
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+		 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
 	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
