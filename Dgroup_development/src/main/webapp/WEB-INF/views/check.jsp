@@ -14,7 +14,7 @@
 <body>
 
 	<form:form action="check" method="post" modelAttribute="checkForm"
-		class="right">
+		class="center">
 	<h1 class ="checkh1">確認画面</h1>
 	<p class ="checkp">以下の内容でよろしいですか？</p>
 
