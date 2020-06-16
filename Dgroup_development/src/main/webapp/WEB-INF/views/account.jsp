@@ -26,7 +26,6 @@
 	<div>
 		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 	</div>
 
