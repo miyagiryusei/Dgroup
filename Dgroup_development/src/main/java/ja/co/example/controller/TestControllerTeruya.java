@@ -94,4 +94,10 @@ public class TestControllerTeruya {
 		return "account";
 	}
 
+	//アイテムリスト画面へ
+	@RequestMapping("/itemlist")
+	public String itemlist(Model model) {
+		return "itemlist";
+	}
+
 }
