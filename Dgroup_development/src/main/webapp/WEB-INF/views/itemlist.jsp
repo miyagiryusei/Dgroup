@@ -17,6 +17,7 @@
 <title><fmt:message key="title.itemShop" /></title>
 </head>
 <body>
+	<h2>所持アイテム</h2>
 	<p>userName
 	<p>所持コイン:999
 	<table>
