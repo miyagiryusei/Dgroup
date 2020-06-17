@@ -5,4 +5,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PgRankingDao {
 
+//	@Autowired
+//	private NamedParameterJdbcTemplate jdbcTemplate;
+
 }
