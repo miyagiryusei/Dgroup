@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ja.co.example.entity.Accountedit;
 import ja.co.example.form.AccounteditForm;
-import jp.co.example.entity.Accountedit;
-import jp.co.example.service.AccounteditService;
+import ja.co.example.service.AccounteditService;
 
 @Controller
 public class AccounteditController {
