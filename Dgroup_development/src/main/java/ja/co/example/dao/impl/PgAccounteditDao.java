@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import ja.co.example.dao.AccounteditDao;
 import ja.co.example.entity.Accountedit;
 
+@Repository
 public class PgAccounteditDao implements AccounteditDao {
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
@@ -23,21 +25,15 @@ public class PgAccounteditDao implements AccounteditDao {
 	@Override
 	public int update(String id, String pass) {
 
-
-
-
 		String select = "SELECT * FROM users WHERE login_id:loginid";
-		String update= "UPDATE users SET login_id=:id, pass=:pass WHERE login_id =:loginid";
+		String update = "UPDATE users SET login_id=:id, pass=:pass WHERE login_id =:loginid";
 
 		Accountedit a = (Accountedit) session.getAttribute("loginiser");
 		String loginid = a.getLoginId();
 
-
 		param.addValue("id", id);
-		param.addValue("pass",pass);
-		param.addValue("loginid",loginid);
-
-
+		param.addValue("pass", pass);
+		param.addValue("loginid", loginid);
 
 		List<Accountedit> resultList = jdbcTemplate.query(select, param,
 				new BeanPropertyRowMapper<Accountedit>(Accountedit.class));
@@ -47,8 +43,6 @@ public class PgAccounteditDao implements AccounteditDao {
 		} else {
 			return 2;
 		}
-
-
 
 	}
 
