@@ -15,8 +15,8 @@ public class AccounteditServiceimpl implements AccounteditService{
 	private AccounteditDao accounteditDao;
 
 	@Override
-	public int  update(String loginid, String pass) {
-		return accounteditDao.update(loginid, pass);
+	public int  update(String name, String pass,String logid) {
+		return accounteditDao.update(name, pass, logid);
 	}
 
 }

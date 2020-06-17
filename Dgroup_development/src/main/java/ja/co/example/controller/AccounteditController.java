@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import ja.co.example.entity.Accountedit;
+import ja.co.example.entity.Users;
 import ja.co.example.form.AccounteditForm;
 import ja.co.example.service.AccounteditService;
 
@@ -23,36 +23,59 @@ public class AccounteditController {
 
 	@Autowired
 	private AccounteditService AccounteditService;
-	//トップ画面へ
-		@RequestMapping("/top")
-		public String index(@ModelAttribute("user") AccounteditForm form, Model model) {
-			return "accountedit";
-		}
 
+	//トップ画面へ
+	@RequestMapping("/top")
+	public String index(@ModelAttribute("user") AccounteditForm form, Model model) {
+		return "account_edit";
+	}
 
 	//情報変更
-		@RequestMapping(value = "/accounteditA", method = RequestMethod.POST)
-		public String result4(@Validated @ModelAttribute("user")Accountedit form, BindingResult bindingResult,Model model) {
-			if (bindingResult.hasErrors()) {
-				return "accountedit";
-			}
-			String id = form.getLoginId();
-			String pass = form.getPass();
+	@RequestMapping(value = "/accounteditA", method = RequestMethod.POST)
+	public String result(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+			Model model) {
+		session.setAttribute("name", form.getLoginName());
+		session.setAttribute("pass", form.getPass());
+
+		return "check";
+
+	}
+
+	//情報変更
+	@RequestMapping(value = "/checkA",params = "update", method = RequestMethod.POST)
+	public String result1(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+			Model model) {
+
+		String old = (String) session.getAttribute("pass");
+
+		String name = form.getLoginName();
+		String pass = form.getPass();
+		if (old.equals(pass)) {
 
 
-			Integer a = AccounteditService.update(id, pass);
-			if (a == 1) {
-				model.addAttribute("msg1", "変更に成功しました。");
-				session.invalidate();
-				return "updateResult";
-			} else if (a == 0) {
-				model.addAttribute("msg", "パスワードが間違えています。");
-				return "update";
+			Users A = (Users) session.getAttribute("user");
 
-			} else {
-				model.addAttribute("msg", "すでに使用されているユーザーidです。");
-				return "update";
+			String logid = A.getLoginId();
 
-			}
+			AccounteditService.update(name, pass, logid);
+
+			model.addAttribute("msg", "変更に成功しました。");
+			session.invalidate();
+			return "result";
+
+		} else {
+			model.addAttribute("msg", "パスワードが間違えています。");
+
+			return "check";
 		}
+	}
+	//情報変更
+		@RequestMapping(value = "/checkA",params = "insert", method = RequestMethod.POST)
+		public String result2(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+				Model model) {
+					return null;
+
+		}
+
+
 }

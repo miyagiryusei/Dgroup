@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	${msg}
 	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
 		<div>
