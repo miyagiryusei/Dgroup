@@ -13,7 +13,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="account_edit.jsp" method="post">
+
+	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
 		<div>
 			<label>ID</label> <input type="text" name="loginName">
@@ -22,7 +23,8 @@
 			<label>パスワード</label> <input type="password" name="pass">
 		</div>
 		<button type="submit">変更する</button>
-	</form>
+	</form:form>
+
 	<div>
 		 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
