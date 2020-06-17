@@ -1,8 +1,12 @@
 package ja.co.example.form;
 
+import javax.validation.constraints.NotBlank;
+
 public class LoginForm {
 
+	@NotBlank
 	private String loginId;
+	@NotBlank
 	private String password;
 
 	public String getLoginId() {
