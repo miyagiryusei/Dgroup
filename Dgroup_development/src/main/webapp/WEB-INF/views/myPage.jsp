@@ -9,7 +9,7 @@
 <head>
 <meta charset="UTF-8">
 <title><fmt:message key="title.myPage" /></title>
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/myPage.css" rel="stylesheet">
 </head>
 <body>
 	<c:if test="${empty user}">
