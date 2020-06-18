@@ -21,7 +21,8 @@ public class PgAccounteditDao implements AccounteditDao {
 	@Override
 	public int update(String name, String pass,String logid) {
 
-		String update = "UPDATE users SET user_name=:name, pass=:pass, edit_time=now() WHERE login_id =:loginid";
+		String  update = "UPDATE users SET user_name=:name, pass=:pass, edit_time=now() WHERE login_id =:loginid";
+
 
 
 		param.addValue("name", name);
