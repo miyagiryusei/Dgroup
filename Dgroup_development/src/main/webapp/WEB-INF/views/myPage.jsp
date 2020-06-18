@@ -12,7 +12,16 @@
 <link href="css/commons.css" rel="stylesheet">
 </head>
 <body>
+	<c:if test="${empty user}">
+　  	<c:redirect url="/login" />
+    </c:if>
+
 	<h1>Myページ</h1>
+
+	<p>${fn:escapeXml(user.userName)}</p>
+	<p>所持コイン：${fn:escapeXml(user.coin)}</p>
+	<p>ランク：${fn:escapeXml(user.rankName)}</p>
+
 
 
     <a href="poker" class="btn"><fmt:message key="btn.poker" /></a>
