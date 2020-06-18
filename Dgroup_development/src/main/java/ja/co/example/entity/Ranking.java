@@ -44,6 +44,17 @@ public class Ranking {
 	private Integer pokerRoleCoin;
 
 
+	//エイリアス
+	private Integer rank;
+
+	private Integer sumBjCoin;
+
+	private Integer sumPokerCoin;
+
+	private Integer difference;
+
+	private Integer maxCoin;
+
 
 	//usersテーブルアクセッサ
 	public Integer getUserId() {
@@ -172,6 +183,48 @@ public class Ranking {
 
 	public void setPokerRoleCoin(Integer pokerRoleCoin) {
 		this.pokerRoleCoin = pokerRoleCoin;
+	}
+
+
+	//エイリアスアクセッサ
+	public Integer getRank() {
+		return rank;
+	}
+
+	public void setRank(Integer rank) {
+		this.rank = rank;
+	}
+
+	public Integer getSumBjCoin() {
+		return sumBjCoin;
+	}
+
+	public void setSumBjCoin(Integer sumBjCoin) {
+		this.sumBjCoin = sumBjCoin;
+	}
+
+	public Integer getSumPokerCoin() {
+		return sumPokerCoin;
+	}
+
+	public void setSumPokerCoin(Integer sumPokerCoin) {
+		this.sumPokerCoin = sumPokerCoin;
+	}
+
+	public Integer getDifference() {
+		return difference;
+	}
+
+	public void setDifference(Integer difference) {
+		this.difference = difference;
+	}
+
+	public Integer getMaxCoin() {
+		return maxCoin;
+	}
+
+	public void setMaxCoin(Integer maxCoin) {
+		this.maxCoin = maxCoin;
 	}
 
 }
