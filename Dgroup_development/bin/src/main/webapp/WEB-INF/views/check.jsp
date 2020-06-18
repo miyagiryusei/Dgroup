@@ -13,31 +13,22 @@
 </head>
 <body>
 
-	<form:form action="checkA" method="post" modelAttribute="user"
+	<form:form action="check" method="post" modelAttribute="checkForm"
 		class="center">
 	<h1 class ="checkh1">確認画面</h1>
-	${msg}
 	<p class ="checkp">以下の内容でよろしいですか？</p>
 
 		<div>
-			<label>名前</label> <input type="text" name="loginName"
-				value="${name}" readonly>
+			<label>ID</label> <input type="text" name="loginame"
+				value="${loginname}" readonly>
 		</div>
 		<div>
-			<label>パスワード(再入力)</label> <input type="password" name="pass">
+			<label>パスワード</label> <input type="password" name="pass">
 		</div>
 		<div>
-			<c:if test="${not empty flg}">
-				<form:button name="update" class="button-right">
-					<fmt:message key="btn.update" />
-				</form:button>
-			</c:if>
-			<c:if test="${empty flg}">
-				<form:button name="insert" class="button-right">
+				<form:button class="button-right">
 					<fmt:message key="btn.insert" />
 				</form:button>
-				</c:if>
-
 			</div>
 	</form:form>
 

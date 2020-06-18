@@ -4,24 +4,23 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<title><fmt:message key="title.myPage" /></title>
 <link href="css/commons.css" rel="stylesheet">
-<title><fmt:message key="title.blackjack" /></title>
 </head>
 <body>
-	<h1>ブラックジャック</h1>
-	<a href="login" class="btn"><fmt:message key="btn.start" /></a>
-
-	<br><br>
 
 
-	 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+	 <p>正常に登録できました。</p>
+  <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
 	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+
+
+
 
 </body>
 </html>

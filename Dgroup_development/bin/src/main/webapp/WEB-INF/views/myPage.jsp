@@ -23,7 +23,10 @@
  　 <br><br>
 
 
-    <a href="itemShop" class="btn"><fmt:message key="btn.itemShop" /></a>
+    <a href="item" class="btn"><fmt:message key="btn.itemShop" /></a>
+    <br><br>
+
+    <a href="itemList" class="btn"><fmt:message key="btn.itemList" /></a>
     <br><br>
 
 
@@ -31,13 +34,10 @@
     <br><br>
 
 
-    <a href="acount" class="btn"><fmt:message key="btn.acount" /></a>
+    <a href="account_edit" class="btn"><fmt:message key="btn.acount" /></a>
     <br><br>
 
-	<form action="logout" method="post">
-    	<button type="submit">
-     		<fmt:message key="btn.logout" />
-    	</button>
-  	</form>
+	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+
 </body>
 </html>

@@ -11,8 +11,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ja.co.example.entity.Account;
 import ja.co.example.entity.Users;
+import ja.co.example.form.AccountForm;
 import ja.co.example.form.AccounteditForm;
+import ja.co.example.service.AccountService;
 import ja.co.example.service.AccounteditService;
 
 @Controller
@@ -24,10 +27,19 @@ public class AccounteditController {
 	@Autowired
 	private AccounteditService AccounteditService;
 
+	@Autowired
+	private AccountService accountservice;
+
 	//トップ画面へ
 	@RequestMapping("/top")
 	public String index(@ModelAttribute("user") AccounteditForm form, Model model) {
 		return "account_edit";
+	}
+
+	//新規登録画面へ
+	@RequestMapping("/insert")
+	public String account(@ModelAttribute("user") AccounteditForm form, Model model) {
+		return "account";
 	}
 
 	//情報変更
@@ -36,13 +48,35 @@ public class AccounteditController {
 			Model model) {
 		session.setAttribute("name", form.getLoginName());
 		session.setAttribute("pass", form.getPass());
+		session.setAttribute("flg", 1);
 
 		return "check";
 
 	}
 
+	@RequestMapping(value = "/account", method = RequestMethod.POST)
+	public String insert(@Validated @ModelAttribute("user") AccountForm form, BindingResult bindingResult,
+			Model model) {
+
+		String id = form.getLoginId();
+		String pass = form.getPass();
+		String name = form.getUserName();
+		session.setAttribute("name", name);
+		session.setAttribute("id", id);
+		session.setAttribute("pass", pass);
+		Account select = accountservice.select(id);
+		if (select == null) {
+			return "check";
+		} else {
+
+			model.addAttribute("massage", "IDが重複しています");
+
+			return "account";
+		}
+	}
+
 	//情報変更
-	@RequestMapping(value = "/checkA",params = "update", method = RequestMethod.POST)
+	@RequestMapping(value = "/checkA", params = "update", method = RequestMethod.POST)
 	public String result1(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
 			Model model) {
 
@@ -51,7 +85,6 @@ public class AccounteditController {
 		String name = form.getLoginName();
 		String pass = form.getPass();
 		if (old.equals(pass)) {
-
 
 			Users A = (Users) session.getAttribute("user");
 
@@ -69,13 +102,25 @@ public class AccounteditController {
 			return "check";
 		}
 	}
+
 	//情報変更
-		@RequestMapping(value = "/checkA",params = "insert", method = RequestMethod.POST)
-		public String result2(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
-				Model model) {
-					return null;
+	@RequestMapping(value = "/checkA", params = "insert", method = RequestMethod.POST)
+	public String result2(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+			Model model) {
 
+		String id = (String) session.getAttribute("id");
+		String name = (String) session.getAttribute("name");
+		String pass = (String) session.getAttribute("pass");
+		String pass1 = form.getPass();
+
+		if (pass.equals(pass1)) {
+
+			accountservice.insert(id, pass, name);
+			return "result";
+		} else {
+			model.addAttribute("msg", "パスワードが間違えています");
+			return "check";
 		}
-
+	}
 
 }

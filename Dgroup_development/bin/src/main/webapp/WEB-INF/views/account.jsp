@@ -13,21 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${massage}
-
-	<form:form action="account" modelAttribute="user" method="post">
+	<form action="account" method="post">
 	<h1>アカウント作成</h1>
 	<div>
-		<label>ID</label> <input type="text" name="loginId">
-	</div>
-	<div>
-	<label>ユーザー名</label> <input type="text" name="userName">
+		<label>ID</label> <input type="text" name="loginName">
 	</div>
 	<div>
 		<label>パスワード</label> <input type="password" name="pass">
 	</div>
 	<button type="submit">作成する</button>
-	</form:form>
+	</form>
 	<div>
 		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 

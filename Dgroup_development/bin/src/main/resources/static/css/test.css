@@ -1,64 +1,64 @@
 @charset "UTF-8";
 
 fieldset {
-  border: none;
+	border: none;
 }
 
 fieldset label {
-  display: inline-block;
-  width: 80px;
-  margin-right: 50px;
+	display: inline-block;
+	width: 80px;
+	margin-right: 50px;
 }
 
 fieldset.label-60 label {
-  width: 60px;
+	width: 60px;
 }
 
 fieldset.label-130 label {
-  width: 130px;
+	width: 130px;
 }
 
 fieldset div {
-  margin: 5px;
+	margin: 5px;
 }
 
 form ~ div, table ~ div {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 table, table th, table td {
-  border: solid 1px;
+	border: solid 1px;
 }
 
 input[readonly] {
-  background: #CCCCCC;
-  color: black;
+	background: #CCCCCC;
+	color: black;
 }
 
 .center {
-  text-align: center;
+	text-align: center;
 }
 
 .required::before {
-  content: "※";
-  color: red;
+	content: "※";
+	color: red;
 }
 
 .error {
-  color: red;
+	color: red;
 }
 
 a.btn {
-  color: white;
-  text-align: center;
-  font-size: 21px;
-  font-weight: bold;
-  background-color: #87cefa;
-  border-radius: 10px;
-  cursor: pointer;
-  border: 0px;
-  padding: 5px 20px 5px 20px;
-  text-decoration:none
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
 }
 
 .login {
@@ -88,7 +88,8 @@ header {
 header.p {
 	color: #ffd700;
 }
-.logoutBtn {
+
+a.logoutBtn {
 	display: inline-block;
 	position: fixed; /* ボタン固定 */
 	top: 13px; /* 下から位置 */
@@ -105,7 +106,7 @@ header.p {
 	text-decoration: none
 }
 
-.myPageBtn {
+a.myPageBtn {
 	display: inline-block;
 	position: fixed; /* ボタン固定 */
 	top: 63px; /* 下から位置 */
@@ -120,5 +121,4 @@ header.p {
 	border: 0px;
 	padding: 5px 20px 5px 20px;
 	text-decoration: none
-}
 }

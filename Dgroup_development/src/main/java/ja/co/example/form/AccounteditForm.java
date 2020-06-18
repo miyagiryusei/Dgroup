@@ -2,7 +2,6 @@ package ja.co.example.form;
 
 public class AccounteditForm {
 	private String loginName;
-
 	private String pass;
 
 	public String getLoginName() {

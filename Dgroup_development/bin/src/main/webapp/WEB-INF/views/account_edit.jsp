@@ -13,26 +13,23 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${massage}
 
-	<form:form action="account" modelAttribute="user" method="post">
-	<h1>アカウント作成</h1>
-	<div>
-		<label>ID</label> <input type="text" name="loginId">
-	</div>
-	<div>
-	<label>ユーザー名</label> <input type="text" name="userName">
-	</div>
-	<div>
-		<label>パスワード</label> <input type="password" name="pass">
-	</div>
-	<button type="submit">作成する</button>
+	<form:form action="accounteditA" modelAttribute="user">
+		<h1>アカウント編集</h1>
+		<div>
+			<label>ID</label> <input type="text" name="loginName">
+		</div>
+		<div>
+			<label>パスワード</label> <input type="password" name="pass">
+		</div>
+		<button type="submit">変更する</button>
 	</form:form>
-	<div>
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
+	<div>
+		 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+
+	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 	</div>
-
 </body>
 </html>
