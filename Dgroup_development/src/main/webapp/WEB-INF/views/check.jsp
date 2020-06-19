@@ -15,14 +15,21 @@
 
 	<form:form action="checkA" method="post" modelAttribute="user"
 		class="center">
-	<h1 class ="checkh1">確認画面</h1>
+		<h1 class="checkh1">確認画面</h1>
 	${msg}
-	<p class ="checkp">以下の内容でよろしいですか？</p>
+	<p class="checkp">以下の内容でよろしいですか？</p>
 
 		<div>
-			<label>名前</label> <input type="text" name="loginName"
-				value="${name}" readonly>
+			<c:if test="${empty flg}">
+			<label>ID</label> <input type="text" name="loginId" value="${id}"
+				readonly>
+				</c:if>
 		</div>
+		<div>
+			<label>名前</label> <input type="text" name="loginName" value="${name}"
+				readonly>
+		</div>
+
 		<div>
 			<label>パスワード(再入力)</label> <input type="password" name="pass">
 		</div>
@@ -36,14 +43,16 @@
 				<form:button name="insert" class="button-right">
 					<fmt:message key="btn.insert" />
 				</form:button>
-				</c:if>
+			</c:if>
 
-			</div>
+		</div>
 	</form:form>
 
-  	  <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
+	<br>
+	<br>
 
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 
 

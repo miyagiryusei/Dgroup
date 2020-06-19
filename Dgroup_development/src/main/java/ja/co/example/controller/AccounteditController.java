@@ -15,6 +15,7 @@ import ja.co.example.entity.Account;
 import ja.co.example.entity.Users;
 import ja.co.example.form.AccountForm;
 import ja.co.example.form.AccounteditForm;
+import ja.co.example.form.CheckForm;
 import ja.co.example.service.AccountService;
 import ja.co.example.service.AccounteditService;
 
@@ -46,7 +47,11 @@ public class AccounteditController {
 	@RequestMapping(value = "/accounteditA", method = RequestMethod.POST)
 	public String result(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
 			Model model) {
-		session.setAttribute("name", form.getLoginName());
+		if (bindingResult.hasErrors()) {
+			return "account_edit";
+		}
+
+		session.setAttribute("name", form.getUserName());
 		session.setAttribute("pass", form.getPass());
 		session.setAttribute("flg", 1);
 
@@ -77,12 +82,12 @@ public class AccounteditController {
 
 	//情報変更
 	@RequestMapping(value = "/checkA", params = "update", method = RequestMethod.POST)
-	public String result1(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+	public String result1(@Validated @ModelAttribute("user") CheckForm form, BindingResult bindingResult,
 			Model model) {
 
 		String old = (String) session.getAttribute("pass");
 
-		String name = form.getLoginName();
+		String name = form.getUserName();
 		String pass = form.getPass();
 		if (old.equals(pass)) {
 
@@ -105,7 +110,7 @@ public class AccounteditController {
 
 	//情報変更
 	@RequestMapping(value = "/checkA", params = "insert", method = RequestMethod.POST)
-	public String result2(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
+	public String result2(@Validated @ModelAttribute("user") CheckForm form, BindingResult bindingResult,
 			Model model) {
 
 		String id = (String) session.getAttribute("id");
