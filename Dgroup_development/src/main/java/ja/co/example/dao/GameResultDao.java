@@ -7,5 +7,8 @@ public interface GameResultDao {
 	public void pokerResultInsert(Ranking result,Integer betCoin);
 	public void jackResultInsert(Ranking result,Integer betCoin);
 	public void userGetCoin(Users user);
+	Ranking getCoin(Integer userId);
+	Ranking pokerRoleName(Integer roleId);
+	void userBetCoin(Integer betCoin,Integer userId);
 
 }

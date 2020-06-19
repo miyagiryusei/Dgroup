@@ -20,7 +20,7 @@ public class PgUsersDao implements UsersDao {
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
 	private static final String SELECT_BY_LOGIN_ID_AND_PASS = "SELECT * ,rank_name FROM users join rank on users.rank_id=rank.rank_id WHERE login_id = :loginId AND pass = :pass";
-	private static final String UPDATE_RANK_BY_LOGIN_ID = "update users set rank_id=(select max(rank_id) from rank where rank_area < (select sum(coin) from result where login_id=:loginId))where login_id=:loginId";
+	private static final String UPDATE_RANK_BY_LOGIN_ID = "update users set rank_id=(select max(rank_id) from rank where rank_area < (select sum(case when coin < 0 then 0 else coin end ) from result where user_id=:userId))where user_id=:userId";
 
 	//ログイン
 	@Override
@@ -37,9 +37,9 @@ public class PgUsersDao implements UsersDao {
 
 	//ランク更新（ゲーム終了時に呼ぶ）
 	@Override
-	public void rank(String loginId) {
+	public void rank(Integer userId) {
 		MapSqlParameterSource param = new MapSqlParameterSource();
-		param.addValue("loginId", loginId);
+		param.addValue("userId", userId);
 
 		jdbcTemplate.update(UPDATE_RANK_BY_LOGIN_ID, param);
 
