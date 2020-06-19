@@ -39,7 +39,7 @@ public class AccounteditController {
 
 	//新規登録画面へ
 	@RequestMapping("/insert")
-	public String account(@ModelAttribute("user") AccounteditForm form, Model model) {
+	public String account(@ModelAttribute("user") AccountForm form, Model model) {
 		return "account";
 	}
 
@@ -62,6 +62,10 @@ public class AccounteditController {
 	@RequestMapping(value = "/account", method = RequestMethod.POST)
 	public String insert(@Validated @ModelAttribute("user") AccountForm form, BindingResult bindingResult,
 			Model model) {
+
+		if (bindingResult.hasErrors()) {
+			return "account";
+		}
 
 		String id = form.getLoginId();
 		String pass = form.getPass();
