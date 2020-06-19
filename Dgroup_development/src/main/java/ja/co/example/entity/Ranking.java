@@ -1,7 +1,5 @@
 package ja.co.example.entity;
 
-import java.sql.Date;
-
 public class Ranking {
 	public Ranking(Integer userId, Integer resultId, Integer divisionId, Integer pokerRoleId) {
 		super();
@@ -18,21 +16,13 @@ public class Ranking {
 	//usersテーブル
 	private Integer userId;
 
-	private String userName;
 
-	private Integer userCoin;
-
-	private Integer rankId;
-
-	private Date insertTime;
-
-	private Integer userStatus;
 
 
 	//resultテーブル
 	private Integer resultId;
 
-	private Integer resultCoin;
+	private Integer coin;
 
 	private Integer divisionId;
 
@@ -76,45 +66,7 @@ public class Ranking {
 		this.userId = userId;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
 
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public Integer getUserCoin() {
-		return userCoin;
-	}
-
-	public void setUserCoin(Integer userCoin) {
-		this.userCoin = userCoin;
-	}
-
-	public Integer getRankId() {
-		return rankId;
-	}
-
-	public void setRankId(Integer rankId) {
-		this.rankId = rankId;
-	}
-
-	public Date getInsertTime() {
-		return insertTime;
-	}
-
-	public void setInsertTime(Date insertTime) {
-		this.insertTime = insertTime;
-	}
-
-	public Integer getUserStatus() {
-		return userStatus;
-	}
-
-	public void setUserStatus(Integer userStatus) {
-		this.userStatus = userStatus;
-	}
 
 
 	//resultアクセッサ
@@ -126,12 +78,12 @@ public class Ranking {
 		this.resultId = resultId;
 	}
 
-	public Integer getResultCoin() {
-		return resultCoin;
+	public Integer getCoin() {
+		return coin;
 	}
 
-	public void setResultCoin(Integer resultCoin) {
-		this.resultCoin = resultCoin;
+	public void setCoin(Integer coin) {
+		this.coin = coin;
 	}
 
 	public Integer getDivisionId() {

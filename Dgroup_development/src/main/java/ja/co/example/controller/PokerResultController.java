@@ -112,7 +112,7 @@ public class PokerResultController {
 		//ポーカーの役取得
 		Ranking po = gameResultDao.pokerRoleName(pokerRole);
 
-		model.addAttribute("getCoin", re.getResultCoin());
+		model.addAttribute("getCoin", re.getCoin());
 		model.addAttribute("pokerResult", po.getPokerRoleName());
 		session.setAttribute("user", user);
 

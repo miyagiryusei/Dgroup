@@ -14,7 +14,7 @@
 <body>
 	<h1>ポーカー</h1>
 
-	<a href="login" class="btn"><fmt:message key="btn.start" /></a>
+	<a href="pokerGame" class="btn"><fmt:message key="btn.start" /></a>
 
 	<br><br>
 
