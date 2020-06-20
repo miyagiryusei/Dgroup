@@ -24,253 +24,272 @@ public class PgRankingDao implements RankingDao {
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where u.user_status !=2 ";
+			"where u.user_status !=2 and u.user_name= case when :flg = 1 then :userName else u.user_name end ";
 
-	//全体ランキング用　（不要なものは破棄します）
-	private static final String SELECT_COIN_RAMKING_OVERALL = "select RANK() OVER (ORDER BY u.coin DESC) , u.user_id , u.user_name , "
-			+ "u.coin user_coin , u.rank_id ,ra.rank_name, u.insert_time, " +
-			"(first_value(u.coin) OVER () - u.coin) as difference " +
-			"from users u join rank ra on ra.rank_id = u.rank_id " +
+	//所持コインランキング用SQL
+	private static final String SELECT_COIN_RAMKING = "select rank , user_name , rank_name , user_coin , difference , count "
+			+
+			"from " +
+			"( select RANK() OVER (ORDER BY u.coin DESC) rank , u.user_id , u.user_name , u.coin user_coin , u.rank_id , "
+			+ "ra.rank_name, u.insert_time , count(result_id) count " +
+			",(first_value(u.coin) OVER () - u.coin) as difference " +
+			"from users u " +
+			"join result r on r.user_id = u.user_id " +
+			"join rank ra on ra.rank_id = u.rank_id " +
 			"where u.user_status !=2 " +
+			"group by u.user_id , u.user_name , u.coin , u.rank_id ,ra.rank_name, u.insert_time ) ran " +
+			"where user_name = case when :flg = 1 then :userName else user_name end " +
 			"FETCH FIRST 50 ROWS ONLY ";
 
-	private static final String SELECT_SUM_BJ_OVERALL = "select  RANK() OVER (ORDER BY sum(r.coin) DESC) , u.user_name , u.rank_id , "
-			+ "ra.rank_name, u.insert_time, sum(r.coin) sum_bj_coin , d.division_name , "
-			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference " +
+	//ブラックジャック OR ポーカー合計
+	private static final String SELECT_SUM = "select rank , user_name , rank_name , sum_coin , division_name , difference ,count "
+			+
+			"from ( select  RANK() OVER (ORDER BY sum(case when r.coin < 0 then 0 else r.coin end) DESC) rank , u.user_name , u.rank_id , ra.rank_name , "
+			+ "u.insert_time, sum(case when r.coin < 0 then 0 else r.coin end) sum_coin , d.division_name , "
+			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference , count(u.user_id) count " +
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
-			"where d.division_name = 'ブラックジャック' and r.coin is not null and u.user_status !=2 and r.coin > 0 " +
-			"group by user_name , d.division_name ,u.rank_id ,ra.rank_name, u.insert_time " +
+			"where d.division_name = :divisionName and r.coin is not null and u.user_status !=2 " +
+			"group by user_name , d.division_name ,u.rank_id ,ra.rank_name, u.insert_time ) ran " +
+			"where user_name = case when :flg = 1 then :userName else user_name end " +
 			"FETCH FIRST 50 ROWS ONLY ";
 
-	private static final String SELECT_SUM_POKER_OVERALL = "select RANK() OVER (ORDER BY sum(r.coin) DESC) , u.user_name , "
-			+ "u.rank_id ,ra.rank_name, u.insert_time, sum(r.coin) sum_poker_coin , d.division_name, "
-			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference " +
-			"from users u " +
-			"join result r on r.user_id = u.user_id " +
-			"join rank ra on ra.rank_id = u.rank_id " +
-			"join division d on d.division_id = r.division_id " +
-			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and r.coin > 0 " +
-			"group by user_name , d.division_name , u.rank_id ,ra.rank_name, u.insert_time " +
-			"FETCH FIRST 50 ROWS ONLY ";
-
-	//	private static final String SELECT_MAX_POKER_OVERALL = "select RANK() OVER (ORDER BY max(r.coin) DESC) , u.user_name, u.rank_id , "
-	//			+ "ra.rank_name, u.insert_time , max(r.coin) max_coin , d.division_name, "
-	//			+ "(first_value(max(r.coin)) OVER () - max(r.coin)) as difference " +
-	//			"from users u " +
-	//			"join result r on r.user_id = u.user_id " +
-	//			"join rank ra on ra.rank_id = u.rank_id " +
-	//			"join division d on d.division_id = r.division_id " +
-	//			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 " +
-	//			"group by user_name , d.division_name , u.rank_id ,ra.rank_name, u.insert_time " +
-	//			"FETCH FIRST 50 ROWS ONLY ";
-
-	private static final String SELECT_POKER_ROLE_OVERALL = "select RANK() OVER (ORDER BY p.poker_role_id DESC), p.poker_role_id , "
-			+ "u.user_name , u.rank_id ,ra.rank_name, u.insert_time, p.poker_role_name " +
+	//ポーカー役ランキング
+	private static final String SELECT_POKER_ROLE = "select rank , user_name , rank_name , poker_role_name " +
+			"from( " +
+			"select RANK() OVER (ORDER BY p.poker_role_id DESC) rank, p.poker_role_id , u.user_name , u.rank_id ,ra.rank_name, "
+			+ "u.insert_time, p.poker_role_name "
+			+
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
 			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 " +
+			") run " +
+			"where user_name = case when :flg = 1 then :userName else user_name end ";
+
+	//ポーカー１試合の最高スコア
+	private static final String SELECT_POKER_ONETIME_SCORE = "select rank , coin , user_name , rank_name , poker_role_name , difference "
+			+
+			"from( " +
+			"select RANK() OVER (ORDER BY (case when r.coin < 0 then 0 else r.coin end) DESC) rank , "
+			+ "case when r.coin < 0 then 0 else r.coin end , p.poker_role_id , u.user_name , u.rank_id ,ra.rank_name, "
+			+ "u.insert_time, p.poker_role_name , (first_value (r.coin) OVER () - r.coin) as difference " +
+			"from users u " +
+			"join result r on r.user_id = u.user_id " +
+			"join rank ra on ra.rank_id = u.rank_id " +
+			"join division d on d.division_id = r.division_id " +
+			"join poker_role p on p.poker_role_id = r.poker_role_id " +
+			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 " +
+			") ran " +
+			"where user_name = case when :flg = 1 then :userName else user_name end " +
 			"FETCH FIRST 50 ROWS ONLY ";
 
-	private static final String SELECT_POKER_ONETIME_SCORE_OVERALL = "select RANK() OVER (ORDER BY r.coin DESC),r.coin, p.poker_role_id ,"
-			+ " u.user_name , u.rank_id ,ra.rank_name, u.insert_time, p.poker_role_name " +
+	//ポーカー役カウント
+	private static final String SELECT_POKER_ROLE_COUNT = "select p.poker_role_name ,count(p.poker_role_id) count " +
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and r.coin > 0  " +
+			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name= case when :flg = 1 then "
+			+ ":userName else u.user_name end " +
+			"group by p.poker_role_name " +
+			"order by p.poker_role_name desc " +
 			"FETCH FIRST 50 ROWS ONLY ";
-	//ランキング用末尾
 
-	//-------------------------------------------------------------------------------------------------------------------------
-
-	//個人用ランキング情報画面（不要なものは破棄します）
-	private static final String SELECT_POKER_ROLE_PERSONAL_COUNT = "select RANK() OVER (ORDER BY p.poker_role_id DESC) , "
-			+ "u.user_name, u.rank_id ,ra.rank_name, u.insert_time , p.poker_role_name ,count(p.poker_role_id) count " +
+	//試合数合計
+	private static final String SELECT_SUM_MATCH = "select count(r.result_id) count " +
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name = :userName " +
-			"group by user_name , p.poker_role_name , p.poker_role_id, u.rank_id ,ra.rank_name, u.insert_time ";
-
-	private static final String SELECT_COIN_RAMKING_PERSONAL = "select RANK() OVER (ORDER BY u.coin DESC) , u.user_id , u.user_name , "
-			+ "u.coin user_coin , u.rank_id ,ra.rank_name, u.insert_time, " +
-			"(first_value(u.coin) OVER () - u.coin) as difference " +
-			"from users u join rank ra on ra.rank_id = u.rank_id " +
-			"where u.user_status !=2 and u.user_name = :userName ";
-
-	private static final String SELECT_SUM_BJ_PERSONAL = "select  RANK() OVER (ORDER BY sum(r.coin) DESC) , u.user_name , u.rank_id , "
-			+ "ra.rank_name, u.insert_time, sum(r.coin) sum_bj_coin , d.division_name , "
-			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference " +
-			"from users u " +
-			"join result r on r.user_id = u.user_id " +
-			"join rank ra on ra.rank_id = u.rank_id " +
-			"join division d on d.division_id = r.division_id " +
-			"where d.division_name = 'ブラックジャック' and r.coin is not null and u.user_status !=2 and u.user_name = :userName and r.coin > 0 "
-			+
-			"group by user_name , d.division_name ,u.rank_id ,ra.rank_name, u.insert_time ";
-
-	private static final String SELECT_SUM_POKER_PERSONAL = "select RANK() OVER (ORDER BY sum(r.coin) DESC) , u.user_name , "
-			+ "u.rank_id ,ra.rank_name, u.insert_time, sum(r.coin) sum_poker_coin , d.division_name, "
-			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference " +
-			"from users u " +
-			"join result r on r.user_id = u.user_id " +
-			"join rank ra on ra.rank_id = u.rank_id " +
-			"join division d on d.division_id = r.division_id " +
-			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name = :userName and r.coin > 0 "
-			+
-			"group by user_name , d.division_name , u.rank_id ,ra.rank_name, u.insert_time ";
-
-	//	private static final String SELECT_MAX_POKER_PERSONAL = "select RANK() OVER (ORDER BY max(r.coin) DESC) , u.user_name, u.rank_id , "
-	//			+ "ra.rank_name, u.insert_time , max(r.coin) max_coin , d.division_name, "
-	//			+ "(first_value(max(r.coin)) OVER () - max(r.coin)) as difference " +
-	//			"from users u " +
-	//			"join result r on r.user_id = u.user_id " +
-	//			"join rank ra on ra.rank_id = u.rank_id " +
-	//			"join division d on d.division_id = r.division_id " +
-	//			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name = :userName " +
-	//			"group by user_name , d.division_name , u.rank_id ,ra.rank_name, u.insert_time " +
-	//			"FETCH FIRST 50 ROWS ONLY ";
-
-	//	private static final String SELECT_POKER_ROLE_PERSONAL = "select RANK() OVER (ORDER BY p.poker_role_id DESC), p.poker_role_id , "
-	//			+ "u.user_name , u.rank_id ,ra.rank_name, u.insert_time, p.poker_role_name " +
-	//			"from users u " +
-	//			"join result r on r.user_id = u.user_id " +
-	//			"join rank ra on ra.rank_id = u.rank_id " +
-	//			"join division d on d.division_id = r.division_id " +
-	//			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-	//			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name = :userName ";
-
-	private static final String SELECT_POKER_ONETIME_SCORE_PERSONAL = "select RANK() OVER (ORDER BY r.coin DESC),r.coin, p.poker_role_id ,"
-			+ " u.user_name , u.rank_id ,ra.rank_name, u.insert_time, p.poker_role_name " +
-			"from users u " +
-			"join result r on r.user_id = u.user_id " +
-			"join rank ra on ra.rank_id = u.rank_id " +
-			"join division d on d.division_id = r.division_id " +
-			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name = :userName "
-			+ "FETCH FIRST 1 ROWS ONLY ";
-	//個人ランキング用末尾
+			"where d.division_name = :divisionName and r.coin IS NOT NULL and u.user_status !=2 " +
+			"FETCH FIRST 50 ROWS ONLY ";
 
 	//---------------------------------------------------------------------------------------------------------------------
 
-	//（全）
 	//全権取得
 	public List<Ranking> getAll() {
+
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_ALL, new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;
 	}
 
-	//全体ランキング必要カラム取得
+	//所持コインランキング(全)
 	public List<Ranking> getOverallRanking() {
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_COIN_RAMKING_OVERALL,
-				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-
-		return resultList;
-	}
-
-	//（全）ブラックジャックの合計取得
-	public List<Ranking> getOverallSumBj() {
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_BJ_OVERALL,
-				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-
-		return resultList;
-	}
-
-	//（全）ポーカーの合計取得
-	public List<Ranking> getOverallSumPoker() {
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_POKER_OVERALL,
-				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-
-		return resultList;
-	}
-
-	//	//（全）ポーカー最高取得数
-	//	public List<Ranking> getOverallMaxPoker() {
-	//		List<Ranking> resultList = jdbcTemplate.query(SELECT_MAX_POKER_OVERALL,
-	//				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-	//
-	//		return resultList;
-	//	}
-
-	//（全）ポーカーの役ランク
-	public List<Ranking> getOverallPokerRole() {
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE_OVERALL,
-				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-
-		return resultList;
-	}
-
-	//（全）ポーカー１試合の最高取得スコア
-	public List<Ranking> getOverallPokerOntimeScore() {
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ONETIME_SCORE_OVERALL,
-				new BeanPropertyRowMapper<Ranking>(Ranking.class));
-
-		return resultList;
-	}
-
-	//-------------------------------------------------------------------------------------------------
-
-	//（個）
-	//（個）ポーカー役カウント
-	public List<Ranking> getPokerCountPersonal(String userName) {
 		MapSqlParameterSource param = new MapSqlParameterSource();
-		param.addValue("userName", userName);
+		param.addValue("flg", 2);
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE_PERSONAL_COUNT,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_COIN_RAMKING, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;
 	}
 
-	//（個）個人ランキング情報取得
+	//所持コインランキング(個人)
 	public List<Ranking> getPersonalRanking(String userName) {
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
 		param.addValue("userName", userName);
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_COIN_RAMKING_PERSONAL,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_COIN_RAMKING, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;
 	}
 
-	//（個）ブラックジャックの合計取得
-	public List<Ranking> getPersonalSumBj(String userName) {
+	//ブラックジャックSUM(全)
+	public List<Ranking> getOverallBjSum() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
-		param.addValue("userName", userName);
+		param.addValue("divisionName", "ブラックジャック");
+		param.addValue("flg", 2);
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_BJ_PERSONAL,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;
 	}
 
-	//（個）ポーカーの合計取得
-	public List<Ranking> getPersonalSumPoker(String userName) {
+	//ブラックジャックSUM(個)
+	public List<Ranking> getPersonalBjSum(String userName) {
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "ブラックジャック");
+		param.addValue("flg", 1);
 		param.addValue("userName", userName);
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_POKER_PERSONAL,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;
 	}
 
-	//（個）ポーカー１試合の最高取得スコアかつ役
-	public List<Ranking> getPersonalPokerOntimeScore(String userName) {
+	//ポーカーSUM(全)
+	public List<Ranking> getOverallPokerSum() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "ポーカー");
+		param.addValue("flg", 2);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカーSUM（個）
+	public List<Ranking> getPersonalPokerSum(String userName) {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "ポーカー");
+		param.addValue("flg", 1);
 		param.addValue("userName", userName);
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ONETIME_SCORE_PERSONAL,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー役(全)
+	public List<Ranking> getOverallPokerRoleRanking() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 2);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE+"FETCH FIRST 50 ROWS ONLY ", param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー役(個)
+	public List<Ranking> getPersonalPokerRoleRanking(String userName) {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
+		param.addValue("userName", userName);
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE+"FETCH FIRST 1 ROWS ONLY ", param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー１試合の最高スコアランキング(全)
+	public List<Ranking> getOverallPokerOneTimeMaxScore() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 2);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ONETIME_SCORE, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー１試合の最高スコアランキング(個)
+	public List<Ranking> getPersonalPokerOneTimeMaxScore(String userName) {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
+		param.addValue("userName", userName);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ONETIME_SCORE, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー役カウント(全)
+	public List<Ranking> getOverallPokerRoleCount() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 2);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE_COUNT, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー役カウント(個)
+	public List<Ranking> getPersonalPokerRoleCount(String userName) {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
+		param.addValue("userName", userName);
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE_COUNT, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ポーカー合計試合数カウント(全)
+	public List<Ranking> getOverallPokerSumMatch() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "ポーカー");
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//ブラックジャック合計試合数カウント(全)
+	public List<Ranking> getOverallBjSumMatch() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "ブラックジャック");
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
+				new BeanPropertyRowMapper<Ranking>(Ranking.class));
+
+		return resultList;
+	}
+
+	//全体試合数カウント
+	public List<Ranking> getSumMatch() {
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("divisionName", "divisionName");
+
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;

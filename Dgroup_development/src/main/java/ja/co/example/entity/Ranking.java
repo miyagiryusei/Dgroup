@@ -9,52 +9,44 @@ public class Ranking {
 
 	private String userName;
 
-	private Integer userCoin;
-
 	private Integer rankId;
 
 	private Date insertTime;
 
 	private Integer userStatus;
 
+	private Integer coin;
 
 	//resultテーブル
 	private Integer resultId;
-
-	private Integer resultCoin;
 
 	private Integer divisionId;
 
 	private Integer pokerRoleId;
 
-
 	//division_idテーブル
 	private String divisionName;
-
 
 	//rankテーブル
 	private String rankName;
 
 	private Integer rankArea;
 
-
 	//poker_roleテーブル
 	private String pokerRoleName;
 
 	private Integer pokerRoleCoin;
 
-
 	//エイリアス
 	private Integer rank;
 
-	private Integer sumBjCoin;
-
-	private Integer sumPokerCoin;
+	private Integer sumCoin;
 
 	private Integer difference;
 
 	private Integer maxCoin;
 
+	private Integer count;
 
 	//usersテーブルアクセッサ
 	public Integer getUserId() {
@@ -71,14 +63,6 @@ public class Ranking {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
-	}
-
-	public Integer getUserCoin() {
-		return userCoin;
-	}
-
-	public void setUserCoin(Integer userCoin) {
-		this.userCoin = userCoin;
 	}
 
 	public Integer getRankId() {
@@ -105,7 +89,6 @@ public class Ranking {
 		this.userStatus = userStatus;
 	}
 
-
 	//resultアクセッサ
 	public Integer getResultId() {
 		return resultId;
@@ -113,14 +96,6 @@ public class Ranking {
 
 	public void setResultId(Integer resultId) {
 		this.resultId = resultId;
-	}
-
-	public Integer getResultCoin() {
-		return resultCoin;
-	}
-
-	public void setResultCoin(Integer resultCoin) {
-		this.resultCoin = resultCoin;
 	}
 
 	public Integer getDivisionId() {
@@ -139,7 +114,6 @@ public class Ranking {
 		this.pokerRoleId = pokerRoleId;
 	}
 
-
 	//divisionアクセッサ
 	public String getDivisionName() {
 		return divisionName;
@@ -148,7 +122,6 @@ public class Ranking {
 	public void setDivisionName(String divisionName) {
 		this.divisionName = divisionName;
 	}
-
 
 	//rankアクセッサ
 	public String getRankName() {
@@ -167,7 +140,6 @@ public class Ranking {
 		this.rankArea = rankArea;
 	}
 
-
 	//pokerRoleアクセッサ
 	public String getPokerRoleName() {
 		return pokerRoleName;
@@ -185,7 +157,6 @@ public class Ranking {
 		this.pokerRoleCoin = pokerRoleCoin;
 	}
 
-
 	//エイリアスアクセッサ
 	public Integer getRank() {
 		return rank;
@@ -193,22 +164,6 @@ public class Ranking {
 
 	public void setRank(Integer rank) {
 		this.rank = rank;
-	}
-
-	public Integer getSumBjCoin() {
-		return sumBjCoin;
-	}
-
-	public void setSumBjCoin(Integer sumBjCoin) {
-		this.sumBjCoin = sumBjCoin;
-	}
-
-	public Integer getSumPokerCoin() {
-		return sumPokerCoin;
-	}
-
-	public void setSumPokerCoin(Integer sumPokerCoin) {
-		this.sumPokerCoin = sumPokerCoin;
 	}
 
 	public Integer getDifference() {
@@ -225,6 +180,30 @@ public class Ranking {
 
 	public void setMaxCoin(Integer maxCoin) {
 		this.maxCoin = maxCoin;
+	}
+
+	public Integer getCount() {
+		return count;
+	}
+
+	public void setCount(Integer count) {
+		this.count = count;
+	}
+
+	public Integer getCoin() {
+		return coin;
+	}
+
+	public void setCoin(Integer coin) {
+		this.coin = coin;
+	}
+
+	public Integer getSumCoin() {
+		return sumCoin;
+	}
+
+	public void setSumCoin(Integer sumCoin) {
+		this.sumCoin = sumCoin;
 	}
 
 }
