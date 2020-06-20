@@ -8,20 +8,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/commons.css" rel="stylesheet">
-<title><fmt:message key="title.poker" /></title>
+<title>Insert title here</title>
+<link href="css/myPage.css" rel="stylesheet">
 </head>
 <body>
-	<h1>ポーカー</h1>
+	<p>結果<p>
 
-	<a href="pokerGame" class="btn"><fmt:message key="btn.start" /></a>
+	<p>${pokerResult}</p>
+	<p>${getCoin}</p>
 
-	<br><br>
+	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
+	<a href="pokerGame" class="btn">もう一度</a>
 
-
-	 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
-
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 </body>
 </html>

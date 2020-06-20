@@ -6,6 +6,6 @@ public interface UsersDao {
 
 	public Users findByLoginIdAndPassword(String loginId, String password);
 
-	public void  rank(String loginId);
+	public void  rank(Integer userId);
 
 }

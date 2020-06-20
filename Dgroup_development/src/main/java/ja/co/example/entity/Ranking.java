@@ -3,11 +3,20 @@ package ja.co.example.entity;
 import java.sql.Date;
 
 public class Ranking {
+	public Ranking(Integer userId, Integer resultId, Integer divisionId, Integer pokerRoleId) {
+		super();
+		this.userId = userId;
+		this.resultId = resultId;
+		this.divisionId = divisionId;
+		this.pokerRoleId = pokerRoleId;
+	}
+
+	public Ranking() {
+
+	}
 
 	//usersテーブル
 	private Integer userId;
-
-	private String userName;
 
 	private Integer rankId;
 
@@ -55,14 +64,6 @@ public class Ranking {
 
 	public void setUserId(Integer userId) {
 		this.userId = userId;
-	}
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
 	}
 
 	public Integer getRankId() {
