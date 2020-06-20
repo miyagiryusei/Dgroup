@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+form ~ div, table ~ div {
+	margin-top: 10px;
+}
+
+table, table th, table td {
+	border: solid 1px;
+}
+
+input[readonly] {
+	background: #CCCCCC;
+	color: black;
+}
+
+.center {
+	text-align: center;
+}
+
+.required::before {
+	content: "※";
+	color: red;
+}
+
+.error {
+	color: red;
+}
+
+a.btn {
+	width: 260px;
+	height: 35px;
+	background: #ffffff;
+	border: 1px solid #000000;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login {
+	background-image: url("casino.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.right {
+	text-align: right;
+	margin-right: 70px;
+	margin-top: 100px
+}
+
+.little-right {
+	margin-right: 80px;
+}
+
+.button-right {
+	margin-right: 55px;
+}
+
+header {
+	text-align: right;
+}
+
+header.p {
+	color: #ffd700;
+}
+
+a.logoutBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 13px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 260px;
+	height: 35px;
+	background: #ffffff;
+	border: 1px solid #000000;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+a.logoutBtn:hover {
+	opacity: 0.9;
+}
+
+a.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 260px;
+	height: 35px;
+	background: #ffffff;
+	border: 1px solid #000000;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.5;
+	margin-top: 10px;
+}
+
+a.myPageBtn:hover {
+	opacity: 0.9;
+}
+
+article {
+	border: solid 2px #804000;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #ffffff;
+	width: 600px;
+	height: auto;
+	margin: auto auto;
+	margin-top: 40px
+}
