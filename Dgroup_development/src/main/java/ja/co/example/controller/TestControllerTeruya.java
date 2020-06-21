@@ -70,11 +70,7 @@ public class TestControllerTeruya {
 		return "logout";
 	}
 
-	//ショップ画面
-	@RequestMapping("/item")
-	public String item(Model model) {
-		return "item";
-	}
+
 
 	//購入確認画面
 	@RequestMapping("/byResult")
