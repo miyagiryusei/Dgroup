@@ -7,10 +7,12 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ja.co.example.entity.Ranking;
 import ja.co.example.entity.Users;
+import ja.co.example.form.LoginForm;
 import ja.co.example.service.RankingService;
 
 @Controller
@@ -36,11 +38,15 @@ public class RankingController {
 
 	//個人ランキング遷移
 	@RequestMapping("/personalRanking")
-	public String personalRanking(Model model) {
+	public String personalRanking(@ModelAttribute("loginForm") LoginForm form, Model model) {
 
-		 Users user = (Users) session.getAttribute("user");
+		Users user = (Users) session.getAttribute("user");
 
-		 String userName = user.getUserName();
+		if (user == null) {
+			return "login";
+		}
+
+		String userName = user.getUserName();
 
 		List<Ranking> resultList = rankingService.getPersonalBjSum(userName);
 		session.setAttribute("bjSumList", resultList);
@@ -59,7 +65,6 @@ public class RankingController {
 
 		resultList = rankingService.getPersonalRanking(userName);
 		session.setAttribute("pokerRanking", resultList);
-
 
 		return "personalRanking";
 	}

@@ -1,16 +1,74 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
 form ~ div, table ~ div {
 	margin-top: 10px;
 }
 
-table, table th, table td {
-	border: solid 1px;
+body {
+	margin: auto auto;
+}
+
+table {
+	margin: auto auto;
+	text-align: center;
+}
+
+.borderleft{
+	border-left: 1px solid #c0c0c0;
+}
+
+table th, table td {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #c0c0c0;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: x-large;
+	width: 300px;
+	height: auto;
+	margin: auto auto;
+}
+
+h5 {
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: x-large;
+}
+
+h1 {
+	text-align: center;
+	background-color: #804000;
+	opacity: 0.8;
+	color: white;
+}
+
+h3 {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+div.h3border {
+	position: fixed; /* ボタン固定 */
+	top: 73px; /* ↑から位置 */
+	left: 14px; /* 右から位置 */
+	border: 1px solid #000000;
+	background: #804000;
+	color: white;
+	opacity: 0.1;
+}
+
+div.h3border:hover {
+	opacity: 0.9;
 }
 
 input[readonly] {
 	background: #CCCCCC;
 	color: black;
+	color: #ffffff;
 }
 
 .center {
@@ -29,11 +87,10 @@ input[readonly] {
 a.btn {
 	width: 260px;
 	height: 35px;
-	background: #ffffff;
-	border: 1px solid #000000;
+	background: #0000ff;
 	cursor: pointer;
 	border-radius: 5px;
-	color: #a18d6c;
+	color: #ffffff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -72,20 +129,22 @@ header.p {
 a.logoutBtn {
 	display: inline-block;
 	position: fixed; /* ボタン固定 */
-	top: 13px; /* 下から位置 */
+	top: 63px; /* 下から位置 */
 	right: 14px; /* 右から位置 */
-	width: 260px;
-	height: 35px;
-	background: #ffffff;
-	border: 1px solid #000000;
+	width: 100px;
+	height: 20px;
+	background: #804000;
+	border: 1px solid #ffffff;
 	cursor: pointer;
 	border-radius: 5px;
-	color: #a18d6c;
+	color: #ffffff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
+	opacity: 0.1;
 	margin-top: 10px;
+	text-align: center;
 }
 
 a.logoutBtn:hover {
@@ -95,21 +154,22 @@ a.logoutBtn:hover {
 a.myPageBtn {
 	display: inline-block;
 	position: fixed; /* ボタン固定 */
-	top: 63px; /* 下から位置 */
+	top: 103px; /* 下から位置 */
 	right: 14px; /* 右から位置 */
-	width: 260px;
-	height: 35px;
-	background: #ffffff;
-	border: 1px solid #000000;
+	width: 100px;
+	height: 20px;
+	background: #804000;
+	border: 1px solid #ffffff;
 	cursor: pointer;
 	border-radius: 5px;
-	color: #a18d6c;
+	color: #ffffff;
 	font-family: 'Exo', sans-serif;
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.1;
 	margin-top: 10px;
+	text-align: center;
 }
 
 a.myPageBtn:hover {
@@ -121,8 +181,20 @@ article {
 	border-radius: 5px;
 	padding: 10px;
 	background-color: #ffffff;
-	width: 600px;
+	width: 900px;
 	height: auto;
 	margin: auto auto;
-	margin-top: 40px
+	margin-top: 40px;
+}
+
+}
+article.p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+h4 {
+	border-bottom: 1px solid #c0c0c0;
+	text-align: center;
+	padding: 6px;
 }
