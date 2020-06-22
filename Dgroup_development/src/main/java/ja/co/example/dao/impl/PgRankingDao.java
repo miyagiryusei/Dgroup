@@ -27,10 +27,10 @@ public class PgRankingDao implements RankingDao {
 			"where u.user_status !=2 and u.user_name= case when :flg = 1 then :userName else u.user_name end ";
 
 	//所持コインランキング用SQL
-	private static final String SELECT_COIN_RAMKING = "select rank , user_name , rank_name , user_coin , difference , count "
+	private static final String SELECT_COIN_RAMKING = "select rank , user_name , rank_name , coin , difference , count "
 			+
 			"from " +
-			"( select RANK() OVER (ORDER BY u.coin DESC) rank , u.user_id , u.user_name , u.coin user_coin , u.rank_id , "
+			"( select RANK() OVER (ORDER BY u.coin DESC) rank , u.user_id , u.user_name , u.coin, u.rank_id , "
 			+ "ra.rank_name, u.insert_time , count(result_id) count " +
 			",(first_value(u.coin) OVER () - u.coin) as difference " +
 			"from users u " +
@@ -108,7 +108,7 @@ public class PgRankingDao implements RankingDao {
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where d.division_name = :divisionName and r.coin IS NOT NULL and u.user_status !=2 " +
+			"where d.division_name = case when :flg = 1 then :divisionName else d.division_name end and r.coin IS NOT NULL and u.user_status !=2 " +
 			"FETCH FIRST 50 ROWS ONLY ";
 
 	//---------------------------------------------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ public class PgRankingDao implements RankingDao {
 	public List<Ranking> getOverallRanking() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("flg", 2);
-
+		param.addValue("userName", "user_name");
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_COIN_RAMKING, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
@@ -149,6 +149,7 @@ public class PgRankingDao implements RankingDao {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("divisionName", "ブラックジャック");
 		param.addValue("flg", 2);
+		param.addValue("userName", "user_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
@@ -174,6 +175,7 @@ public class PgRankingDao implements RankingDao {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("divisionName", "ポーカー");
 		param.addValue("flg", 2);
+		param.addValue("userName", "user_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
@@ -198,6 +200,7 @@ public class PgRankingDao implements RankingDao {
 	public List<Ranking> getOverallPokerRoleRanking() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("flg", 2);
+		param.addValue("userName", "user_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE+"FETCH FIRST 50 ROWS ONLY ", param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
@@ -220,6 +223,7 @@ public class PgRankingDao implements RankingDao {
 	public List<Ranking> getOverallPokerOneTimeMaxScore() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("flg", 2);
+		param.addValue("userName", "user_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ONETIME_SCORE, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
@@ -243,6 +247,7 @@ public class PgRankingDao implements RankingDao {
 	public List<Ranking> getOverallPokerRoleCount() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("flg", 2);
+		param.addValue("userName", "user_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE_COUNT, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
@@ -265,6 +270,7 @@ public class PgRankingDao implements RankingDao {
 	//ポーカー合計試合数カウント(全)
 	public List<Ranking> getOverallPokerSumMatch() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
 		param.addValue("divisionName", "ポーカー");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
@@ -276,6 +282,7 @@ public class PgRankingDao implements RankingDao {
 	//ブラックジャック合計試合数カウント(全)
 	public List<Ranking> getOverallBjSumMatch() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("flg", 1);
 		param.addValue("divisionName", "ブラックジャック");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
@@ -287,7 +294,8 @@ public class PgRankingDao implements RankingDao {
 	//全体試合数カウント
 	public List<Ranking> getSumMatch() {
 		MapSqlParameterSource param = new MapSqlParameterSource();
-		param.addValue("divisionName", "divisionName");
+		param.addValue("flg", 2);
+		param.addValue("divisionName", "division_name");
 
 		List<Ranking> resultList = jdbcTemplate.query(SELECT_SUM_MATCH, param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));

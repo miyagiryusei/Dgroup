@@ -18,6 +18,8 @@ public class Ranking {
 	//usersテーブル
 	private Integer userId;
 
+	private String userName;
+
 	private Integer rankId;
 
 	private Date insertTime;
@@ -205,6 +207,14 @@ public class Ranking {
 
 	public void setSumCoin(Integer sumCoin) {
 		this.sumCoin = sumCoin;
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 }

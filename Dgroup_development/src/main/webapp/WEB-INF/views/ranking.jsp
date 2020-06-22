@@ -11,9 +11,6 @@
 <title><fmt:message key="title.ranking" /></title>
 </head>
 <body>
-	<c:if test="${empty user}">
-		<c:redirect url="/login" />
-	</c:if>
 
 	<h1>
 		<fmt:message key="title.ranking" />
