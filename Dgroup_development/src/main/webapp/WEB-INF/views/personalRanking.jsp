@@ -22,7 +22,7 @@
 		</h2>
 	</div>
 
-	<div class=h3border>
+	<div class=white>
 		<h3>${fn:escapeXml(user.userName)}様<br>
 			開始日：${fn:escapeXml(user.insertTime)}<br>
 			総ゲーム数：${fn:escapeXml(pokerRanking[0].count)}<br>

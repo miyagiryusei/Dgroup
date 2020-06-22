@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/myPage.css" rel="stylesheet">
 
 <title>Insert title here</title>
 </head>
@@ -16,19 +16,36 @@
 	${msg}
 	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
-		<div>
-			<label>名前</label> <input type="text" name="userName"><form:errors path="userName" class="required"/>
+		<label>名前</label><br>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			 <input type="text" name="userName"
+				class="btn-border-gradient">
+			<form:errors path="userName" class="required" />
 		</div>
-		<div>
-			<label>パスワード</label> <input type="password" name="pass"><form:errors path="pass" class="required" />
+		<br>
+		<br>
+
+		<label>パスワード</label><br>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			 <input type="password" name="pass"
+				class="btn-border-gradient">
+			<form:errors path="pass" class="required" />
 		</div>
-		<button type="submit">変更する</button>
+		<br>
+		<br>
+
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+
+			<button type="submit" class="btn btn-border-gradient">
+				<span class="btn-text-gradient--gold">変更する</span>
+			</button>
+		</div>
 	</form:form>
 
 	<div>
-		 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
-
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br>
+		<br> <a href="login" class="logoutBtn"><fmt:message
+				key="btn.logout" /></a>
 
 	</div>
 </body>

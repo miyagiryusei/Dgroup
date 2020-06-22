@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="css/test.css" rel="stylesheet">
+<link href="css/myPage.css" rel="stylesheet">
 <meta charset="UTF-8">
 <title><fmt:message key="title.ranking" /></title>
 </head>
@@ -16,12 +16,20 @@
 		<fmt:message key="title.ranking" />
 	</h1>
 
-	<a href="personalRanking" class="btn"><fmt:message
-			key="btn.personal.ranking" /></a>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="personalRanking" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message key="btn.personal.ranking" /></span></a>
+	</div>
 	<br>
 	<br>
-	<a href="overallRanking" class="btn"><fmt:message
-			key="btn.overall.ranking" /></a>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="overallRanking" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message key="btn.overall.ranking" /></span></a>
+	</div>
+	<br>
+	<br>
+
+
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>

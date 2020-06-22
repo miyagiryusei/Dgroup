@@ -18,35 +18,55 @@
 
 	<h1>Myページ</h1>
 
-	<p>${fn:escapeXml(user.userName)}</p>
-	<p>所持コイン：${fn:escapeXml(user.coin)}</p>
-	<p>ランク：${fn:escapeXml(user.rankName)}</p>
+	<div class=white>
+	<h3>${fn:escapeXml(user.userName)}<br>
+	所持コイン：${fn:escapeXml(user.coin)}<br>
+	ランク：${fn:escapeXml(user.rankName)}</h3>
+	</div>
 
 
+   <div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="poker" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message key="btn.poker" /></span></a>
+	</div>
+	<br>
+	<br>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="blackjack" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message
+					key="btn.blackjack" /></span></a>
+	</div>
+	<br>
+	<br>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 
-    <a href="poker" class="btn"><fmt:message key="btn.poker" /></a>
-    <br><br>
+		<a href="item" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message
+					key="btn.itemShop" /></span></a>
+	</div>
+	<br>
+	<br>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="itemList" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message
+					key="btn.itemList" /></span></a>
+	</div>
+	<br>
+	<br>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="ranking" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message key="btn.ranking" /></span></a>
+	</div>
+	<br>
+	<br>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="account_edit" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message key="btn.acount" /></span></a>
+	</div>
+	<br>
+	<br>
 
-
-    <a href="blackjack" class="btn"><fmt:message key="btn.blackjack" /></a>
- 　 <br><br>
-
-
-    <a href="item" class="btn"><fmt:message key="btn.itemShop" /></a>
-    <br><br>
-
-    <a href="itemList" class="btn"><fmt:message key="btn.itemList" /></a>
-    <br><br>
-
-
-    <a href="ranking" class="btn"><fmt:message key="btn.ranking" /></a>
-    <br><br>
-
-
-    <a href="account_edit" class="btn"><fmt:message key="btn.acount" /></a>
-    <br><br>
-
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 </body>
 </html>

@@ -13,23 +13,28 @@
 
 <title>Insert title here</title>
 </head>
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/myPage.css" rel="stylesheet">
 <title><fmt:message key="title.itemShop" /></title>
 </head>
 <body>
-	<h2>所持アイテム</h2>
+	<h1>所持アイテム</h1>
 	<form:form action="itemuse" modelAttribute="user" method="get">
-		<p>${fn:escapeXml(us.userName)}</p>
-		<p>所持コイン:${fn:escapeXml(us.coin)}</p>
+
+	<div class=white>
+		<h3>${fn:escapeXml(us.userName)}<br>
+		所持コイン:${fn:escapeXml(us.coin)}</h3>
+	</div>
+
 
 		<c:if test="${not empty itemcoin}">
-			<p>コインを${itemcoin}枚得ました</p>
+		<div class=white>
+			<h3>コインを${itemcoin}枚得ました</h3>
+		</div>
 		</c:if>
 
 
 
 		<c:if test="${empty msg}">
-			<h3>所持アイテム一覧</h3>
 			<table>
 				<tr>
 					<th>使用</th>
@@ -41,24 +46,34 @@
 
 				<c:forEach var="list" items="${list}">
 					<tr>
-						<td><form:checkbox value="${list.itemId}" path="itemId" /></td>
-						<td>${fn:escapeXml(list.name)}</td>
+						<td><form:radiobutton value="${list.itemId}" path="itemId" /></td>
+						<td class="icon bird">${fn:escapeXml(list.name)}</td>
 						<td>${fn:escapeXml(list.effect)}</td>
 						<td>${fn:escapeXml(list.itemCount)}</td>
 					</tr>
 				</c:forEach>
-				<button type="submit">使用</button>
-				<br>
-				<br>
+
 
 
 
 
 			</table>
 
+			<br>
+			<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+
+				<button type="submit" class="btn btn-border-gradient"><span
+					class="btn-text-gradient--gold">使用</span></button>
+			</div>
+<!-- 			<button type="submit" class=>使用</button> -->
+			<br>
+			<br>
+
 		</c:if>
 		<c:if test="${not empty msg}">
-			${msg}
+		<div class=whit>
+			<h3>${msg}</h3>
+		</div>
 		</c:if>
 	</form:form>
 

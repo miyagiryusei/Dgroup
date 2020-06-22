@@ -92,6 +92,7 @@ public class AccounteditController {
 		String old = (String) session.getAttribute("pass");
 
 		String name = form.getUserName();
+		System.out.println(form.getUserName());
 		String pass = form.getPass();
 		if (old.equals(pass)) {
 
@@ -102,7 +103,7 @@ public class AccounteditController {
 			AccounteditService.update(name, pass, logid);
 
 			model.addAttribute("msg", "変更に成功しました。");
-			session.invalidate();
+//			session.invalidate();
 			return "result";
 
 		} else {

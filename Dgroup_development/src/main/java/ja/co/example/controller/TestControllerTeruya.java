@@ -82,6 +82,7 @@ public class TestControllerTeruya {
 	//ログアウト画面
 	@RequestMapping("/logout")
 	public String logout(Model model) {
+		session.invalidate();
 		return "logout";
 	}
 

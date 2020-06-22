@@ -26,7 +26,7 @@
 				</c:if>
 		</div>
 		<div>
-			<label>名前</label> <input type="text" name="loginName" value="${name}"
+			<label>名前</label> <input type="text" name="userName" value="${name}"
 				readonly>
 		</div>
 
