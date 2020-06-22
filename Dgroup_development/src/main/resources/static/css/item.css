@@ -1,0 +1,96 @@
+body{
+    background-image: url("casinoHolejpg.jpg");
+    background-size: cover;               /* 全画面 */
+    background-attachment: fixed;         /* 固定 */
+    background-position: center center;   /* 縦横中央 */
+    text-align: center;
+    font-size: 31px;
+    color: rgb(229, 255, 0);
+}
+
+div{
+    text-align: center;
+}
+
+table{
+    margin-right: auto;
+    margin-left: auto;
+
+}
+
+
+
+  table {
+    width          : 60%;             /* 100%幅     */
+    border-collapse: collapse;         /* 境界線結合 */
+    border-spacing : 0;                /* 罫線間余白 */
+    font-size      : 18pt;              /* 文字サイズ */
+    background     : #ffffff;          /* テーブル全体の背景色 */
+    color: rgb(0, 0, 0);
+  }
+   /* --- ヘッダーのスタイル指定 ------------------- */
+table th {
+    text-align    : center;            /* 文字位置   */
+    font-weight   : bold;              /* 太文字     */
+    padding       : 10px 10px;           /* 余白       */
+    border        : 1px #666666 solid; /* 罫線       */
+    background    : rgb(252, 63, 63);           /* 背景色     */
+  }
+   /* --- 明細のスタイル指定 ----------------------- */
+table td {
+    text-align    : center;            /* 文字位置   */
+    padding       : 10px 10px;           /* 余白       */
+    border        : 1px #666666 solid; /* 罫線       */
+  }
+
+  .decorated-btn {
+    background-color: rgb(0, 81, 255);
+    font-size: 30px;
+    border-radius: 5px;
+    border-bottom: solid 3px rgb(88, 32, 218);
+    box-shadow: 3px 3px 3px gray;
+    transition: 0.3s;
+  }
+
+  .click-down:active {
+    transform: translateY(2px);
+    border-bottom: none;
+  }
+
+  .decorated-btn:hover {
+    background-color: rgb(0, 140, 255);
+  }
+
+  .logoutBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 13px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}
+
+.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}

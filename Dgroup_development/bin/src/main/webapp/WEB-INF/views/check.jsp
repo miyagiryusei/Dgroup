@@ -13,28 +13,46 @@
 </head>
 <body>
 
-	<form:form action="check" method="post" modelAttribute="checkForm"
+	<form:form action="checkA" method="post" modelAttribute="user"
 		class="center">
-	<h1 class ="checkh1">確認画面</h1>
-	<p class ="checkp">以下の内容でよろしいですか？</p>
+		<h1 class="checkh1">確認画面</h1>
+	${msg}
+	<p class="checkp">以下の内容でよろしいですか？</p>
 
 		<div>
-			<label>ID</label> <input type="text" name="loginame"
-				value="${loginname}" readonly>
+			<c:if test="${empty flg}">
+			<label>ID</label> <input type="text" name="loginId" value="${id}"
+				readonly>
+				</c:if>
 		</div>
 		<div>
-			<label>パスワード</label> <input type="password" name="pass">
+			<label>名前</label> <input type="text" name="loginName" value="${name}"
+				readonly>
+		</div>
+
+		<div>
+			<label>パスワード(再入力)</label> <input type="password" name="pass">
 		</div>
 		<div>
-				<form:button class="button-right">
+			<c:if test="${not empty flg}">
+				<form:button name="update" class="button-right">
+					<fmt:message key="btn.update" />
+				</form:button>
+			</c:if>
+			<c:if test="${empty flg}">
+				<form:button name="insert" class="button-right">
 					<fmt:message key="btn.insert" />
 				</form:button>
-			</div>
+			</c:if>
+
+		</div>
 	</form:form>
 
-  	  <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
+	<br>
+	<br>
 
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 
 

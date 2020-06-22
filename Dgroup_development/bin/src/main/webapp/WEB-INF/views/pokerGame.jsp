@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
@@ -8,20 +8,29 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/commons.css" rel="stylesheet">
-<title><fmt:message key="title.poker" /></title>
+<title>Insert title here</title>
+<link href="css/myPage.css" rel="stylesheet">
 </head>
 <body>
-	<h1>ポーカー</h1>
-
-	<a href="pokerGame" class="btn"><fmt:message key="btn.start" /></a>
-
-	<br><br>
+	<form:form method="post" action="pokerResult" modelAttribute="gameForm">
 
 
-	 <a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+		<form:select name="coin" path="betCoin">
+			<c:forEach items="${betCoin}" var="coin">
+				<option value="${coin}">${coin}</option>
+			</c:forEach>
+		</form:select>
 
-	 <a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+
+
+		<p>
+			<form:button>
+			BET
+		</form:button>
+		</p>
+	</form:form>
+
+
 
 </body>
 </html>

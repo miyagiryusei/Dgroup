@@ -13,14 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	${msg}
 	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
 		<div>
-			<label>ID</label> <input type="text" name="loginName">
+			<label>名前</label> <input type="text" name="userName"><form:errors path="userName" class="required"/>
 		</div>
 		<div>
-			<label>パスワード</label> <input type="password" name="pass">
+			<label>パスワード</label> <input type="password" name="pass"><form:errors path="pass" class="required" />
 		</div>
 		<button type="submit">変更する</button>
 	</form:form>

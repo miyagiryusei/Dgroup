@@ -1,0 +1,111 @@
+body {
+	background: #02a71d; /*#26558b*/
+}
+
+.text {
+	position: relative;
+	width: 40%;
+	margin: 40px 3%;
+}
+
+.text input[type='text'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 8em;
+}
+
+.text input[type='password'] {
+	font: 15px/24px sans-serif;
+	box-sizing: border-box;
+	width: 100%;
+	letter-spacing: 1px;
+	padding-left: 4em;
+}
+
+.text input[type='text']:focus {
+	outline: none;
+}
+
+.text input[type='password']:focus {
+	outline: none;
+}
+
+.ef {
+	padding: 4px 0;
+	border: 0;
+	border-bottom: 1px solid #3063c4; /*#1b2538 */
+	background-color: transparent;
+}
+
+.ef ~ .line {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	height: 2px;
+	transition: 0.4s;
+	background-color: #da3c41;
+}
+
+.ef:focus ~ .line, .text.ef ~ .line {
+	width: 100%;
+	transition: 0.4s;
+}
+
+.ef ~ label {
+	position: absolute;
+	z-index: -1;
+	top: 4px;
+	left: 0px;
+	width: 100%;
+	transition: 0.3s;
+	letter-spacing: 0.5px;
+	color: #492020f8;
+}
+
+.ef:focus ~ label, .text.ef ~ label {
+	font-size: 12px;
+	top: -16px;
+	transition: 0.3s;
+	color: #da3c41;
+}
+
+.button {
+	display: inline-block;
+	border-radius: 50%; /* 角丸       */
+	font-size: 17pt; /* 文字サイズ */
+	text-align: center; /* 文字位置   */
+	cursor: pointer; /* カーソル   */
+	padding: 12px 12px; /* 余白       */
+	background: #ff0000; /* 背景色     */
+	color: #ffffff; /* 文字色     */
+	line-height: 1em; /* 1行の高さ  */
+	transition: .3s; /* なめらか変化 */
+	box-shadow: 6px 6px 5px #666666; /* 影の設定 */
+	border: 2px solid #ff0000; /* 枠の指定 */
+}
+
+.button:hover {
+	box-shadow: none; /* カーソル時の影消去 */
+	color: #ff0000; /* 背景色     */
+	background: #ffffff; /* 文字色     */
+}
+
+.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}

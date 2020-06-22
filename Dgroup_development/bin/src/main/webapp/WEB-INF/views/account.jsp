@@ -8,23 +8,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/account.css" rel="stylesheet">
 
 <title>Insert title here</title>
 </head>
 <body>
-	<form action="account" method="post">
-	<h1>アカウント作成</h1>
+	${massage}
+
+	<form:form action="account" modelAttribute="user" method="post">
+		<h1>アカウント作成</h1>
+
+		<div class=text>
+			<input class=ef type="text" name="loginId" placeholder=""> <label>ID</label>
+			<span class="line"></span>
+			<form:errors path="loginId" class="required" />
+		</div>
+
+		<div class=text>
+			<input class=ef type="text" name="userName" placeholder=""> <label>ユーザー名</label>
+			<span class="line"></span>
+			<form:errors path="userName" class="required" />
+		</div>
+
+		<div class=text>
+			<input class=ef type="password" name="pass" placeholder=""> <label>パスワード</label>
+			<span class="line"></span>
+			<form:errors path="pass" class="required" />
+		</div>
+		<button type="submit" class=button>作成する</button>
+	</form:form>
 	<div>
-		<label>ID</label> <input type="text" name="loginName">
-	</div>
-	<div>
-		<label>パスワード</label> <input type="password" name="pass">
-	</div>
-	<button type="submit">作成する</button>
-	</form>
-	<div>
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br>
+		<br>
 
 
 	</div>

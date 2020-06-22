@@ -1,0 +1,234 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP');
+
+form ~ div, table ~ div {
+	margin-top: 10px;
+}
+
+body {
+	margin: auto auto;
+	background-image:
+		url(https://us.123rf.com/450wm/oasis15/oasis151507/oasis15150700099/42860026-%E6%9A%97%E3%81%84%E8%B5%A4%E3%81%84%E8%89%B2%E3%81%A7%E3%82%AB%E3%82%B8%E3%83%8E%E3%82%84%E3%83%9D%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg?ver=6);
+}
+
+table {
+	background-color: white;
+	margin: auto auto;
+	text-align: center;
+	margin: auto auto;
+}
+
+.borderleft {
+	border-left: 1px solid #c0c0c0;
+}
+
+table th, table td {
+	text-align: center;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: x-large;
+	width: 300px;
+	height: auto;
+	margin: auto auto;
+}
+
+h5 {
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: x-large;
+}
+
+h1 {
+	text-align: center;
+	background-image:
+		url("https://previews.123rf.com/images/nataliyaua/nataliyaua1602/nataliyaua160200052/52287420-%E3%82%AB%E3%82%B8%E3%83%8E%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82.jpg");
+	color: white;
+}
+
+h2 {
+	color: white;
+}
+
+h3 {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.white {
+	color: white;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	width: 20%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+}
+
+/* div.h3border { */
+/* 	position: fixed; ボタン固定 */
+/* 	top: 73px; ↑から位置 */
+/* 	left: 14px; 右から位置 */
+/* 	border: 1px solid #000000; */
+/* 	background-image: */
+/* 		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6"); */
+/* 	color : white; */
+/* 	opacity: 0.2; */
+/* 	color: white; */
+/* } */
+
+/* div.h3border:hover { */
+/* 	opacity: 0.9; */
+/* } */
+input[readonly] {
+	background: #CCCCCC;
+	color: black;
+	color: #ffffff;
+}
+
+.center {
+	text-align: center;
+}
+
+.required::before {
+	content: "※";
+	color: red;
+}
+
+.error {
+	color: red;
+}
+
+a.btn {
+	width: 260px;
+	height: 35px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login {
+	background-image: url("casino.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.right {
+	text-align: right;
+	margin-right: 70px;
+	margin-top: 100px
+}
+
+.little-right {
+	margin-right: 80px;
+}
+
+.button-right {
+	margin-right: 55px;
+}
+
+header {
+	text-align: right;
+}
+
+header.p {
+	color: #ffd700;
+}
+
+a.logoutBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.3;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.logoutBtn:hover {
+	opacity: 0.9;
+}
+
+a.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 103px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.3;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.myPageBtn:hover {
+	opacity: 0.9;
+}
+
+article {
+	border-radius: 5px;
+	padding: 10px;
+	height: auto;
+	margin: auto auto;
+	margin-top: 40px;
+}
+
+}
+article.p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+h4 {
+	border-bottom: 1px solid #c0c0c0;
+	text-align: center;
+	padding: 6px;
+}
+
+.overall {
+	border-radius: 5px;
+	padding: 10px;
+	height: auto;
+	margin: auto auto;
+	margin-top: 40px;
+}
+
+caption {
+	border-bottom: 1px solid #c0c0c0;
+	background-color: white;
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: x-large;
+}

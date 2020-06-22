@@ -13,7 +13,7 @@
 
 <title>Insert title here</title>
 </head>
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/item.css" rel="stylesheet">
 <title><fmt:message key="title.itemShop" /></title>
 </head>
 <body>
@@ -22,6 +22,7 @@
 		<h2>アイテムショップ</h2>
 		<p>${fn:escapeXml(user.userName)}
 		<p>所持コイン:${fn:escapeXml(user.coin)}
+            <div class=table>
 		<table>
 			<caption>アイテム一覧</caption>
 			<thead>
@@ -45,9 +46,10 @@
 			</thead>
 
 
-		</table>
+        </table>
+        </div>
 		<br>
-		<button type="submit">購入</button>
+		<button class="decorated-btn click-down" type="submit">購入</button>
 		<br>
 		<br>
 	</form:form>
