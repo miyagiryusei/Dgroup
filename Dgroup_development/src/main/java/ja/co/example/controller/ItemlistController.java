@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ja.co.example.dao.ItemDao;
+import ja.co.example.dao.UsersDao;
 import ja.co.example.entity.Itemlist;
 import ja.co.example.entity.Users;
 import ja.co.example.form.ItemlistForm;
@@ -22,6 +24,13 @@ public class ItemlistController {
 	HttpSession session;
 	@Autowired
 	ItemService itemservice;
+
+	@Autowired
+	ItemDao itemDao;
+
+	@Autowired
+	UsersDao userDao;
+
 
 
 
@@ -39,6 +48,7 @@ public class ItemlistController {
 		Integer userid =user.getUserId();
 
 
+
 		List<Itemlist> list=itemservice.Itemlist(userid);
 		if(list ==null) {
 			model.addAttribute("msg","所持アイテムはありません");
@@ -46,6 +56,7 @@ public class ItemlistController {
 		}
 
 
+		session.setAttribute("us", user);
 		session.setAttribute("list",list);
 			return "itemlist";
 	}
@@ -62,7 +73,7 @@ public class ItemlistController {
 		if(itemid==1) {
 			//ランダム生成
 			Random random = new Random();
-			Integer itemcoin = random.nextInt(100);
+			Integer itemcoin = random.nextInt(100000);
 			//生成値の保存
 			model.addAttribute("itemcoin",itemcoin);
 
@@ -72,7 +83,17 @@ public class ItemlistController {
 		}
 		List<Itemlist> list=itemservice.Itemlist(userid);
 
+
+
+		if (list.get(0).getItemCount() == 0) {
+			itemDao.itemListDelete(userid,itemid);
+			model.addAttribute("msg","所持アイテムはありません");
+		}
+
 		session.setAttribute("list",list);
+		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
+		session.setAttribute("us", u);
+
 
 
 

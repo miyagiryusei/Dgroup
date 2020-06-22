@@ -26,7 +26,6 @@ public class PgItemDao implements ItemDao {
 	GameResultDao gameresult;
 
 
-
 	@Override
 	public List<Itemlist> itemlist(Integer id) {
 		String sql= "SELECT i.item_id,i.name, i.effect, il.item_count FROM users as u "
@@ -66,6 +65,19 @@ public class PgItemDao implements ItemDao {
 		gameresult.userGetCoin(user);
 
 		return id;
+
+	}
+	@Override
+	public void itemListDelete(Integer userId, Integer itemId) {
+		String sql_delete = "delete from item_list where user_id=:userId and item_id=:itemId";
+;
+
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("userId", userId);
+		param.addValue("itemId",itemId );
+
+			jdbcTemplate.update(sql_delete, param);
+
 
 	}
 

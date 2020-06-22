@@ -1,10 +1,15 @@
 package ja.co.example.controller;
 
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import ja.co.example.dao.UsersDao;
+import ja.co.example.entity.Users;
 import ja.co.example.form.LoginForm;
 
 @Controller
@@ -28,6 +33,13 @@ public class TestControllerTeruya {
 //		return "personalRanking";
 //	}
 
+	@Autowired
+	HttpSession session;
+
+	@Autowired
+	UsersDao userDao;
+
+
 	//ログイン画面へ
 	@RequestMapping("/login")
 	public String login(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
@@ -43,6 +55,9 @@ public class TestControllerTeruya {
 	//Myページ画面表示
 	@RequestMapping("/myPage")
 	public String myPage(Model model) {
+		Users user = (Users) session.getAttribute("user");
+		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
+		session.setAttribute("user", u);
 		return "myPage";
 	}
 
@@ -90,10 +105,10 @@ public class TestControllerTeruya {
 		return "account";
 	}
 
-	//アイテムリスト画面へ
-	@RequestMapping("/itemlist")
-	public String itemlist(Model model) {
-		return "itemlist";
-	}
+//	//アイテムリスト画面へ
+//	@RequestMapping("/itemlist")
+//	public String itemlist(Model model) {
+//		return "itemlist";
+//	}
 
 }

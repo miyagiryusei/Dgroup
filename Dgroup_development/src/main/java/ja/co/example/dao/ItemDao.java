@@ -11,4 +11,6 @@ public interface ItemDao {
 
 	public Integer Goddess(Integer id, Integer userid, Integer itemcoin,Users user);
 
+	public void itemListDelete(Integer userId,Integer itemId);
+
 }

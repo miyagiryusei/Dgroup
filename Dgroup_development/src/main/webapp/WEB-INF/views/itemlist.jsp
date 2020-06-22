@@ -18,26 +18,27 @@
 </head>
 <body>
 	<h2>所持アイテム</h2>
-	<p>${user.userName}</p>
-	<p>所持コイン:${user.coin}</p>
+	<form:form action="itemuse" modelAttribute="user" method="get">
+		<p>${fn:escapeXml(us.userName)}</p>
+		<p>所持コイン:${fn:escapeXml(us.coin)}</p>
 
-	<c:if test="${not empty itemcoin}">
-	<p>コインを${itemcoin}枚得ました</p>
-	</c:if>
+		<c:if test="${not empty itemcoin}">
+			<p>コインを${itemcoin}枚得ました</p>
+		</c:if>
 
 
 
-	<c:if test="${empty msg}">
-		<h3>所持アイテム一覧</h3>
-		<table>
-			<tr>
-				<th>使用</th>
-				<th>アイテム名</th>
-				<th>効果</th>
-				<th>所持数</th>
+		<c:if test="${empty msg}">
+			<h3>所持アイテム一覧</h3>
+			<table>
+				<tr>
+					<th>使用</th>
+					<th>アイテム名</th>
+					<th>効果</th>
+					<th>所持数</th>
 
-			</tr>
-			<form:form action="itemuse" modelAttribute="user" method="get">
+				</tr>
+
 				<c:forEach var="list" items="${list}">
 					<tr>
 						<td><form:checkbox value="${list.itemId}" path="itemId" /></td>
@@ -49,22 +50,23 @@
 				<button type="submit">使用</button>
 				<br>
 				<br>
-			</form:form>
 
 
 
-		</table>
-	</c:if>
-	<c:if test="${not empty msg}">
-	${msg}
-	</c:if>
+
+			</table>
+
+		</c:if>
+		<c:if test="${not empty msg}">
+			${msg}
+		</c:if>
+	</form:form>
 
 
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>
 
-	<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
-
+	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 </body>
 </html>
