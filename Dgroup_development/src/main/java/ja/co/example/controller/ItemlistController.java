@@ -1,19 +1,25 @@
 package ja.co.example.controller;
 
+import java.util.List;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
+import ja.co.example.entity.Itemlist;
 import ja.co.example.entity.Users;
-import ja.co.example.form.AccounteditForm;
-import ja.co.example.service.AccounteditService;
+import ja.co.example.service.ItemService;
 
 @Controller
 public class ItemlistController {
+	@Autowired
+	HttpSession session;
+	@Autowired
+	ItemService itemservice;
+
 
 
 //	//アイテムリスト画面へ
@@ -22,13 +28,30 @@ public class ItemlistController {
 //		return "itemlist";
 //	}
 
-	@RequestMapping(value = "/itemlistA",params = "update", method = RequestMethod.POST)
-	public String result1(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
-			Model model) {
+	@RequestMapping("/itemList")
+	public String result1(Model model) {
+
+		Users user=(Users) session.getAttribute("user");
+
+		Integer userid =user.getUserId();
+
+
+		List<Itemlist> list=itemservice.Itemlist(userid);
+		if(list ==null) {
+			model.addAttribute("msg","所持アイテムはありません");
+
+		}
+
+
+		session.setAttribute("list",list);
 
 
 
-			return "check";
+
+
+
+			return "itemlist";
+
 		}
 	}
 

@@ -8,7 +8,9 @@ public class Itemlist {
 
 	private String effect;
 
-	private Integer deathblow_Cost;
+	private Integer deathblowCost;
+
+	private Integer itemCount;
 
 	public String getUserName() {
 		return userName;
@@ -34,12 +36,20 @@ public class Itemlist {
 		this.effect = effect;
 	}
 
-	public Integer getDeathblow_Cost() {
-		return deathblow_Cost;
+	public Integer getDeathblowCost() {
+		return deathblowCost;
 	}
 
-	public void setDeathblow_Cost(Integer deathblow_Cost) {
-		this.deathblow_Cost = deathblow_Cost;
+	public void setDeathblowCost(Integer deathblowCost) {
+		this.deathblowCost = deathblowCost;
+	}
+
+	public Integer getItemCount() {
+		return itemCount;
+	}
+
+	public void setItemCount(Integer itemCount) {
+		this.itemCount = itemCount;
 	}
 
 

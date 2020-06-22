@@ -18,26 +18,35 @@
 </head>
 <body>
 	<h2>所持アイテム</h2>
-	<p>userName
-	<p>所持コイン:999
+	<p>${user.userName}</p>
+	<p>所持コイン:${user.coin}</p>
+
+
+			<c:if test="${empty msg}">
+			<h3>所持アイテム一覧</h3>
 	<table>
-		<caption>所持アイテム一覧</caption>
-		<tr>
-			<th>アイテム名</th>
-			<th>効果</th>
-			<th>所持数</th>
-		</tr>
-		<tr>
-			<td>アイテム１</td>
-			<td>すごい</td>
-			<td>3</td>
-		</tr>
-		<tr>
-			<td>アイテム2</td>
-			<td>やばい</td>
-			<td>1</td>
-		</tr>
+			<tr>
+				<th>アイテム名</th>
+				<th>効果</th>
+				<th>所持数</th>
+
+			</tr>
+		<c:forEach var="list" items="${list}">
+			<tr>
+				<td>${fn:escapeXml(list.name)}</td>
+				<td>${fn:escapeXml(list.effect)}</td>
+				<td>${fn:escapeXml(list.itemCount)}</td>
+			</tr>
+		</c:forEach>
+
+
+
 	</table>
+	</c:if>
+	<c:if test="${not empty msg}">
+	${msg}
+	</c:if>
+
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>
