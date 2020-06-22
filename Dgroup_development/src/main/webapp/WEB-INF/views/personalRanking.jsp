@@ -32,9 +32,8 @@
 	</div>
 
 	<article>
-		<h4>総合コイン獲得ランキング</h4>
-
 		<table>
+			<caption>総合コイン獲得ランキング</caption>
 			<tr>
 				<th class=borderleft>${fn:escapeXml(user.userName)}様の現在の所持金</th>
 				<th>所持金ランキング</th>
@@ -51,9 +50,8 @@
 
 
 	<article>
-		<h4>BJコイン獲得ランキング</h4>
-
 		<table>
+			<caption>BJコイン獲得ランキング</caption>
 			<tr>
 				<th class=borderleft>${fn:escapeXml(user.userName)}様のBJでの総獲得金額</th>
 				<th>BJ総獲得金額ランキング</th>
@@ -68,10 +66,9 @@
 
 	</article>
 
-
 	<article>
-		<h4>ポーカーコイン獲得ランキング</h4>
 		<table>
+			<caption>ポーカーコイン獲得ランキング</caption>
 			<tr>
 				<th class=borderleft>${fn:escapeXml(user.userName)}様のポーカーでの総獲得金額</th>
 				<th>ポーカー総獲得金額ランキング</th>
@@ -88,9 +85,8 @@
 
 
 	<article>
-		<h4>ポーカー１試合コイン最高獲得ランキング</h4>
-
 		<table>
+			<caption>ポーカー１試合コイン最高獲得ランキング</caption>
 			<tr>
 				<th class=borderleft>${fn:escapeXml(user.userName)}様のポーカー1試合での最高獲得枚数</th>
 				<th>ポーカー1試合での最高獲得枚数ランキング</th>
@@ -107,14 +103,20 @@
 
 
 	<article>
-		<h4>${fn:escapeXml(user.userName)}様がポーカーで出したの最高の役</h4>
-		<h5>${fn:escapeXml(pokerRoleRankingList[0].pokerRoleName)}</h5>
+		<table>
+			<tr>
+				<th class=borderleft>${fn:escapeXml(user.userName)}様がポーカーで出したの最高の役</th>
+			</tr>
+			<tr>
+				<td class=borderleft>
+					${fn:escapeXml(pokerRoleRankingList[0].pokerRoleName)}</td>
+			</tr>
+		</table>
 	</article>
 
 	<article>
-		<h4>${fn:escapeXml(user.userName)}様が今まで出したポーカーの役</h4>
-
 		<table>
+			<caption>${fn:escapeXml(user.userName)}様が今まで出したポーカーの役</caption>
 			<tr>
 				<th class=borderleft>役</th>
 				<th>回数</th>

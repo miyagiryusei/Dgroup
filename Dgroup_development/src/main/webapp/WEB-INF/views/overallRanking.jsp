@@ -156,7 +156,7 @@
 		</table>
 	</div>
 
-	<div class=overall>
+	<article>
 		<table>
 			<caption>ポーカー出た役の回数</caption>
 			<thead>
@@ -174,7 +174,7 @@
 				</tr>
 			</c:forEach>
 		</table>
-	</div>
+	</article>
 
 	<br>
 	<br>
