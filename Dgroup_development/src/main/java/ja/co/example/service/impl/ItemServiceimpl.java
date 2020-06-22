@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import ja.co.example.dao.ItemDao;
 import ja.co.example.entity.Itemlist;
+import ja.co.example.entity.Users;
 import ja.co.example.service.ItemService;
 
 @Service
@@ -19,5 +20,8 @@ public class ItemServiceimpl implements ItemService{
 	public List<Itemlist> Itemlist(Integer id) {
 		return itemDao.itemlist(id);
 
+	}
+	public Integer Goddess(Integer id, Integer userid, Integer itemcoin, Users user) {
+		return itemDao.Goddess(id,userid, itemcoin, user);
 	}
 }

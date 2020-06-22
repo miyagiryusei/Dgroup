@@ -12,6 +12,8 @@ public class Itemlist {
 
 	private Integer itemCount;
 
+	private Integer itemId;
+
 	public String getUserName() {
 		return userName;
 	}
@@ -50,6 +52,14 @@ public class Itemlist {
 
 	public void setItemCount(Integer itemCount) {
 		this.itemCount = itemCount;
+	}
+
+	public Integer getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(Integer itemId) {
+		this.itemId = itemId;
 	}
 
 
