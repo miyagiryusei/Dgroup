@@ -36,12 +36,12 @@
 
 		<table>
 			<tr>
-				<th class= borderleft>${fn:escapeXml(user.userName)}様の現在の所持金</th>
+				<th class=borderleft>${fn:escapeXml(user.userName)}様の現在の所持金</th>
 				<th>所持金ランキング</th>
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class= borderleft>${fn:escapeXml(user.coin)}コインです</td>
+				<td class=borderleft>${fn:escapeXml(user.coin)}コインです</td>
 				<td>現在${fn:escapeXml(pokerRanking[0].rank)}位です</td>
 				<td>${fn:escapeXml(pokerRanking[0].difference)}コインです</td>
 			</tr>
@@ -55,12 +55,12 @@
 
 		<table>
 			<tr>
-				<th class= borderleft>${fn:escapeXml(user.userName)}様のBJでの総獲得金額</th>
+				<th class=borderleft>${fn:escapeXml(user.userName)}様のBJでの総獲得金額</th>
 				<th>BJ総獲得金額ランキング</th>
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class= borderleft>${fn:escapeXml(bjSumList[0].sumCoin)}コインです</td>
+				<td class=borderleft>${fn:escapeXml(bjSumList[0].sumCoin)}コインです</td>
 				<td>現在${fn:escapeXml(bjSumList[0].rank)}位です</td>
 				<td>${fn:escapeXml(bjSumList[0].difference)}コインです</td>
 			</tr>
@@ -73,12 +73,12 @@
 		<h4>ポーカーコイン獲得ランキング</h4>
 		<table>
 			<tr>
-				<th class= borderleft>${fn:escapeXml(user.userName)}様のポーカーでの総獲得金額</th>
+				<th class=borderleft>${fn:escapeXml(user.userName)}様のポーカーでの総獲得金額</th>
 				<th>ポーカー総獲得金額ランキング</th>
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class= borderleft>${fn:escapeXml(pokerSumList[0].sumCoin)}です</td>
+				<td class=borderleft>${fn:escapeXml(pokerSumList[0].sumCoin)}です</td>
 				<td>現在${fn:escapeXml(pokerSumList[0].rank)}位です</td>
 				<td>${fn:escapeXml(pokerSumList[0].difference)}です</td>
 			</tr>
@@ -92,12 +92,12 @@
 
 		<table>
 			<tr>
-				<th class= borderleft>${fn:escapeXml(user.userName)}様のポーカー1試合での最高獲得枚数</th>
+				<th class=borderleft>${fn:escapeXml(user.userName)}様のポーカー1試合での最高獲得枚数</th>
 				<th>ポーカー1試合での最高獲得枚数ランキング</th>
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class= borderleft>${fn:escapeXml(pokerOneTimeList[0].coin)}です</td>
+				<td class=borderleft>${fn:escapeXml(pokerOneTimeList[0].coin)}です</td>
 				<td>現在${fn:escapeXml(pokerOneTimeList[0].rank)}位です</td>
 				<td>${fn:escapeXml(pokerOneTimeList[0].difference)}です</td>
 			</tr>
@@ -116,12 +116,12 @@
 
 		<table>
 			<tr>
-				<th class= borderleft>役</th>
+				<th class=borderleft>役</th>
 				<th>回数</th>
 			</tr>
 			<c:forEach items="${pokerRoleCountList}" var="role">
 				<tr>
-					<td class= borderleft>${fn:escapeXml(role.pokerRoleName)}</td>
+					<td class=borderleft>${fn:escapeXml(role.pokerRoleName)}</td>
 					<td>${fn:escapeXml(role.count)}回</td>
 				</tr>
 			</c:forEach>

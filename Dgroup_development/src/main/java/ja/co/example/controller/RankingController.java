@@ -43,18 +43,24 @@ public class RankingController {
 			return "login";
 		}
 
+		//
 		List<Ranking> resultList = rankingService.getSumMatch();
 		session.setAttribute("overallSumMatch", resultList);
 
+		//
 		resultList = rankingService.getOverallBjSumMatch();
 		session.setAttribute("overallbjSumMatch", resultList);
 
+		//
 		resultList = rankingService.getOverallPokerSumMatch();
 		session.setAttribute("overallpokerSumMatch", resultList);
 
+		//
 		resultList = rankingService.getOverallBjSum();
 		session.setAttribute("overallbjSum", resultList);
 
+
+		//
 		resultList = rankingService.getOverallPokerOneTimeMaxScore();
 		session.setAttribute("overallPokerOnetime", resultList);
 
@@ -64,9 +70,11 @@ public class RankingController {
 		resultList = rankingService.getOverallPokerRoleRanking();
 		session.setAttribute("overallPokerRoleRanking", resultList);
 
+		//
 		resultList = rankingService.getOverallPokerSum();
 		session.setAttribute("overallPokerSum", resultList);
 
+		//
 		resultList = rankingService.getOverallRanking();
 		session.setAttribute("overallRanking", resultList);
 

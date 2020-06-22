@@ -21,6 +21,7 @@ table {
 
 .borderleft {
 	border-left: 1px solid #c0c0c0;
+	box-shadow: 1px 1px 1px;
 }
 
 table th, table td {
@@ -28,11 +29,13 @@ table th, table td {
 	padding-left: 10px;
 	padding-right: 10px;
 	border-right: 1px solid #c0c0c0;
+	border-bottom: 1px solid #c0c0c0;
 	font-family: 'Noto Sans JP', sans-serif;
 	font-size: x-large;
 	width: 300px;
 	height: auto;
 	margin: auto auto;
+	box-shadow: 1px 1px 1px;
 }
 
 h5 {
@@ -52,6 +55,10 @@ h1 {
 h3 {
 	margin-left: 5px;
 	margin-right: 5px;
+}
+
+.white{
+	color: white;
 }
 
 div.h3border {
@@ -202,7 +209,7 @@ h4 {
 	padding: 6px;
 }
 
-.overall{
+.overall {
 	border: solid 2px #804000;
 	border-radius: 5px;
 	padding: 10px;
@@ -210,4 +217,9 @@ h4 {
 	height: auto;
 	margin: auto auto;
 	margin-top: 40px;
+}
+
+caption {
+	font-family: 'Noto Sans JP', sans-serif;
+	font-size: large;
 }

@@ -42,10 +42,10 @@ public class PgRankingDao implements RankingDao {
 			"FETCH FIRST 50 ROWS ONLY ";
 
 	//ブラックジャック OR ポーカー合計
-	private static final String SELECT_SUM = "select rank , user_name , rank_name , sum_coin , division_name , difference ,count "
+	private static final String SELECT_SUM = "select rank , user_name , rank_name , coin , division_name , difference ,count "
 			+
 			"from ( select  RANK() OVER (ORDER BY sum(case when r.coin < 0 then 0 else r.coin end) DESC) rank , u.user_name , u.rank_id , ra.rank_name , "
-			+ "u.insert_time, sum(case when r.coin < 0 then 0 else r.coin end) sum_coin , d.division_name , "
+			+ "u.insert_time, sum(case when r.coin < 0 then 0 else r.coin end) coin , d.division_name , "
 			+ "(first_value(sum(r.coin)) OVER () - sum(r.coin)) as difference , count(u.user_id) count " +
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +

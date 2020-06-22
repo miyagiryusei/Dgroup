@@ -22,37 +22,161 @@
 		</h2>
 	</div>
 
-	<h3>
-		総ゲーム数：${fn:escapeXml(overallSumMatch[0].count)}<br>
-		ポーカー試合数:${fn:escapeXml(overallpokerSumMatch[0].count)}<br>
-		ブラックジャック試合数:${fn:escapeXml(overallbjSumMatch[0].count)}<br>
-	</h3>
+	<div class=white>
+		<h3>
+			総ゲーム数：${fn:escapeXml(overallSumMatch[0].count)}<br>
+			ポーカー試合数:${fn:escapeXml(overallpokerSumMatch[0].count)}<br>
+			ブラックジャック試合数:${fn:escapeXml(overallbjSumMatch[0].count)}<br>
+		</h3>
+	</div>
 
-<article  class = overall>
-	<table>
-		<caption>総合コイン獲得ランキング-50位まで表示-</caption>
-		<thead>
-			<tr>
-				<th>順位</th>
-				<th><fmt:message key="lbl.user.name" /></th>
-				<th>ランク名</th>
-				<th><fmt:message key="|b|.coin.have" /></th>
-				<th>一位との差</th>
-				<th>総ゲーム回数</th>
-			</tr>
-		</thead>
-		<c:forEach items="${overallRanking}" var="ranking">
-			<tr>
-				<td>${fn:escapeXml(ranking.rank)}</td>
-				<td>${fn:escapeXml(ranking.userName)}</td>
-				<td>${fn:escapeXml(ranking.rankName)}</td>
-				<td>${fn:escapeXml(ranking.coin)}</td>
-				<td>${fn:escapeXml(ranking.difference)}</td>
-				<td>${fn:escapeXml(ranking.count)}</td>
-			</tr>
-		</c:forEach>
-	</table>
-	</article>
+	<div class=overall>
+		<table>
+			<caption>総合コイン獲得ランキング-50位まで表示-</caption>
+			<thead>
+				<tr>
+					<th class=borderleft>順位</th>
+					<th><fmt:message key="lbl.user.name" /></th>
+					<th>ランク名</th>
+					<th><fmt:message key="|b|.coin.have" /></th>
+					<th>一位との差</th>
+					<th>総ゲーム回数</th>
+				</tr>
+			</thead>
+			<c:forEach items="${overallRanking}" var="ranking">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
+					<td>${fn:escapeXml(ranking.userName)}</td>
+					<td>${fn:escapeXml(ranking.rankName)}</td>
+					<td>${fn:escapeXml(ranking.coin)}</td>
+					<td>${fn:escapeXml(ranking.difference)}</td>
+					<td>${fn:escapeXml(ranking.count)}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<div class=overall>
+		<table>
+			<caption>BJコイン獲得ランキング-50位まで表示-</caption>
+			<thead>
+				<tr>
+					<th class=borderleft>順位</th>
+					<th><fmt:message key="lbl.user.name" /></th>
+					<th>ランク名</th>
+					<th>BJ獲得コイン</th>
+					<th>一位との差</th>
+					<th>総ゲーム回数</th>
+				</tr>
+			</thead>
+			<c:forEach items="${overallbjSum}" var="ranking">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
+					<td>${fn:escapeXml(ranking.userName)}</td>
+					<td>${fn:escapeXml(ranking.rankName)}</td>
+					<td>${fn:escapeXml(ranking.coin)}</td>
+					<td>${fn:escapeXml(ranking.difference)}</td>
+					<td>${fn:escapeXml(ranking.count)}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<div class=overall>
+		<table>
+			<caption>ポーカーコイン獲得ランキング-50位まで表示-</caption>
+			<thead>
+				<tr>
+					<th class=borderleft>順位</th>
+					<th><fmt:message key="lbl.user.name" /></th>
+					<th>ランク名</th>
+					<th>ポーカー獲得コイン</th>
+					<th>一位との差</th>
+					<th>総ゲーム回数</th>
+				</tr>
+			</thead>
+			<c:forEach items="${overallPokerSum}" var="ranking">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
+					<td>${fn:escapeXml(ranking.userName)}</td>
+					<td>${fn:escapeXml(ranking.rankName)}</td>
+					<td>${fn:escapeXml(ranking.coin)}</td>
+					<td>${fn:escapeXml(ranking.difference)}</td>
+					<td>${fn:escapeXml(ranking.count)}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<div class=overall>
+		<table>
+			<caption>ポーカー１試合コイン最高獲得ランキング-50位まで表示-</caption>
+			<thead>
+				<tr>
+					<th class=borderleft>順位</th>
+					<th><fmt:message key="lbl.user.name" /></th>
+					<th>ランク名</th>
+					<th>ポーカー総獲得コイン</th>
+					<th>一位との差</th>
+					<th>総ゲーム回数</th>
+				</tr>
+			</thead>
+			<c:forEach items="${overallPokerOnetime}" var="ranking">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
+					<td>${fn:escapeXml(ranking.userName)}</td>
+					<td>${fn:escapeXml(ranking.rankName)}</td>
+					<td>${fn:escapeXml(ranking.coin)}</td>
+					<td>${fn:escapeXml(ranking.difference)}</td>
+					<td>${fn:escapeXml(ranking.pokerRoleName)}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<div class=overall>
+		<table>
+			<caption>ポーカー出した役ランキング-50位まで表示-</caption>
+			<thead>
+				<tr>
+					<th class=borderleft>順位</th>
+					<th><fmt:message key="lbl.user.name" /></th>
+					<th>ランク名</th>
+					<th>ポーカーの役</th>
+				</tr>
+			</thead>
+			<c:forEach items="${overallPokerRoleRanking}" var="ranking">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
+					<td>${fn:escapeXml(ranking.userName)}</td>
+					<td>${fn:escapeXml(ranking.rankName)}</td>
+					<td>${fn:escapeXml(ranking.pokerRoleName)}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<div class=overall>
+		<table>
+			<caption>ポーカー出た役の回数</caption>
+			<thead>
+				<tr>
+
+					<th class=borderleft>役</th>
+					<th>回数</th>
+
+				</tr>
+			</thead>
+			<c:forEach items="${overallPokerRoleCount}" var="role">
+				<tr>
+					<td class=borderleft>${fn:escapeXml(role.pokerRoleName)}</td>
+					<td>${fn:escapeXml(role.count)}回</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
+
+	<br>
 	<br>
 	<a href="personalRanking" class="btn"><fmt:message
 			key="btn.personal.ranking" /></a>
