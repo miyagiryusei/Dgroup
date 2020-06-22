@@ -84,4 +84,32 @@ public class PgItemShopDao implements ItemShopDao {
 		}
 		return que.get(0);
 	}
+
+	@Override
+	public void update(Integer user_id, Integer item_id) {
+		String sql_up = "UPDATE item_list set item_count=item_count+1 where user_id=:user_id and item_id=:item_id";
+
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("user_id", user_id);
+		param.addValue("item_id",item_id );
+
+			jdbcTemplate.update(sql_up, param);
+
+	}
+
+	@Override
+	public ItemShop selectItem(Integer user_Id, Integer item_id) {
+		String sql = "SELECT * FROM item_list where user_id=:user_id and item_id=:item_id" ;
+
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("user_id", user_Id);
+		param.addValue("item_id", item_id);
+
+		List<ItemShop> que = jdbcTemplate.query(sql, param, new BeanPropertyRowMapper<ItemShop>(ItemShop.class));
+		if (que.isEmpty()) {
+			return null;
+		}
+		return que.get(0);
+	}
+
 }

@@ -63,12 +63,25 @@ public class ItemShopController {
 		Users u = (Users) session.getAttribute("user");
 		form.getItemId();
 		List<ItemShop> i = new ArrayList<ItemShop>();
+
+
 		for (Integer itemId : form.getItemId()) {
+		 ItemShop itemShop =	itemShopDao.selectItem(u.getUserId(), itemId);
+
+			if(itemShop == null) {
+				ItemShop it = itemShopDao.selectPrice(itemId);
+				itemShopDao.insert(u.getUserId(), itemId, 1);
+				itemShopDao.buyResult(u.getUserId(), it.getPrice(), 3);
+				gameResultDao.userGetCoin(u);
+			}else {
 
 			ItemShop it = itemShopDao.selectPrice(itemId);
-			itemShopDao.insert(u.getUserId(), itemId, 1);
+
+			itemShopDao.update(u.getUserId(), itemId);
+
 			itemShopDao.buyResult(u.getUserId(), it.getPrice(), 3);
 			gameResultDao.userGetCoin(u);
+			}
 
 		}
 

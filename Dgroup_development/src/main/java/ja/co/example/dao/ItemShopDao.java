@@ -13,4 +13,8 @@ public interface ItemShopDao {
 	public ItemShop insert(Integer id, Integer itemId, Integer itemCount);
 
 	public void buyResult(Integer user_id, Integer coin, Integer division_id);
+
+	public void update(Integer user_id, Integer item_id);
+
+	public ItemShop selectItem (Integer user_id, Integer item_id);
 }
