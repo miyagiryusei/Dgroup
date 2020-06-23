@@ -9,42 +9,66 @@
 <head>
 <meta charset="UTF-8">
 <title><fmt:message key="title.login" /></title>
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/login.css" rel="stylesheet">
 </head>
-<body class="login">
+<body>
+
+
 
 	<header>
-			<br> <a href="insert" class="btn"><fmt:message
-					key="btn.begginer" /></a>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			<a href="insert" class="btn btn-border-gradient"><span
+				class="btn-text-gradient--gold"><fmt:message
+						key="btn.begginer" /></span></a>
+		</div>
 	</header>
 	<c:if test="${not empty errMsg}">
 		<p>${fn:escapeXml(errMsg)}</p>
 	</c:if>
+	<div class="loading">
+		<span class="dreams">O</span> <span class="dreams">k</span> <span class="dreams">i</span> <span class="dreams">V</span>
+		<span class="dreams">e</span><span class="dreams">g</span><span class="dreams">a</span><span class="dreams">s</span>
+	</div>
+
 
 	<form:form action="login" method="post" modelAttribute="loginForm"
 		class="right">
 		<fieldset>
+
 			<div>
-				<label class="little-right"><fmt:message key="lbl.id" /></label>
-				<div>
-					<form:input path="loginId" />
+
+				<label class="little-right"><fmt:message key="lbl.id" /></label><br>
+				<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+					<form:input path="loginId" class="btn-border-gradient" />
 				</div>
 				<form:errors path="loginId" class="required" />
 			</div>
 			<div>
-				<label><fmt:message key="lbl.pass" /></label>
-				<div>
-					<form:input type="password" path="password" />
+				<label><fmt:message key="lbl.pass" /></label><br>
+				<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+					<form:input type="password" path="password"
+						class="btn-border-gradient" />
 				</div>
 				<form:errors path="password" class="required" />
 			</div>
-			<div>
-				<form:button class="button-right">
-					<fmt:message key="btn.login" />
-				</form:button>
+
+			<div class="aa">
+				<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+					<button type="submit" class="btn btn-border-gradient">
+						<span class="btn-text-gradient--gold"><fmt:message
+								key="btn.login" /></span>
+					</button>
+				</div>
 			</div>
+
+
+
 		</fieldset>
+
+
+
 	</form:form>
+
 
 </body>
 </html>

@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@charset "UTF-8";
+
 body {
 	text-align: center;
 	margin: auto auto;
@@ -9,13 +11,8 @@ body {
 
 label {
 	font-size: 30px;
-	color : white;
+	color: white;
 }
-
-
-
-
-
 
 h1 {
 	text-align: center;
@@ -24,7 +21,6 @@ h1 {
 	color: white;
 }
 
-
 h3 {
 	margin-left: 5px;
 	margin-right: 5px;
@@ -32,13 +28,14 @@ h3 {
 
 input.btn-border-gradient {
 	color: white;
-    font-size: 30px;
-    text-align: center;
+	font-size: 30px;
+	text-align: center;
 	padding: 4px 0;
 	border: 0;
 	background-color: black;
 	height: 45px;
 }
+
 .white {
 	color: white;
 	background-image:
@@ -58,40 +55,39 @@ input.btn-border-gradient {
 	border: 1px solid #000000;
 }
 
-table{
-  background-color: white;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 80%;
-  margin: auto;
+table {
+	background-color: white;
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 80%;
+	margin: auto;
 }
 
-table tr{
-  border-bottom: solid 1px #eee;
-  cursor: pointer;
+table tr {
+	border-bottom: solid 1px #eee;
+	cursor: pointer;
 }
 
-table td.:hover{
-  background-color: #d4f0fd;
+table td .:hover {
+	background-color: #d4f0fd;
 }
 
-table th,table td{
-  text-align: center;
-  width: 25%;
-  padding: 15px 0;
+table th, table td {
+	text-align: center;
+	width: 25%;
+	padding: 15px 0;
 }
 
-table td.icon{
-  background-size: 35px;
-  background-position: left 5px center;
-  background-repeat: no-repeat;
-  padding-left: 30px;
+table td.icon {
+	background-size: 35px;
+	background-position: left 5px center;
+	background-repeat: no-repeat;
+	padding-left: 30px;
 }
 
 /* table td.icon.bird{ */
 /*   background-image: url(http://livedoor.blogimg.jp/mfh7791/imgs/b/6/b66d5287.jpg); */
 /* } */
-
 article {
 	border: solid 2px #804000;
 	border-radius: 5px;
@@ -109,67 +105,97 @@ article.p {
 	margin-right: 10px;
 }
 
-
-
 fieldset {
-  border: none;
+	border: none;
 }
 
 fieldset label {
-  width: 80px;
-  margin-right: 10px;
+	width: 80px;
+	margin-right: 10px;
 }
 
 fieldset.label-60 label {
-  width: 60px;
+	width: 60px;
 }
 
 fieldset.label-130 label {
-  width: 130px;
+	width: 130px;
 }
 
 fieldset div {
-  margin: 5px;
+	margin: 5px;
 }
 
 form ~ div, table ~ div {
-  margin-top: 10px;
+	margin-top: 10px;
 }
 
 /* table, table th, table td { */
 /*   border: solid 1px; */
 /* } */
-
 input[readonly] {
-  background: #CCCCCC;
-  color: black;
+	background: #CCCCCC;
+	color: black;
 }
 
 .center {
-  text-align: center;
+	text-align: center;
 }
 
 .required::before {
-  content: "※";
-  color: red;
+	content: "※";
+	color: red;
 }
 
 .error {
-  color: red;
+	color: red;
 }
 
-/* a.btn { */
-/*   color: white; */
-/*   text-align: center; */
-/*   font-size: 21px; */
-/*   font-weight: bold; */
-/*   background-color: red; */
-/*   border-radius: 10px; */
-/*   cursor: pointer; */
-/*   border: 0px; */
-/*   padding: 5px 20px 5px 20px; */
-/*   text-decoration:none */
-/* } */
+.loading{
+	display: inline-block;
+/*     position: fixed; */
+/*     top: 230px; */
+/*     right: 700px; */
+/*     cursor: pointer; */
+
+}
+
+.loading span {
+  font-size: 200px;
+  display: inline-block;
+  margin: 0 -.05em;
+  animation: loading .7s infinite;
+}
+.loading span:nth-child(2) {
+  animation-delay: .1s;
+}
+.loading span:nth-child(3) {
+  animation-delay: .2s;
+}
+.loading span:nth-child(4) {
+  animation-delay: .3s;
+}
+.loading span:nth-child(5) {
+  animation-delay: .4s;
+}
+.loading span:nth-child(6) {
+  animation-delay: .5s;
+}
+.loading span:nth-child(7) {
+  animation-delay: .6s;
+}
+.loading span:nth-child(8) {
+  animation-delay: .7s;
+}
+@keyframes loading {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+
 
 .login {
 	background-image: url("casino.jpg");
@@ -177,10 +203,52 @@ input[readonly] {
 	background-size: cover;
 }
 
+/* .dreams { */
+
+/*   margin: 0px; */
+/*   font-family: 'Mr Dafoe', cursive; */
+/*   font-size: 160px; */
+/*   color: #F975F7 ; */
+/*   transform:rotate(-15deg); */
+/*   -ms-transform:rotate(-15deg); IE 9 */
+/*   -webkit-transform:rotate(-15deg); Safari and Chrome */
+/*   -webkit-text-stroke: 1px #f008b7; */
+/*   -webkit-filter: drop-shadow(2px 2px 20px #f008b7); */
+/*   z-index: 20; */
+/* } */
+
+.dreams {
+    margin: 0px;
+    font-family: 'Mr Dafoe', cursive;
+    font-size: 160px;
+    /* color: #F975F7; */
+    transform: rotate(-15deg);
+    /* color: #DA8E00; */
+    background:  -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 6px transparent;
+    -ms-transform: rotate(-15deg);
+    -webkit-transform: rotate(-15deg);
+    /* -webkit-text-stroke: 1px #212529; */
+    -webkit-filter: drop-shadow(2px 2px 20px transparent);
+    z-index: 20;
+}
+
+.windows .dreams {
+  -webkit-text-stroke: 4px #f008b7;
+}
+
 .right {
-	text-align: right;
-	margin-right: 70px;
-	margin-top: 100px
+/* 	text-align: right; */
+/* 	margin-right: 70px; */
+/* 	margin-top: 100px */
+}
+
+.aa {
+/* 	text-align: right; */
+/* 	margin-right: 20px; */
+    margin-top: 30px;
 }
 
 .little-right {
@@ -199,128 +267,83 @@ header.p {
 	color: #ffd700;
 }
 
-.btn,
-a.btn,
-button.btn {
-  font-size: 1.6rem;
-  font-weight: 700;
-  line-height: 1.5;
-  position: relative;
-  display: inline-block;
-  padding: 1rem 4rem;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-  text-align: center;
-  vertical-align: middle;
-  text-decoration: none;
-  letter-spacing: 0.1em;
-  color: #212529;
-  border-radius: 0.5rem;
+.btn, a.btn, button.btn {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	padding: 1rem 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
 }
 
-
 .btn-border-gradient-wrap {
-  display: inline-block;
-
-  padding: 0.2rem;
-
-  border-radius: 0.5rem;
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
 }
 
 .btn-border-gradient-wrap--gol {
 	position: fixed; /* ボタン固定 */
 	top: 73px; /* ↑から位置 */
 	left: 14px; /* 右から位置 */
-  background-image: -webkit-linear-gradient(
-    315deg,
-    #704308 0%,
-    #ffce08 37%,
-    #fefeb2 47%,
-    #fafad6 50%,
-    #fefeb2 53%,
-    #e1ce08 63%,
-    #704308 100%
-  );
-  background-image: linear-gradient(
-    135deg,
-    #704308 0%,
-    #ffce08 37%,
-    #fefeb2 47%,
-    #fafad6 50%,
-    #fefeb2 53%,
-    #e1ce08 63%,
-    #704308 100%
-  );
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
 }
 
 .btn-border-gradient-wrap--gold {
-  background-image: -webkit-linear-gradient(
-    315deg,
-    #704308 0%,
-    #ffce08 37%,
-    #fefeb2 47%,
-    #fafad6 50%,
-    #fefeb2 53%,
-    #e1ce08 63%,
-    #704308 100%
-  );
-  background-image: linear-gradient(
-    135deg,
-    #704308 0%,
-    #ffce08 37%,
-    #fefeb2 47%,
-    #fafad6 50%,
-    #fefeb2 53%,
-    #e1ce08 63%,
-    #704308 100%
-  );
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
 }
 
 .btn-border-gradient-wrap--gold:hover a.btn {
-  text-shadow: 0 0 15px rgba(250, 250, 214, 0.5),
-    0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5),
-    0 0 15px rgba(250, 250, 214, 0.5);
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
 }
 
 button.btn-border-gradient {
-  font-size: 2rem;
-  background: #000;
+	font-size: 1.5rem;
+	background: #000;
+	padding: 1px 10px;
 }
 
 a.btn-border-gradient {
-  font-size: 2rem;
-  background: #000;
+	font-size: 2rem;
+	background: #000;
 }
 
 h3.btn-border-gradient {
-  font-size: 1.75rem;
-  background: #000;
-  witdh: 500px;
+	font-size: 1.75rem;
+	background: #000;
+	witdh: 500px;
 }
 
 .btn-text-gradient--gold {
-  font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
-    "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
-
-  background: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    from(#ffffdb),
-    to(#a16422)
-  );
-
-  background: -webkit-linear-gradient(bottom, #ffffdb, #a16422);
-
-  background: linear-gradient(to top, #ffffdb, #a16422);
-  -webkit-background-clip: text;
-
-  -webkit-text-fill-color: transparent;
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+	background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422));
+	background: -webkit-linear-gradient(bottom, #ffffdb, #a16422);
+	background: linear-gradient(to top, #ffffdb, #a16422);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 a.logoutBtn {
