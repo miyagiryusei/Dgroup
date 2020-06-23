@@ -12,9 +12,11 @@
 </head>
 <body>
 	<a id="top"></a>
-	<h1>
-		<fmt:message key="btn.overall.ranking" />
-	</h1>
+	<div class="title-set">
+		<h1>
+			<fmt:message key="btn.overall.ranking" />
+		</h1>
+	</div>
 
 
 	<div class=white>
