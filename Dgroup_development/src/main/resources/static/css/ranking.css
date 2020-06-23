@@ -13,77 +13,56 @@ body {
 }
 
 table {
-	background-color: #000000;
-	margin: auto auto;
 	text-align: center;
-	margin: auto auto;
-	border-left: 3px solid #a16422;
-	border-right: 3px solid #a16422;
 	border-collapse: collapse;
-}
-
-.border-gradient-overall {
-	width: 90%;
 	margin: auto auto;
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	border-radius: 0.5rem;
-}
-
-.border-gradient-maxrole {
-	width: 22%;
-	margin: auto auto;
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	border-radius: 0.5rem;
-}
-
-.border-gradient-overall-role {
-	width: 82.5%;
-	margin: auto auto;
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	border-radius: 0.5rem;
-}
-
-.border-gradient-role {
-	width: 42%;
-	margin: auto auto;
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	border-radius: 0.5rem;
-}
-
-.border-gradient {
-	width: 62%;
-	margin: auto auto;
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	border-radius: 0.5rem;
+	border-left: 2px solid #a16422;
+	border-right: 2px solid #a16422;
+	border-bottom: 2px solid #a16422;
+	border-collapse: collapse;
+	border-collapse: collapse;
+	background-color: #161616;
 }
 
 table th, table td {
 	text-align: center;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 10px;
 	border: 2px solid #a16422;
 	border-collapse: collapse;
-	font-family: 'Noto Sans JP', sans-serif;
-	font-size: x-large;
-	width: 300px;
-	height: auto;
+	border-collapse: collapse;
 	margin: auto auto;
-	color: white;
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+	color: #000000;
+	background: -webkit-linear-gradient(320deg, #704308 0%, #ffce08 10%, #fefeb2 100%,
+		#fafad6 50%, #fefeb2 20%, #e1ce08 63%, #704308 100%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 6px transparent;
+	-webkit-filter: drop-shadow(2px 2px 20px transparent);
+	z-index: 20;
+	width: 350px;
+}
+
+table th {
+	font-size: 25px;
+}
+
+table td {
+	font-size: 30px;
+}
+
+table caption {
+	font-size: 40px;
+	margin: auto auto;
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+	color: #000000;
+	background: -webkit-linear-gradient(320deg, #704308 0%, #ffce08 10%, #fefeb2 100%,
+		#fafad6 50%, #fefeb2 20%, #e1ce08 63%, #704308 100%);
+	-webkit-background-clip: text;
+	-webkit-text-stroke: 6px transparent;
+	-webkit-filter: drop-shadow(2px 2px 20px transparent);
+	padding: 5px;
 }
 
 h5 {
@@ -239,7 +218,7 @@ a.logoutBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.2;
+	opacity: 0.5;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -265,7 +244,7 @@ a.myPageBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.2;
+	opacity: 0.5;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -291,7 +270,7 @@ a.bottomBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.2;
+	opacity: 0.5;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -317,7 +296,7 @@ a.topBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.2;
+	opacity: 0.5;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -329,12 +308,14 @@ a.topBtn:hover {
 article {
 	border-radius: 5px;
 	padding: 10px;
+	padding-top: 30px;
 	height: auto;
 	margin: auto auto;
 	margin-top: 40px;
+	border-radius: 0.5rem;
+	height: auto;
 }
 
-}
 article.p {
 	margin-left: 10px;
 	margin-right: 10px;
@@ -347,20 +328,10 @@ h4 {
 }
 
 .overall {
-	border-radius: 5px;
 	padding: 10px;
 	height: auto;
 	margin: auto auto;
 	margin-top: 40px;
-}
-
-caption {
-	border-top: 2px solid #a16422;
-	border-left: 2px solid #a16422;
-	border-right: 2px solid #a16422;
-	background-color: black;
-	font-family: 'Noto Sans JP', sans-serif;
-	font-size: x-large;
-	color: white;
-	background-color: black;
+	border-radius: 0.5rem;
+	padding-bottom: 100px;
 }

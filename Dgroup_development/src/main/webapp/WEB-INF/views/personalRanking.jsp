@@ -27,7 +27,6 @@
 		</h3>
 	</div>
 
-	<div class="border-gradient">
 		<article>
 			<table>
 				<caption>総合コイン獲得ランキング</caption>
@@ -43,9 +42,7 @@
 				</tr>
 			</table>
 		</article>
-	</div>
 
-	<div class="border-gradient">
 		<article>
 			<table>
 				<caption>BJコイン獲得ランキング</caption>
@@ -61,9 +58,7 @@
 				</tr>
 			</table>
 		</article>
-	</div>
 
-	<div class="border-gradient">
 		<article>
 			<table>
 				<caption>ポーカーコイン獲得ランキング</caption>
@@ -79,9 +74,7 @@
 				</tr>
 			</table>
 		</article>
-	</div>
 
-	<div class="border-gradient">
 		<article>
 			<table>
 				<caption>ポーカー１試合コイン最高獲得ランキング</caption>
@@ -97,9 +90,7 @@
 				</tr>
 			</table>
 		</article>
-	</div>
 
-	<div class="border-gradient-maxrole">
 		<article>
 			<table>
 				<tr>
@@ -111,9 +102,7 @@
 				</tr>
 			</table>
 		</article>
-	</div>
 
-	<div class="border-gradient-role">
 		<article>
 			<table>
 				<caption>${fn:escapeXml(user.userName)}様が今まで出したポーカーの役</caption>
@@ -129,7 +118,6 @@
 				</c:forEach>
 			</table>
 		</article>
-	</div>
 
 	<br>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
