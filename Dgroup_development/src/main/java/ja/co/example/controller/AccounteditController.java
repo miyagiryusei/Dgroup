@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import ja.co.example.dao.UsersDao;
 import ja.co.example.entity.Account;
 import ja.co.example.entity.Users;
 import ja.co.example.form.AccountForm;
@@ -30,6 +31,11 @@ public class AccounteditController {
 
 	@Autowired
 	private AccountService accountservice;
+
+	@Autowired
+	private UsersDao userDao;
+
+
 
 	//トップ画面へ
 	@RequestMapping("/top")
@@ -101,6 +107,8 @@ public class AccounteditController {
 			String logid = A.getLoginId();
 
 			AccounteditService.update(name, pass, logid);
+			Users user = userDao.findByLoginIdAndPassword(A.getLoginId(), A.getPass());
+			session.setAttribute("user", user);
 
 			model.addAttribute("msg", "変更に成功しました。");
 //			session.invalidate();

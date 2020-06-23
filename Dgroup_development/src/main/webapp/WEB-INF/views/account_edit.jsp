@@ -13,10 +13,16 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${msg}
+
 	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
-		<label>名前</label><br>
+		<c:if test="${not empty msg}">
+		<div class=whit>
+			<h3>${msg}</h3>
+		</div>
+		</c:if>
+
+		<label>ユーザー名</label><br>
 		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 			 <input type="text" name="userName"
 				class="btn-border-gradient">
@@ -37,7 +43,7 @@
 		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 
 			<button type="submit" class="btn btn-border-gradient">
-				<span class="btn-text-gradient--gold">変更する</span>
+				<span class="btn-text-gradient--gold">変更</span>
 			</button>
 		</div>
 	</form:form>

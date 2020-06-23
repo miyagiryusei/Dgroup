@@ -17,20 +17,30 @@
 <title><fmt:message key="title.itemShop" /></title>
 </head>
 <body>
-	<h1>所持アイテム</h1>
-	<form:form action="itemuse" modelAttribute="user" method="get">
 
-	<div class=white>
-		<h3>${fn:escapeXml(us.userName)}<br>
-		所持コイン:${fn:escapeXml(us.coin)}</h3>
-	</div>
+
+
+	<form:form action="itemuse" modelAttribute="use" method="get">
+		<h1>所持アイテム</h1>
+
+
+		<div class=white>
+			<h3>
+				${fn:escapeXml(user.userName)}<br>
+				所持コイン:${fn:escapeXml(user.coin)}<br>
+			</h3>
+		</div>
+
+
+
 
 
 		<c:if test="${not empty itemcoin}">
-		<div class=white>
-			<h3>コインを${itemcoin}枚得ました</h3>
-		</div>
+			<div class=whit>
+				<h3>コインを${itemcoin}枚得ました</h3>
+			</div>
 		</c:if>
+		<br>
 
 
 
@@ -64,18 +74,19 @@
 			<br>
 			<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 
-				<button type="submit" class="btn btn-border-gradient"><span
-					class="btn-text-gradient--gold">使用</span></button>
+				<button type="submit" class="btn btn-border-gradient">
+					<span class="btn-text-gradient--gold">使用</span>
+				</button>
 			</div>
-<!-- 			<button type="submit" class=>使用</button> -->
+			<!-- 			<button type="submit" class=>使用</button> -->
 			<br>
 			<br>
 
 		</c:if>
 		<c:if test="${not empty msg}">
-		<div class=whit>
-			<h3>${msg}</h3>
-		</div>
+			<div class=whit>
+				<h3>${msg}</h3>
+			</div>
 		</c:if>
 	</form:form>
 
