@@ -217,9 +217,17 @@ input[readonly] {
 /*   z-index: 20; */
 /* } */
 
+form {
+    display: block;
+    margin-top: 5em;
+}
+
 .dreams {
     margin: 0px;
-    font-family: 'Mr Dafoe', cursive;
+    font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+/*     font-family: 'Titillium Web', sans-serif; */
+/*     font-family: 'Mr Dafoe', cursive; */
     font-size: 160px;
     /* color: #F975F7; */
     transform: rotate(-15deg);
