@@ -58,7 +58,7 @@
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class=borderleft>${fn:escapeXml(bjSumList[0].sumCoin)}コインです</td>
+				<td class=borderleft>${fn:escapeXml(bjSumList[0].coin)}コインです</td>
 				<td>現在${fn:escapeXml(bjSumList[0].rank)}位です</td>
 				<td>${fn:escapeXml(bjSumList[0].difference)}コインです</td>
 			</tr>
@@ -75,7 +75,7 @@
 				<th>1位との差額</th>
 			</tr>
 			<tr>
-				<td class=borderleft>${fn:escapeXml(pokerSumList[0].sumCoin)}です</td>
+				<td class=borderleft>${fn:escapeXml(pokerSumList[0].coin)}です</td>
 				<td>現在${fn:escapeXml(pokerSumList[0].rank)}位です</td>
 				<td>${fn:escapeXml(pokerSumList[0].difference)}です</td>
 			</tr>
