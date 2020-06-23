@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import ja.co.example.dao.UsersDao;
+import ja.co.example.entity.Users;
 import ja.co.example.form.LoginForm;
 
 @Controller
@@ -53,10 +54,11 @@ public class TestControllerTeruya {
 
 	//Myページ画面表示
 	@RequestMapping("/myPage")
-	public String myPage(Model model) {
-//		Users user = (Users) session.getAttribute("user");
-//		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
-//		session.setAttribute("user", u);
+	public String myPage(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+		Users user = (Users) session.getAttribute("user");
+		if (user == null) {
+			return "login";
+		}
 		return "myPage";
 	}
 
