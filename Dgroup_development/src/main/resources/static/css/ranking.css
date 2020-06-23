@@ -14,21 +14,15 @@ body {
 
 table {
 	text-align: center;
-	border-collapse: collapse;
 	margin: auto auto;
-	border-left: 2px solid #a16422;
-	border-right: 2px solid #a16422;
-	border-bottom: 2px solid #a16422;
-	border-collapse: collapse;
-	border-collapse: collapse;
 	background-color: #161616;
+	border-collapse: collapse;
 }
 
 table th, table td {
 	text-align: center;
 	padding: 10px;
-	border: 2px solid #a16422;
-	border-collapse: collapse;
+	border: 4px solid #a16422;
 	border-collapse: collapse;
 	margin: auto auto;
 	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
