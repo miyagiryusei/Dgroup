@@ -73,7 +73,17 @@ public class ItemlistController {
 		if(itemid==1) {
 			//ランダム生成
 			Random random = new Random();
-			Integer itemcoin = random.nextInt(100000);
+			Integer itemcoin;
+			int rate =random.nextInt(10);
+
+			if(rate<=8) {
+				itemcoin = random.nextInt(10000);
+				//生成値の保存
+
+			}else {
+
+				itemcoin = random.nextInt(90000)+10000;
+			}
 			//生成値の保存
 			model.addAttribute("itemcoin",itemcoin);
 
