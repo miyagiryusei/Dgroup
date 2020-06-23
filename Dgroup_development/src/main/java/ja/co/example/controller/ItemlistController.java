@@ -100,6 +100,7 @@ public class ItemlistController {
 			model.addAttribute("msg","所持アイテムはありません");
 		}
 
+		userDao.rank(user.getUserId());
 		session.setAttribute("list",list);
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
 		session.setAttribute("us", u);
