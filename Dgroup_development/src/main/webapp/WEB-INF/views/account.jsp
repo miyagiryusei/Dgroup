@@ -13,38 +13,54 @@
 <title>Insert title here</title>
 </head>
 <body>
-  ${massage}
+
+
+
 
 	<form:form action="account" modelAttribute="user" method="post">
-  <h1>アカウント作成</h1>
- <p>
-  <label>ID</label>
-	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
-    <input class="btn-border-gradient" type="text" name="loginId">
-    <form:errors path="loginId" class="required"/>
-</div>
+		<h1>アカウント作成</h1>
+		<c:if test="${not empty massage}">
+		<div class=whit>
+			<h3>${massage}</h3>
+		</div>
+		</c:if>
 
-<p>
-<label>ユーザー名</label>
-	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
-    <input class="btn-border-gradient" type="text" name="userName">
-  <form:errors path="userName" class="required"/>
-  </div>
+		<p>
+			<label>ID</label>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			<input class="btn-border-gradient" type="text" name="loginId">
+			<form:errors path="loginId" class="required" />
+		</div>
 
-  <p>
-  <label>パスワード</label>
-	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
-    <input class="btn-border-gradient" type="password" name="pass">
-    <form:errors path="pass" class="required"/>
-  </div>
+		<p>
+			<label>ユーザー名</label>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			<input class="btn-border-gradient" type="text" name="userName">
+			<form:errors path="userName" class="required" />
+		</div>
 
-<p>
-	<button type="submit" class="btn-border-gradient">
-    <span class="btn-text-gradient--gold">
-    作成する</span></button>
+		<p>
+			<label>パスワード</label>
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+			<input class="btn-border-gradient" type="password" name="pass">
+			<form:errors path="pass" class="required" />
+		</div>
+
+		<br>
+		<br>
+
+
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+
+			<button type="submit" class="btn btn-border-gradient">
+				<span class="btn-text-gradient--gold">作成</span>
+			</button>
+		</div>
 	</form:form>
 	<div>
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
+
+		<a href="login" class="myPageBtn">戻る</a><br>
+		<br>
 
 
 	</div>

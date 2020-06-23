@@ -7,13 +7,20 @@
 <meta charset="UTF-8">
 <meta http-equiv="Refresh" content="3;URL=login">
 <title><fmt:message key="title.logout" /></title>
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/logout.css" rel="stylesheet">
 </head>
 <body>
-  <div class="center">
-    <p>
-      ログアウトしました。<br> ※３秒後にログイン画面に遷移します。
-    </p>
-  </div>
+
+
+	<br><br><br><br><br><br>
+    	<div class="loading">
+		<span class="dreams">ロ</span> <span class="dreams">グ</span> <span class="dreams">ア</span> <span class="dreams">ウ</span>
+		<span class="dreams">ト</span><span class="dreams">し</span><span class="dreams">ま</span><span class="dreams">し</span>
+		<span class="dreams">た</span>
+	</div>
+
+<!--      <br> ※３秒後にログイン画面に遷移します。 -->
+
+
 </body>
 </html>

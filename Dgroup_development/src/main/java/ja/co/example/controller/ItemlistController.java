@@ -41,7 +41,7 @@ public class ItemlistController {
 //	}
 
 	@RequestMapping("/itemList")
-	public String result1(@ModelAttribute("user") ItemlistForm form,Model model) {
+	public String result1(@ModelAttribute("use") ItemlistForm form,Model model) {
 		//所持アイテムの表示
 		Users user=(Users) session.getAttribute("user");
 
@@ -55,15 +55,16 @@ public class ItemlistController {
 
 		}
 
-
-		session.setAttribute("us", user);
+		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
+		System.out.println(u.getUserName());
+		session.setAttribute("user", u);
 		session.setAttribute("list",list);
 			return "itemlist";
 	}
 
 
 	@RequestMapping("/itemuse")
-	public String result(@ModelAttribute("user") ItemlistForm form,Model model) {
+	public String result(@ModelAttribute("use") ItemlistForm form,Model model) {
 		Integer itemid=form.getItemId();
 		Users user=(Users) session.getAttribute("user");
 		Integer userid = user.getUserId();
@@ -103,7 +104,7 @@ public class ItemlistController {
 		userDao.rank(user.getUserId());
 		session.setAttribute("list",list);
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
-		session.setAttribute("us", u);
+		session.setAttribute("user", u);
 
 
 

@@ -13,50 +13,64 @@
 
 <title>Insert title here</title>
 </head>
-<link href="css/item.css" rel="stylesheet">
+<link href="css/myPage.css" rel="stylesheet">
 <title><fmt:message key="title.itemShop" /></title>
 </head>
 <body>
 
 	<form:form action="buy" modelAttribute="itemShopForm" method="get">
-		<h2>アイテムショップ</h2>
-		<c:if test="${not empty msgg}">
+		<h1>アイテムショップ</h1>
+
+
+
+
 		<div class=white>
-			<h3>${msgg}</h3>
+		<h3>
+		${fn:escapeXml(user.userName)}<br>
+		所持コイン:${fn:escapeXml(user.coin)}<br>
+		</h3>
 		</div>
+
+		<c:if test="${not empty msgg}">
+			<div class=whit>
+				<h3>${msgg}</h3>
+			</div>
 		</c:if>
-		<p>${fn:escapeXml(user.userName)}
-		<p>所持コイン:${fn:escapeXml(user.coin)}
-            <div class=table>
-		<table>
-			<caption>アイテム一覧</caption>
-			<thead>
-				<tr>
-					<th></th>
-					<th>アイテム名</th>
-					<th>効果</th>
-					<th>必要コイン</th>
-				</tr>
+
+				<table>
+					<caption>アイテム一覧</caption>
+					<thead>
+						<tr>
+							<th></th>
+							<th>アイテム名</th>
+							<th>効果</th>
+							<th>必要コイン</th>
+						</tr>
 
 
-			<c:forEach items="${item}" var="item">
-				<tr>
-					<td><form:checkbox value="${item.itemId}" path="itemId" /></td>
-					<td>${item.name}</td>
-					<td>${item.effect }</td>
-					<td>${item.price}</td>
-				</tr>
-			</c:forEach>
+						<c:forEach items="${item}" var="item">
+							<tr>
+								<td><form:checkbox value="${item.itemId}" path="itemId" /></td>
+								<td>${item.name}</td>
+								<td>${item.effect }</td>
+								<td>${item.price}</td>
+							</tr>
+						</c:forEach>
 
-			</thead>
+					</thead>
 
 
-        </table>
-        </div>
+				</table>
+
+
 		<br>
-		<button class="decorated-btn click-down" type="submit">購入</button>
-		<br>
-		<br>
+
+		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+
+			<button type="submit" class="btn btn-border-gradient">
+				<span class="btn-text-gradient--gold">購入</span>
+			</button>
+		</div>
 	</form:form>
 
 
