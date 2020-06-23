@@ -11,7 +11,7 @@
 <title><fmt:message key="title.ranking" /></title>
 </head>
 <body>
-
+	<a id="top"></a>
 	<h1>
 		<fmt:message key="title.ranking" />
 	</h1>
@@ -178,16 +178,29 @@
 
 	<br>
 	<br>
-	<a href="personalRanking" class="btn"><fmt:message
-			key="btn.personal.ranking" /></a>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="personalRanking" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold"><fmt:message
+					key="btn.personal.ranking" /></span></a>
+	</div>
 	<br>
 	<br>
-	<a href="ranking" class="btn"><fmt:message key="btn.back" /></a>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="ranking" class="btn btn-border-gradient"><span class="btn-text-gradient--gold"><fmt:message
+				key="btn.back" /></span></a>
+	</div>
 
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
 	<br>
 	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	<br>
+	<br>
+	<a href="#top" class="topBtn">ページ↑へ</a>
+	<br>
+	<br>
+	<a href="#bottom" class="bottomBtn">ページ↓へ</a>
+	<a id="bottom"></a>
 
 </body>
 </html>

@@ -36,7 +36,7 @@ public class PgRankingDao implements RankingDao {
 			"from users u " +
 			"join result r on r.user_id = u.user_id " +
 			"join rank ra on ra.rank_id = u.rank_id " +
-			"where u.user_status !=2 " +
+			"where u.user_status !=2 and r.division_id != 3 " +
 			"group by u.user_id , u.user_name , u.coin , u.rank_id ,ra.rank_name, u.insert_time ) ran " +
 			"where user_name = case when :flg = 1 then :userName else user_name end " +
 			"FETCH FIRST 50 ROWS ONLY ";
@@ -108,7 +108,7 @@ public class PgRankingDao implements RankingDao {
 			"join rank ra on ra.rank_id = u.rank_id " +
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
-			"where d.division_name = case when :flg = 1 then :divisionName else d.division_name end and r.coin IS NOT NULL and u.user_status !=2 " +
+			"where d.division_name = case when :flg = 1 then :divisionName else d.division_name end and r.coin IS NOT NULL and u.user_status !=2 and r.division_id != 3 " +
 			"FETCH FIRST 50 ROWS ONLY ";
 
 	//---------------------------------------------------------------------------------------------------------------------

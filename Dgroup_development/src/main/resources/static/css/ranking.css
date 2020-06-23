@@ -69,7 +69,6 @@ h3 {
 	border: 1px solid #000000;
 }
 
-
 input[readonly] {
 	background: #CCCCCC;
 	color: black;
@@ -89,19 +88,96 @@ input[readonly] {
 	color: red;
 }
 
-a.btn {
-	width: 260px;
-	height: 35px;
-	background-image:
-		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+/* a.btn { */
+/* 	width: 260px; */
+/* 	height: 35px; */
+/* 	background-image: */
+/* 		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6"); */
+/* 	cursor: pointer; */
+/* 	border-radius: 5px; */
+/* 	color: #ffffff; */
+/* 	font-family: 'Exo', sans-serif; */
+/* 	font-size: 16px; */
+/* 	font-weight: 400; */
+/* 	padding: 6px; */
+/* 	margin-top: 10px; */
+/* } */
+.btn, a.btn, button.btn {
+	font-size: 1.2rem;
+	font-weight: 50;
+	line-height: 1.5;
+	position: relative;
+	display: inline-block;
+	padding: 1rem 2rem;
 	cursor: pointer;
-	border-radius: 5px;
-	color: #ffffff;
-	font-family: 'Exo', sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	padding: 6px;
-	margin-top: 10px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
+	border-radius: 0.5rem;
+}
+
+.btn-border-gradient-wrap {
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+}
+
+.btn-border-gradient-wrap--gol {
+	position: fixed; /* ボタン固定 */
+	top: 73px; /* ↑から位置 */
+	left: 14px; /* 右から位置 */
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+}
+
+.btn-border-gradient-wrap--gold {
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+}
+
+.btn-border-gradient-wrap--gold:hover a.btn {
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
+}
+
+button.btn-border-gradient {
+	font-size: 1rem;
+	background: #000;
+}
+
+a.btn-border-gradient {
+	font-size: 1rem;
+	background: #000;
+}
+
+h3.btn-border-gradient {
+	font-size: 1rem;
+	background: #000;
+	witdh: 300px;
+}
+
+.btn-text-gradient--gold {
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+	background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422));
+	background: -webkit-linear-gradient(bottom, #ffffdb, #a16422);
+	background: linear-gradient(to top, #ffffdb, #a16422);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .login {
@@ -149,7 +225,7 @@ a.logoutBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.3;
+	opacity: 0.2;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -175,12 +251,64 @@ a.myPageBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.3;
+	opacity: 0.2;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.myPageBtn:hover {
+	opacity: 0.9;
+}
+
+a.bottomBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 143px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.2;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.bottomBtn:hover {
+	opacity: 0.9;
+}
+
+a.topBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 183px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.2;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.topBtn:hover {
 	opacity: 0.9;
 }
 
