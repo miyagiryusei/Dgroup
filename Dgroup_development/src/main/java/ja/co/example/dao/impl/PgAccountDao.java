@@ -48,8 +48,8 @@ public class PgAccountDao implements AccountDao {
 
 
 
-		String sql1 = "INSERT INTO users (login_id,user_name,pass,coin, rank_id, insert_time) VALUES"
-				+ "(:login_id ,:user_name , :pass , 1000,1,now()) ";
+		String sql1 = "INSERT INTO users (login_id,user_name,pass,coin, rank_id, insert_time, user_status) VALUES"
+				+ "(:login_id ,:user_name , :pass , 1000,1,now(),1) ";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("login_id", id);
