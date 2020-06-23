@@ -20,6 +20,11 @@
 
 	<form:form action="buy" modelAttribute="itemShopForm" method="get">
 		<h2>アイテムショップ</h2>
+		<c:if test="${not empty msgg}">
+		<div class=white>
+			<h3>${msgg}</h3>
+		</div>
+		</c:if>
 		<p>${fn:escapeXml(user.userName)}
 		<p>所持コイン:${fn:escapeXml(user.coin)}
             <div class=table>

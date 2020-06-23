@@ -45,13 +45,9 @@ public class ItemShopController {
 	@RequestMapping(value = "/item", method = RequestMethod.GET)
 	public String result(@Validated @ModelAttribute("itemShopForm") ItemShopForm form, BindingResult bindingResult,
 			Model model) {
-		List<ItemShop> i = new ArrayList<ItemShop>();
 
+		List<ItemShop> i = new ArrayList<ItemShop>();
 		i = itemShopDao.select();
-		for (ItemShop item : i) {
-			System.out.println(item.getItemId());
-			System.out.println(item.getName());
-		}
 		model.addAttribute("item", i);
 
 		return "item";
@@ -62,11 +58,20 @@ public class ItemShopController {
 			Model model) {
 		Users u = (Users) session.getAttribute("user");
 		form.getItemId();
-		List<ItemShop> i = new ArrayList<ItemShop>();
 
 
 		for (Integer itemId : form.getItemId()) {
 		 ItemShop itemShop =	itemShopDao.selectItem(u.getUserId(), itemId);
+		 	ItemShop ii = itemShopDao.selectPrice(itemId);
+		 	if(ii.getPrice() > u.getCoin()) {
+		 		model.addAttribute("msgg","コインが足りません");
+		 		List<ItemShop> i = new ArrayList<ItemShop>();
+				i = itemShopDao.select();
+				model.addAttribute("item", i);
+		 		return "item";
+
+		 	}
+
 
 			if(itemShop == null) {
 				ItemShop it = itemShopDao.selectPrice(itemId);
