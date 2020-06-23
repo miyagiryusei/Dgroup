@@ -8,7 +8,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link href="css/commons.css" rel="stylesheet">
+<link href="css/byResult.css" rel="stylesheet">
 <title><fmt:message key="title.byResult" /></title>
 </head>
 <body class="center">

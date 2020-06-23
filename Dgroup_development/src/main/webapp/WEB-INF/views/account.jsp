@@ -13,33 +13,38 @@
 <title>Insert title here</title>
 </head>
 <body>
-	${massage}
+  ${massage}
 
 	<form:form action="account" modelAttribute="user" method="post">
-		<h1>アカウント作成</h1>
+  <h1>アカウント作成</h1>
+ <p>
+  <label>ID</label>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+    <input class="btn-border-gradient" type="text" name="loginId">
+    <form:errors path="loginId" class="required"/>
+</div>
 
-		<div class=text>
-			<input class=ef type="text" name="loginId" placeholder=""> <label>ID</label>
-			<span class="line"></span>
-			<form:errors path="loginId" class="required" />
-		</div>
+<p>
+<label>ユーザー名</label>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+    <input class="btn-border-gradient" type="text" name="userName">
+  <form:errors path="userName" class="required"/>
+  </div>
 
-		<div class=text>
-			<input class=ef type="text" name="userName" placeholder=""> <label>ユーザー名</label>
-			<span class="line"></span>
-			<form:errors path="userName" class="required" />
-		</div>
+  <p>
+  <label>パスワード</label>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+    <input class="btn-border-gradient" type="password" name="pass">
+    <form:errors path="pass" class="required"/>
+  </div>
 
-		<div class=text>
-			<input class=ef type="password" name="pass" placeholder=""> <label>パスワード</label>
-			<span class="line"></span>
-			<form:errors path="pass" class="required" />
-		</div>
-		<button type="submit" class=button>作成する</button>
+<p>
+	<button type="submit" class="btn-border-gradient">
+    <span class="btn-text-gradient--gold">
+    作成する</span></button>
 	</form:form>
 	<div>
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br>
-		<br>
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a><br><br>
 
 
 	</div>

@@ -1,111 +1,388 @@
+@charset "UTF-8";
+
 body {
-	background: #02a71d; /*#26558b*/
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://us.123rf.com/450wm/oasis15/oasis151507/oasis15150700099/42860026-%E6%9A%97%E3%81%84%E8%B5%A4%E3%81%84%E8%89%B2%E3%81%A7%E3%82%AB%E3%82%B8%E3%83%8E%E3%82%84%E3%83%9D%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg?ver=6);
 }
 
-.text {
-	position: relative;
-	width: 40%;
-	margin: 40px 3%;
+label {
+	font-size: 30px;
+	color : white;
 }
 
-.text input[type='text'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 100%;
-	letter-spacing: 1px;
-	padding-left: 8em;
+
+
+
+
+
+h1 {
+	text-align: center;
+	background-image:
+		url("https://previews.123rf.com/images/nataliyaua/nataliyaua1602/nataliyaua160200052/52287420-%E3%82%AB%E3%82%B8%E3%83%8E%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82.jpg");
+	color: white;
 }
 
-.text input[type='password'] {
-	font: 15px/24px sans-serif;
-	box-sizing: border-box;
-	width: 100%;
-	letter-spacing: 1px;
-	padding-left: 4em;
+
+h3 {
+	margin-left: 5px;
+	margin-right: 5px;
 }
 
-.text input[type='text']:focus {
-	outline: none;
-}
-
-.text input[type='password']:focus {
-	outline: none;
-}
-
-.ef {
+input.btn-border-gradient {
+	color: white;
+    font-size: 30px;
+    text-align: center;
 	padding: 4px 0;
 	border: 0;
-	border-bottom: 1px solid #3063c4; /*#1b2538 */
-	background-color: transparent;
+	background-color: black;
+    height: 45px;
+}
+.white {
+	color: white;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	width: 20%;
+	border-radius: 5px;
+	border: 1px solid #000000;
 }
 
-.ef ~ .line {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 0;
-	height: 2px;
-	transition: 0.4s;
-	background-color: #da3c41;
+.whit {
+	margin: auto;
+	color: white;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	width: 20%;
+	border-radius: 5px;
+	border: 1px solid #000000;
 }
 
-.ef:focus ~ .line, .text.ef ~ .line {
-	width: 100%;
-	transition: 0.4s;
+table{
+  background-color: white;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 80%;
+  margin: auto;
 }
 
-.ef ~ label {
-	position: absolute;
-	z-index: -1;
-	top: 4px;
-	left: 0px;
-	width: 100%;
-	transition: 0.3s;
-	letter-spacing: 0.5px;
-	color: #492020f8;
+table tr{
+  border-bottom: solid 1px #eee;
+  cursor: pointer;
 }
 
-.ef:focus ~ label, .text.ef ~ label {
-	font-size: 12px;
-	top: -16px;
-	transition: 0.3s;
-	color: #da3c41;
+table td.:hover{
+  background-color: #d4f0fd;
 }
 
-.button {
-	display: inline-block;
-	border-radius: 50%; /* 角丸       */
-	font-size: 17pt; /* 文字サイズ */
-	text-align: center; /* 文字位置   */
-	cursor: pointer; /* カーソル   */
-	padding: 12px 12px; /* 余白       */
-	background: #ff0000; /* 背景色     */
-	color: #ffffff; /* 文字色     */
-	line-height: 1em; /* 1行の高さ  */
-	transition: .3s; /* なめらか変化 */
-	box-shadow: 6px 6px 5px #666666; /* 影の設定 */
-	border: 2px solid #ff0000; /* 枠の指定 */
+table th,table td{
+  text-align: center;
+  width: 25%;
+  padding: 15px 0;
 }
 
-.button:hover {
-	box-shadow: none; /* カーソル時の影消去 */
-	color: #ff0000; /* 背景色     */
-	background: #ffffff; /* 文字色     */
+table td.icon{
+  background-size: 35px;
+  background-position: left 5px center;
+  background-repeat: no-repeat;
+  padding-left: 30px;
 }
 
-.myPageBtn {
+/* table td.icon.bird{ */
+/*   background-image: url(http://livedoor.blogimg.jp/mfh7791/imgs/b/6/b66d5287.jpg); */
+/* } */
+
+article {
+	border: solid 2px #804000;
+	border-radius: 5px;
+	padding: 10px;
+	background-color: #ffffff;
+	width: 900px;
+	height: auto;
+	margin: auto auto;
+	margin-top: 40px;
+}
+
+}
+article.p {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+fieldset {
+  border: none;
+}
+
+fieldset label {
+  display: inline-block;
+  width: 80px;
+  margin-right: 50px;
+}
+
+fieldset.label-60 label {
+  width: 60px;
+}
+
+fieldset.label-130 label {
+  width: 130px;
+}
+
+fieldset div {
+  margin: 5px;
+}
+
+form ~ div, table ~ div {
+  margin-top: 10px;
+}
+
+/* table, table th, table td { */
+/*   border: solid 1px; */
+/* } */
+
+input[readonly] {
+  background: #CCCCCC;
+  color: black;
+}
+
+.center {
+  text-align: center;
+}
+
+.required::before {
+  content: "※";
+  color: red;
+}
+
+.error {
+  color: red;
+}
+
+/* a.btn { */
+/*   color: white; */
+/*   text-align: center; */
+/*   font-size: 21px; */
+/*   font-weight: bold; */
+/*   background-color: red; */
+/*   border-radius: 10px; */
+/*   cursor: pointer; */
+/*   border: 0px; */
+/*   padding: 5px 20px 5px 20px; */
+/*   text-decoration:none */
+/* } */
+
+.login {
+	background-image: url("casino.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.right {
+	text-align: right;
+	margin-right: 70px;
+	margin-top: 100px
+}
+
+.little-right {
+	margin-right: 80px;
+}
+
+.button-right {
+	margin-right: 55px;
+}
+
+header {
+	text-align: right;
+}
+
+header.p {
+	color: #ffd700;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+
+
+.btn-border-gradient-wrap {
+  display: inline-block;
+
+  padding: 0.2rem;
+  padding-bottom: 0.2rem;
+  border-radius: 0.5rem;
+}
+
+
+
+.btn-border-gradient-wrap--gol {
+	position: fixed; /* ボタン固定 */
+	top: 73px; /* ↑から位置 */
+	left: 14px; /* 右から位置 */
+  background-image: -webkit-linear-gradient(
+    315deg,
+    #704308 0%,
+    #ffce08 37%,
+    #fefeb2 47%,
+    #fafad6 50%,
+    #fefeb2 53%,
+    #e1ce08 63%,
+    #704308 100%
+  );
+  background-image: linear-gradient(
+    135deg,
+    #704308 0%,
+    #ffce08 37%,
+    #fefeb2 47%,
+    #fafad6 50%,
+    #fefeb2 53%,
+    #e1ce08 63%,
+    #704308 100%
+  );
+}
+
+.btn-border-gradient-wrap--gold {
+  background-image: -webkit-linear-gradient(
+    315deg,
+    #704308 0%,
+    #ffce08 37%,
+    #fefeb2 47%,
+    #fafad6 50%,
+    #fefeb2 53%,
+    #e1ce08 63%,
+    #704308 100%
+  );
+  background-image: linear-gradient(
+    135deg,
+    #704308 0%,
+    #ffce08 37%,
+    #fefeb2 47%,
+    #fafad6 50%,
+    #fefeb2 53%,
+    #e1ce08 63%,
+    #704308 100%
+  );
+}
+
+.btn-border-gradient-wrap--gold:hover a.btn {
+  text-shadow: 0 0 15px rgba(250, 250, 214, 0.5),
+    0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5),
+    0 0 15px rgba(250, 250, 214, 0.5);
+}
+
+button.btn-border-gradient {
+  font-size: 3rem;
+  background: #000;
+}
+
+a.btn-border-gradient {
+  font-size: 2rem;
+  background: #000;
+}
+
+h3.btn-border-gradient {
+  font-size: 1.75rem;
+  background: #000;
+  width: 1000px;
+  padding-top: 100px;
+}
+
+.btn-text-gradient--gold {
+  font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+    "Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+
+  background: (
+    linear,
+    left bottom,
+    left top,
+    from(#ffffdb),
+    to(#a16422)
+    bottom 1px
+  );
+
+  background: -webkit-linear-gradient(bottom, #ffffdb, #a16422);
+
+  background: linear-gradient(to top, #ffffdb, #a16422);
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+}
+
+a.logoutBtn {
 	display: inline-block;
 	position: fixed; /* ボタン固定 */
 	top: 63px; /* 下から位置 */
 	right: 14px; /* 右から位置 */
-	color: white;
-	text-align: center;
-	font-size: 21px;
-	font-weight: bold;
-	background-color: #87cefa;
-	border-radius: 10px;
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
 	cursor: pointer;
-	border: 0px;
-	padding: 5px 20px 5px 20px;
-	text-decoration: none
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.3;
+	margin-top: 10px;
+	text-align: center;
 }
+
+a.logoutBtn:hover {
+	opacity: 0.9;
+}
+
+a.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 103px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 100px;
+	height: 20px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.3;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.myPageBtn:hover {
+	opacity: 0.9;
+}
+
+.btn-text-gradient--gold{
+margin-bottom: 1px;
+}
+
+

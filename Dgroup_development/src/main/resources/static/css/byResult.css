@@ -1,0 +1,44 @@
+body{
+    background-image: url("casinoHolejpg.jpg");
+    background-size: cover;               /* 全画面 */
+    background-attachment: fixed;         /* 固定 */
+    background-position: center center;   /* 縦横中央 */
+    text-align: center;
+    font-size: 35px;
+    color: rgb(229, 255, 0);
+
+}
+
+.logoutBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 13px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}
+
+.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 63px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	color: white;
+	text-align: center;
+	font-size: 21px;
+	font-weight: bold;
+	background-color: #87cefa;
+	border-radius: 10px;
+	cursor: pointer;
+	border: 0px;
+	padding: 5px 20px 5px 20px;
+	text-decoration: none
+}
