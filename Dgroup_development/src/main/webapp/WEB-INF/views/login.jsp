@@ -22,13 +22,17 @@
 						key="btn.begginer" /></span></a>
 		</div>
 	</header>
-	<c:if test="${not empty errMsg}">
-		<p>${fn:escapeXml(errMsg)}</p>
-	</c:if>
+
 	<div class="loading">
 		<span class="dreams">O</span> <span class="dreams">k</span> <span class="dreams">i</span> <span class="dreams">V</span>
 		<span class="dreams">e</span><span class="dreams">g</span><span class="dreams">a</span><span class="dreams">s</span>
 	</div>
+
+	<c:if test="${not empty errMsg}">
+		<div class=whit>
+		<h3>${fn:escapeXml(errMsg)}</h3>
+		</div>
+	</c:if>
 
 
 	<form:form action="login" method="post" modelAttribute="loginForm"
@@ -40,16 +44,18 @@
 				<label class="little-right"><fmt:message key="lbl.id" /></label><br>
 				<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 					<form:input path="loginId" class="btn-border-gradient" />
+					<form:errors path="loginId" class="required" />
 				</div>
-				<form:errors path="loginId" class="required" />
+
 			</div>
 			<div>
 				<label><fmt:message key="lbl.pass" /></label><br>
 				<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 					<form:input type="password" path="password"
 						class="btn-border-gradient" />
+						<form:errors path="password" class="required" />
 				</div>
-				<form:errors path="password" class="required" />
+
 			</div>
 
 			<div class="aa">

@@ -54,7 +54,6 @@ public class ItemlistController {
 		}
 
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
-		System.out.println(u.getUserName());
 		session.setAttribute("user", u);
 		session.setAttribute("list", list);
 		return "itemlist";
@@ -93,7 +92,6 @@ public class ItemlistController {
 
 			itemservice.Goddess(itemid, userid, itemcoin, user);
 
-			System.out.println(list.get(0).getItemCount());
 
 		}
 
