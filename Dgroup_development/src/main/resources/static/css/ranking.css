@@ -59,6 +59,60 @@ table caption {
 	padding: 5px;
 }
 
+.sample1{
+  display    : inline-block;
+  font-weight: bold;
+  color      : #ff8040;
+  animation  : sample1Anime 2s linear infinite alternate;
+}
+@keyframes sample1Anime{
+  0% { text-shadow:  2px  2px 10px #fff ,
+                    -2px  2px 10px #fff ,
+                     2px -2px 10px #fff ,
+                    -2px -2px 10px #fff;}
+
+ 100% { text-shadow:  2px  2px 10px #ffff00 ,
+                      -2px  2px 10px #ffff00 ,
+                       2px -2px 10px #ffff00 ,
+                      -2px -2px 10px #ffff00;}
+}
+
+.sample2{
+  display    : inline-block;
+  font-weight: bold;
+  color      : #0000ff;
+  animation  : sample2Anime 2s linear infinite alternate;
+}
+@keyframes sample2Anime{
+  0% { text-shadow:  2px  2px 10px #fff ,
+                    -2px  2px 10px #fff ,
+                     2px -2px 10px #fff ,
+                    -2px -2px 10px #fff;}
+
+ 100% { text-shadow:  2px  2px 10px #ffff00 ,
+                      -2px  2px 10px #ffff00 ,
+                       2px -2px 10px #ffff00 ,
+                      -2px -2px 10px #ffff00;}
+}
+
+.sample3{
+  display    : inline-block;
+  font-weight: bold;
+  color      : green;
+  animation  : sample3Anime 2s linear infinite alternate;
+}
+@keyframes sample3Anime{
+  0% { text-shadow:  2px  2px 10px #fff ,
+                    -2px  2px 10px #fff ,
+                     2px -2px 10px #fff ,
+                    -2px -2px 10px #fff;}
+
+ 100% { text-shadow:  2px  2px 10px #ffff00 ,
+                      -2px  2px 10px #ffff00 ,
+                       2px -2px 10px #ffff00 ,
+                      -2px -2px 10px #ffff00;}
+}
+
 h5 {
 	text-align: center;
 	padding-left: 20px;

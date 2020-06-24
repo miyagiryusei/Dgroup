@@ -21,63 +21,67 @@
 
 	<div class=white>
 		<h3>
-			総ゲーム数：${fn:escapeXml(overallSumMatch[0].count)}<br>
+			<%-- 			総ゲーム数：${fn:escapeXml(overallSumMatch[0].count)}<br> --%>
 			ポーカー試合数:${fn:escapeXml(overallpokerSumMatch[0].count)}<br>
-			ブラックジャック試合数:${fn:escapeXml(overallbjSumMatch[0].count)}<br>
+			所持金現在のTOP3プレーヤー<br>
+			1位:<span class="sample1">${fn:escapeXml(overallRanking[0].userName)}様</span>　所持金:${fn:escapeXml(overallRanking[0].coin)}<br>
+			2位:<span class="sample2">${fn:escapeXml(overallRanking[1].userName)}様</span>　所持金:${fn:escapeXml(overallRanking[1].coin)}<br>
+			3位:<span class="sample3">${fn:escapeXml(overallRanking[2].userName)}様</span>　所持金:${fn:escapeXml(overallRanking[2].coin)}<br>
+			<%-- 			ブラックジャック試合数:${fn:escapeXml(overallbjSumMatch[0].count)}<br> --%>
 		</h3>
 	</div>
 
-	<div class=overall>
-		<table>
-			<caption>総合コイン獲得ランキング-50位まで表示-</caption>
-			<thead>
-				<tr>
-					<th class=borderleft>順位</th>
-					<th><fmt:message key="lbl.user.name" /></th>
-					<th>ランク名</th>
-					<th><fmt:message key="|b|.coin.have" /></th>
-					<th>一位との差</th>
-					<th>総ゲーム回数</th>
-				</tr>
-			</thead>
-			<c:forEach items="${overallRanking}" var="ranking">
-				<tr>
-					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
-					<td>${fn:escapeXml(ranking.userName)}</td>
-					<td>${fn:escapeXml(ranking.rankName)}</td>
-					<td>${fn:escapeXml(ranking.coin)}</td>
-					<td>${fn:escapeXml(ranking.difference)}枚</td>
-					<td>${fn:escapeXml(ranking.count)}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
+	<!-- 	<div class=overall> -->
+	<!-- 		<table> -->
+	<%-- 			<caption>総合コイン獲得ランキング-50位まで表示-</caption> --%>
+	<!-- 			<thead> -->
+	<!-- 				<tr> -->
+	<!-- 					<th class=borderleft>順位</th> -->
+	<%-- 					<th><fmt:message key="lbl.user.name" /></th> --%>
+	<!-- 					<th>ランク名</th> -->
+	<%-- 					<th><fmt:message key="|b|.coin.have" /></th> --%>
+	<!-- 					<th>一位との差</th> -->
+	<!-- 					<th>総ゲーム回数</th> -->
+	<!-- 				</tr> -->
+	<!-- 			</thead> -->
+	<%-- 			<c:forEach items="${overallRanking}" var="ranking"> --%>
+	<!-- 				<tr> -->
+	<%-- 					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.userName)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.rankName)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.coin)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.difference)}枚</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.count)}</td> --%>
+	<!-- 				</tr> -->
+	<%-- 			</c:forEach> --%>
+	<!-- 		</table> -->
+	<!-- 	</div> -->
 
-	<div class=overall>
-		<table>
-			<caption>BJコイン獲得ランキング-50位まで表示-</caption>
-			<thead>
-				<tr>
-					<th class=borderleft>順位</th>
-					<th><fmt:message key="lbl.user.name" /></th>
-					<th>ランク名</th>
-					<th>BJ獲得コイン</th>
-					<th>一位との差</th>
-					<th>総ゲーム回数</th>
-				</tr>
-			</thead>
-			<c:forEach items="${overallbjSum}" var="ranking">
-				<tr>
-					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td>
-					<td>${fn:escapeXml(ranking.userName)}</td>
-					<td>${fn:escapeXml(ranking.rankName)}</td>
-					<td>${fn:escapeXml(ranking.coin)}</td>
-					<td>${fn:escapeXml(ranking.difference)}枚</td>
-					<td>${fn:escapeXml(ranking.count)}</td>
-				</tr>
-			</c:forEach>
-		</table>
-	</div>
+	<!-- 	<div class=overall> -->
+	<!-- 		<table> -->
+	<%-- 			<caption>BJコイン獲得ランキング-50位まで表示-</caption> --%>
+	<!-- 			<thead> -->
+	<!-- 				<tr> -->
+	<!-- 					<th class=borderleft>順位</th> -->
+	<%-- 					<th><fmt:message key="lbl.user.name" /></th> --%>
+	<!-- 					<th>ランク名</th> -->
+	<!-- 					<th>BJ獲得コイン</th> -->
+	<!-- 					<th>一位との差</th> -->
+	<!-- 					<th>総ゲーム回数</th> -->
+	<!-- 				</tr> -->
+	<!-- 			</thead> -->
+	<%-- 			<c:forEach items="${overallbjSum}" var="ranking"> --%>
+	<!-- 				<tr> -->
+	<%-- 					<td class=borderleft>${fn:escapeXml(ranking.rank)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.userName)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.rankName)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.coin)}</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.difference)}枚</td> --%>
+	<%-- 					<td>${fn:escapeXml(ranking.count)}</td> --%>
+	<!-- 				</tr> -->
+	<%-- 			</c:forEach> --%>
+	<!-- 		</table> -->
+	<!-- 	</div> -->
 
 	<div class=overall>
 		<table>
