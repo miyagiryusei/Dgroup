@@ -60,6 +60,7 @@
 
 		<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 			<input type="password" class="btn-border-gradient" name="pass">
+			<form:errors path="pass" class="required" />
 
 		</div>
 		<br>

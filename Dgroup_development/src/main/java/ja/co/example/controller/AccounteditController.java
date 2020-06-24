@@ -95,6 +95,10 @@ public class AccounteditController {
 	public String result1(@Validated @ModelAttribute("user") CheckForm form, BindingResult bindingResult,
 			Model model) {
 
+		if (bindingResult.hasErrors()) {
+			return "check";
+		}
+
 		String old = (String) session.getAttribute("pass");
 
 		String name = form.getUserName();
@@ -125,6 +129,10 @@ public class AccounteditController {
 	@RequestMapping(value = "/checkA", params = "insert", method = RequestMethod.POST)
 	public String result2(@Validated @ModelAttribute("user") CheckForm form, BindingResult bindingResult,
 			Model model) {
+
+		if (bindingResult.hasErrors()) {
+			return "check";
+		}
 
 		String id = (String) session.getAttribute("id");
 		String name = (String) session.getAttribute("name");

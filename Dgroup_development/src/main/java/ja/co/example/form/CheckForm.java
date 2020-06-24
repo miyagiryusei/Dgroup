@@ -1,5 +1,7 @@
 package ja.co.example.form;
 
+import javax.validation.constraints.NotBlank;
+
 public class CheckForm {
 
 
@@ -7,6 +9,7 @@ public class CheckForm {
 
 	private String userName;
 
+	@NotBlank
 	private String pass;
 
 

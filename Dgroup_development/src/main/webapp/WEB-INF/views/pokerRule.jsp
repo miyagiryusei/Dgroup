@@ -8,6 +8,6 @@
 <link href="css/myPage.css" rel="stylesheet">
 </head>
 <body>
-	<a href="poker" class="btn"></a>
+	<a href="poker" class="btn">戻る</a>
 </body>
 </html>

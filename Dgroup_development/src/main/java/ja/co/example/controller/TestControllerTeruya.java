@@ -46,6 +46,12 @@ public class TestControllerTeruya {
 		return "login";
 	}
 
+	//ルール
+		@RequestMapping("/pokerRule")
+		public String pokerRole(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+			return "pokerRule";
+		}
+
 	//完了画面へ
 	@RequestMapping("/result")
 	public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {

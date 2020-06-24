@@ -23,6 +23,11 @@
 	<br>
 	<br>
 
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<a href="pokerRule" class="btn btn-border-gradient"><span
+			class="btn-text-gradient--gold">ルール</span></a>
+	</div>
+
 
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 	<br>
