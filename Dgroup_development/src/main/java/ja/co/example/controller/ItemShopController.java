@@ -58,34 +58,41 @@ public class ItemShopController {
 			Model model) {
 		Users u = (Users) session.getAttribute("user");
 		form.getItemId();
-
+		ItemShop ii = new ItemShop();
+		Integer totalPrice = 0;
 
 		for (Integer itemId : form.getItemId()) {
-		 ItemShop itemShop =	itemShopDao.selectItem(u.getUserId(), itemId);
-		 	ItemShop ii = itemShopDao.selectPrice(itemId);
-		 	if(ii.getPrice() > u.getCoin()) {
-		 		model.addAttribute("msgg","コインが足りません");
-		 		List<ItemShop> i = new ArrayList<ItemShop>();
-				i = itemShopDao.select();
-				model.addAttribute("item", i);
-		 		return "item";
+			ii = itemShopDao.selectPrice(itemId);
+			totalPrice += ii.getPrice();
 
-		 	}
+		}
 
+		if (totalPrice > u.getCoin()) {
+			model.addAttribute("msgg", "コインが足りません");
+			List<ItemShop> i = new ArrayList<ItemShop>();
+			i = itemShopDao.select();
+			model.addAttribute("item", i);
+			return "item";
 
-			if(itemShop == null) {
+		}
+
+		for (Integer itemId : form.getItemId()) {
+			ItemShop itemShop = itemShopDao.selectItem(u.getUserId(), itemId);
+			ii = itemShopDao.selectPrice(itemId);
+
+			if (itemShop == null) {
 				ItemShop it = itemShopDao.selectPrice(itemId);
 				itemShopDao.insert(u.getUserId(), itemId, 1);
 				itemShopDao.buyResult(u.getUserId(), it.getPrice(), 3);
 				gameResultDao.userGetCoin(u);
-			}else {
+			} else {
 
-			ItemShop it = itemShopDao.selectPrice(itemId);
+				ItemShop it = itemShopDao.selectPrice(itemId);
 
-			itemShopDao.update(u.getUserId(), itemId);
+				itemShopDao.update(u.getUserId(), itemId);
 
-			itemShopDao.buyResult(u.getUserId(), it.getPrice(), 3);
-			gameResultDao.userGetCoin(u);
+				itemShopDao.buyResult(u.getUserId(), it.getPrice(), 3);
+				gameResultDao.userGetCoin(u);
 			}
 
 		}

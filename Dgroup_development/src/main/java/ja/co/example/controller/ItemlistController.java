@@ -31,89 +31,95 @@ public class ItemlistController {
 	@Autowired
 	UsersDao userDao;
 
-
-
-
-//	//アイテムリスト画面へ
-//	@RequestMapping("/itemlist")
-//	public String itemlist(Model model) {
-//		return "itemlist";
-//	}
+	//	//アイテムリスト画面へ
+	//	@RequestMapping("/itemlist")
+	//	public String itemlist(Model model) {
+	//		return "itemlist";
+	//	}
 
 	@RequestMapping("/itemList")
-	public String result1(@ModelAttribute("use") ItemlistForm form,Model model) {
+	public String result1(@ModelAttribute("use") ItemlistForm form, Model model) {
 		//所持アイテムの表示
-		Users user=(Users) session.getAttribute("user");
+		Users user = (Users) session.getAttribute("user");
 
-		Integer userid =user.getUserId();
+		Integer userid = user.getUserId();
 
 
+		List<Itemlist> list = itemservice.Itemlist(userid);
 
-		List<Itemlist> list=itemservice.Itemlist(userid);
-		if(list ==null) {
-			model.addAttribute("msg","所持アイテムはありません");
+
+		if (list == null) {
+			model.addAttribute("msg", "所持アイテムはありません");
 
 		}
 
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
 		System.out.println(u.getUserName());
 		session.setAttribute("user", u);
-		session.setAttribute("list",list);
-			return "itemlist";
+		session.setAttribute("list", list);
+		return "itemlist";
 	}
 
-
 	@RequestMapping("/itemuse")
-	public String result(@ModelAttribute("use") ItemlistForm form,Model model) {
-		Integer itemid=form.getItemId();
-		Users user=(Users) session.getAttribute("user");
+	public String result(@ModelAttribute("use") ItemlistForm form, Model model) {
+		Integer itemid = form.getItemId();
+		Users user = (Users) session.getAttribute("user");
 		Integer userid = user.getUserId();
+		List<Itemlist> list = itemservice.Itemlist(userid);
+
+
+		if (list == null) {
+			model.addAttribute("msg", "所持アイテムはありません");
+		}
 
 
 
-		if(itemid==1) {
+		if (itemid == 1) {
 			//ランダム生成
 			Random random = new Random();
 			Integer itemcoin;
-			int rate =random.nextInt(10);
+			int rate = random.nextInt(10);
 
-			if(rate<=8) {
+			if (rate <= 8) {
 				itemcoin = random.nextInt(10000);
 				//生成値の保存
 
-			}else {
+			} else {
 
-				itemcoin = random.nextInt(90000)+10000;
+				itemcoin = random.nextInt(90000) + 10000;
 			}
 			//生成値の保存
-			model.addAttribute("itemcoin",itemcoin);
+			model.addAttribute("itemcoin", itemcoin);
 
+			itemservice.Goddess(itemid, userid, itemcoin, user);
 
+			System.out.println(list.get(0).getItemCount());
 
-			itemservice.Goddess(itemid, userid,itemcoin, user);
 		}
-		List<Itemlist> list=itemservice.Itemlist(userid);
 
-
+		list = itemservice.Itemlist(userid);
 
 		if (list.get(0).getItemCount() == 0) {
-			itemDao.itemListDelete(userid,itemid);
-			model.addAttribute("msg","所持アイテムはありません");
+			itemDao.itemListDelete(userid, itemid);
 		}
 
+		list = itemservice.Itemlist(userid);
+
+		if (list == null) {
+			model.addAttribute("msg", "所持アイテムはありません");
+		}
+
+
+
+
+
+
 		userDao.rank(user.getUserId());
-		session.setAttribute("list",list);
+		session.setAttribute("list", list);
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
 		session.setAttribute("user", u);
-
-
-
 
 		return "itemlist";
 
 	}
-	}
-
-
-
-
+}
