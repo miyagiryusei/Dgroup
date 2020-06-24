@@ -31,6 +31,12 @@
 			</h3>
 		</div>
 
+		<c:if test="${not empty msgg}">
+			<div class=whit>
+				<h3>${msgg}</h3>
+			</div>
+		</c:if>
+
 
 
 
@@ -48,6 +54,7 @@
 
 		<c:if test="${empty msg}">
 			<table>
+				<caption>アイテム一覧</caption>
 				<tr>
 					<th>使用</th>
 					<th>アイテム名</th>

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -60,11 +62,16 @@ public class ItemlistController {
 	}
 
 	@RequestMapping("/itemuse")
-	public String result(@ModelAttribute("use") ItemlistForm form, Model model) {
+	public String result(@Validated @ModelAttribute("use") ItemlistForm form, BindingResult bindingResult,  Model model) {
 		Integer itemid = form.getItemId();
 		Users user = (Users) session.getAttribute("user");
 		Integer userid = user.getUserId();
 		List<Itemlist> list = itemservice.Itemlist(userid);
+
+		if (bindingResult.hasErrors()) {
+			model.addAttribute("msgg","アイテムを選択してください");
+			return "forward:itemList";
+		}
 
 
 		if (list == null) {

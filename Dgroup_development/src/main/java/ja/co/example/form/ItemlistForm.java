@@ -1,7 +1,10 @@
 package ja.co.example.form;
 
+import javax.validation.constraints.NotNull;
+
 public class ItemlistForm {
 
+	@NotNull
 	private Integer itemId;
 
 	private String userName;

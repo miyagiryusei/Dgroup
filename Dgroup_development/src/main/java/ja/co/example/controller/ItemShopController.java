@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,6 +36,8 @@ public class ItemShopController {
 	private ItemShopDao itemShopDao;
 	@Autowired
 	private GameResultDao gameResultDao;
+	@Autowired
+	MessageSource messageSource;
 
 	@Autowired
 	private UsersDao userDao;
@@ -43,7 +46,7 @@ public class ItemShopController {
 	private AccountService accountservice;
 
 	@RequestMapping(value = "/item", method = RequestMethod.GET)
-	public String result(@Validated @ModelAttribute("itemShopForm") ItemShopForm form, BindingResult bindingResult,
+	public String result(@ModelAttribute("itemShopForm") ItemShopForm form, BindingResult bindingResult,
 			Model model) {
 
 		List<ItemShop> i = new ArrayList<ItemShop>();
@@ -57,9 +60,17 @@ public class ItemShopController {
 	public String insert(@Validated @ModelAttribute("itemShopForm") ItemShopForm form, BindingResult bindingResult,
 			Model model) {
 		Users u = (Users) session.getAttribute("user");
-		form.getItemId();
+
 		ItemShop ii = new ItemShop();
 		Integer totalPrice = 0;
+
+
+
+		if (bindingResult.hasErrors()) {
+			model.addAttribute("msgg","アイテムを選択してください");
+			return "forward:item";
+		}
+
 
 		for (Integer itemId : form.getItemId()) {
 			ii = itemShopDao.selectPrice(itemId);

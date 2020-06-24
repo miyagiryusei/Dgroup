@@ -54,6 +54,7 @@
 								<td>${item.name}</td>
 								<td>${item.effect }</td>
 								<td>${item.price}</td>
+
 							</tr>
 						</c:forEach>
 
