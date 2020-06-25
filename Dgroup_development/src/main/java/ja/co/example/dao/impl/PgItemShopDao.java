@@ -28,7 +28,7 @@ public class PgItemShopDao implements ItemShopDao {
 
 	public List<ItemShop> select() {
 
-		String sql = "SELECT * FROM item <> 100" ;
+		String sql = "SELECT * FROM item" ;
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		//param.addValue("item_id", id);
