@@ -10,7 +10,7 @@
 <meta charset="UTF-8">
 <title><fmt:message key="title.ranking" /></title>
 </head>
-<body>
+<body class="background${fn:escapeXml(user.backgroundId)}">
 	<a id="top"></a>
 	<div class="title-set">
 		<h1>

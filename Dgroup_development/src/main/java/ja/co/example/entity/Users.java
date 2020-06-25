@@ -14,6 +14,7 @@ public class Users {
 	private Date editTime;
 	private Integer userStatus;
 	private String rankName;
+	private Integer backgroundId;
 
 	public Integer getUserId() {
 		return userId;
@@ -93,6 +94,14 @@ public class Users {
 
 	public void setRankName(String rankName) {
 		this.rankName = rankName;
+	}
+
+	public Integer getBackgroundId() {
+		return backgroundId;
+	}
+
+	public void setBackgroundId(Integer backgroundId) {
+		this.backgroundId = backgroundId;
 	}
 
 }
