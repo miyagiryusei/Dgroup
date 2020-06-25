@@ -49,6 +49,13 @@
 		</c:if>
 		<br>
 
+		<c:if test="${not empty background}">
+			<div class=whit>
+				<h3>${background}</h3>
+			</div>
+			<br>
+		</c:if>
+
 
 
 

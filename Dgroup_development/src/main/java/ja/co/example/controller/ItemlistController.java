@@ -143,6 +143,18 @@ public class ItemlistController {
 			itemservice.backgroundChange(userid, 5 , 7);
 		}
 
+		if (itemid == 8) {
+			model.addAttribute("background" , "背景を変更しました");
+
+			itemservice.backgroundChange(userid, null , 8);
+		}
+
+		if (itemid == 9) {
+			model.addAttribute("background" , "背景を変更しました");
+
+			itemservice.backgroundChange(userid, 6 , 9);
+		}
+
 		list = itemservice.Itemlist(userid);
 
 		if (list.get(0).getItemCount() == 0) {
