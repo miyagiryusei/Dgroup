@@ -1,5 +1,47 @@
 @charset "UTF-8";
 
+.background {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://us.123rf.com/450wm/oasis15/oasis151507/oasis15150700099/42860026-%E6%9A%97%E3%81%84%E8%B5%A4%E3%81%84%E8%89%B2%E3%81%A7%E3%82%AB%E3%82%B8%E3%83%8E%E3%82%84%E3%83%9D%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg?ver=6);
+}
+
+.background1 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://previews.123rf.com/images/nataliyaua/nataliyaua1602/nataliyaua160200052/52287420-%E3%82%AB%E3%82%B8%E3%83%8E%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82.jpg);
+}
+
+.background2 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://previews.123rf.com/images/inventoris/inventoris1705/inventoris170500031/77855387-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg);
+}
+
+.background3 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://t.pimg.jp/027/359/130/1/27359130.jpg);
+}
+
+.background4 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://previews.123rf.com/images/sannie32/sannie321203/sannie32120300036/12791033-%E3%82%AF%E3%83%AD%E3%83%BC%E3%82%BA-%E3%82%A2%E3%83%83%E3%83%97%E3%81%A7%E7%B7%91%E3%81%AE%E3%83%95%E3%82%A7%E3%83%AB%E3%83%88-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%86%E3%83%BC%E3%83%96%E3%83%AB%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF-%E3%82%B0%E3%83%A9%E3%82%A6%E3%83%B3%E3%83%89-%E3%83%86%E3%82%AF%E3%82%B9%E3%83%81%E3%83%A3.jpg);
+}
+
+.background5 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(https://st2.depositphotos.com/4641287/7119/i/950/depositphotos_71192803-stock-photo-casino-background.jpg);
+}
+
 body {
 	text-align: center;
 	margin: auto auto;

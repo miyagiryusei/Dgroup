@@ -16,7 +16,8 @@
 <link href="css/myPage.css" rel="stylesheet">
 <title><fmt:message key="title.itemShop" /></title>
 </head>
-<body>
+<body class="background${fn:escapeXml(user.backgroundId)}">
+
 
 
 
