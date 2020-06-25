@@ -361,9 +361,9 @@ function startgame() {
     shuffle();
     imgchangecoll();
     console.log(firstword);
-    image = [];
-    imagenumber = [];
-    firstword = [];
+//    image = [];
+//    imagenumber = [];
+//    firstword = [];
 }
 
 function nextgame() {
