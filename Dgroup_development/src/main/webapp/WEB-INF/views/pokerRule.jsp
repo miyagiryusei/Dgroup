@@ -477,7 +477,7 @@
 
 	<a href="#bottom" class="bottomBtn">ページ↓へ</a>
 
-	<a href="poker" class="btnBack">戻る</a>
+	<a href="pokerHome" class="btnBack">戻る</a>
 	<a id="bottom"></a>
 </body>
 </html>

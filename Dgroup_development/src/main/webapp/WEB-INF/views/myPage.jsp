@@ -26,7 +26,7 @@
 
 
    <div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
-		<a href="poker" class="btn btn-border-gradient"><span
+		<a href="pokerHome" class="btn btn-border-gradient"><span
 			class="btn-text-gradient--gold"><fmt:message key="btn.poker" /></span></a>
 	</div>
 	<br>
