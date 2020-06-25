@@ -45,7 +45,7 @@ function imgchange(e) {
                 msg.id = "msg" + (e.target.id.substring(e.target.id.length - 1, 1));
                 e.target.parentNode.insertBefore(msg, e.target.nextSibling);
             }
-        image = [];
+//        image = [];
 }
 
 function card_dsp() {
@@ -112,7 +112,7 @@ function shuffle() {
     } else {
         nextchangecard();
     }
-    image = [];
+//    image = [];
     document.getElementById('roledisplay').innerHTML = "交換するカードを選んでください";
     betmaney.style.visibility = "visible";
     betbutton.style.visibility = "visible";
@@ -344,8 +344,8 @@ function change() {
     chopcard();
     judgerole();
     roledisplay();
-    imagenumber = [];
-    firstword = [];
+//    imagenumber = [];
+//    firstword = [];
     document.getElementById("betmaney").style.visibility = "hidden";
     document.getElementById("betbutton").style.visibility = "hidden";
     document.getElementById("changebutton").style.visibility = "hidden";
