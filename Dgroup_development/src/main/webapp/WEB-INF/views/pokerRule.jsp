@@ -12,11 +12,14 @@
 </head>
 <body>
 	<a id="top"></a>
+	<c:if test="${empty user}">
+		<c:redirect url="/login" />
+	</c:if>
 
-	<h1 class = title>ポーカールール</h1>
+	<h1 class=title>ポーカールール</h1>
 
 	<div class=white>
-		<h3 class = "border-none">${fn:escapeXml(user.userName)}様<br>
+		<h3 class="border-none">${fn:escapeXml(user.userName)}様<br>
 			所持コイン：${fn:escapeXml(user.coin)}<br>
 			ランク：${fn:escapeXml(user.rankName)}
 		</h3>
@@ -38,10 +41,11 @@
 
 			</p>
 			<p>
-				<img src="css/tramp/s01.png" width="150px" /> <img src="css/tramp/s10.png"
-					width="150px" /> <img src="css/tramp/s11.png" width="150px" /> <img
-					src="css/tramp/s12.png" width="150px" /> <img src="css/tramp/s13.png"
-					width="150px" />
+				<img src="css/tramp/s01.png" width="150px" /> <img
+					src="css/tramp/s10.png" width="150px" /> <img
+					src="css/tramp/s11.png" width="150px" /> <img
+					src="css/tramp/s12.png" width="150px" /> <img
+					src="css/tramp/s13.png" width="150px" />
 			</p>
 			<br />
 			<h2>3. ポーカーのカードの強さ</h2>
@@ -79,27 +83,31 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/s01.png" width="100px" /> <img
-							src="css/tramp/s10.png" width="100px" /> <img src="css/tramp/s11.png"
-							width="100px" /> <img src="css/tramp/s12.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/s01.png" width="100px" />
+							<img src="css/tramp/s10.png" width="100px" /> <img
+							src="css/tramp/s11.png" width="100px" /> <img
+							src="css/tramp/s12.png" width="100px" /> <img
 							src="css/tramp/s13.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/h01.png" width="100px" /> <img
-							src="css/tramp/h10.png" width="100px" /> <img src="css/tramp/h11.png"
-							width="100px" /> <img src="css/tramp/h12.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/h01.png" width="100px" />
+							<img src="css/tramp/h10.png" width="100px" /> <img
+							src="css/tramp/h11.png" width="100px" /> <img
+							src="css/tramp/h12.png" width="100px" /> <img
 							src="css/tramp/h13.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/d10.png" width="100px" /> <img src="css/tramp/d11.png"
-							width="100px" /> <img src="css/tramp/d12.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/d10.png" width="100px" /> <img
+							src="css/tramp/d11.png" width="100px" /> <img
+							src="css/tramp/d12.png" width="100px" /> <img
 							src="css/tramp/d13.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/c10.png" width="100px" /> <img src="css/tramp/c11.png"
-							width="100px" /> <img src="css/tramp/c12.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/c10.png" width="100px" /> <img
+							src="css/tramp/c11.png" width="100px" /> <img
+							src="css/tramp/c12.png" width="100px" /> <img
 							src="css/tramp/c13.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -124,15 +132,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/d01.png" width="100px" /> <img src="css/tramp/h01.png"
-							width="100px" /> <img src="css/tramp/s01.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h01.png" width="100px" /> <img
+							src="css/tramp/s01.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c02.png" width="100px" /> <img
-							src="css/tramp/d02.png" width="100px" /> <img src="css/tramp/h02.png"
-							width="100px" /> <img src="css/tramp/s02.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c02.png" width="100px" />
+							<img src="css/tramp/d02.png" width="100px" /> <img
+							src="css/tramp/h02.png" width="100px" /> <img
+							src="css/tramp/s02.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -159,15 +169,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/s03.png" width="100px" /> <img
-							src="css/tramp/s04.png" width="100px" /> <img src="css/tramp/s05.png"
-							width="100px" /> <img src="css/tramp/s06.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/s03.png" width="100px" />
+							<img src="css/tramp/s04.png" width="100px" /> <img
+							src="css/tramp/s05.png" width="100px" /> <img
+							src="css/tramp/s06.png" width="100px" /> <img
 							src="css/tramp/s07.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/h08.png" width="100px" /> <img
-							src="css/tramp/h09.png" width="100px" /> <img src="css/tramp/h10.png"
-							width="100px" /> <img src="css/tramp/h11.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/h08.png" width="100px" />
+							<img src="css/tramp/h09.png" width="100px" /> <img
+							src="css/tramp/h10.png" width="100px" /> <img
+							src="css/tramp/h11.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -194,15 +206,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/d01.png" width="100px" /> <img src="css/tramp/h01.png"
-							width="100px" /> <img src="css/tramp/s01.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h01.png" width="100px" /> <img
+							src="css/tramp/s01.png" width="100px" /> <img
 							src="css/tramp/h13.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/d01.png" width="100px" /> <img src="css/tramp/h01.png"
-							width="100px" /> <img src="css/tramp/s10.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h01.png" width="100px" /> <img
+							src="css/tramp/s10.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -229,15 +243,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/d01.png" width="100px" /> <img src="css/tramp/h01.png"
-							width="100px" /> <img src="css/tramp/s13.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h01.png" width="100px" /> <img
+							src="css/tramp/s13.png" width="100px" /> <img
 							src="css/tramp/h13.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" /> <img
-							src="css/tramp/d01.png" width="100px" /> <img src="css/tramp/h10.png"
-							width="100px" /> <img src="css/tramp/s10.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h10.png" width="100px" /> <img
+							src="css/tramp/s10.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -264,15 +280,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c03.png" width="100px" /> <img
-							src="css/tramp/c05.png" width="100px" /> <img src="css/tramp/c07.png"
-							width="100px" /> <img src="css/tramp/c09.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c03.png" width="100px" />
+							<img src="css/tramp/c05.png" width="100px" /> <img
+							src="css/tramp/c07.png" width="100px" /> <img
+							src="css/tramp/c09.png" width="100px" /> <img
 							src="css/tramp/c11.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d02.png" width="100px" /> <img
-							src="css/tramp/d04.png" width="100px" /> <img src="css/tramp/d06.png"
-							width="100px" /> <img src="css/tramp/d08.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d02.png" width="100px" />
+							<img src="css/tramp/d04.png" width="100px" /> <img
+							src="css/tramp/d06.png" width="100px" /> <img
+							src="css/tramp/d08.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -299,15 +317,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c03.png" width="100px" /> <img
-							src="css/tramp/d04.png" width="100px" /> <img src="css/tramp/h05.png"
-							width="100px" /> <img src="css/tramp/s06.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c03.png" width="100px" />
+							<img src="css/tramp/d04.png" width="100px" /> <img
+							src="css/tramp/h05.png" width="100px" /> <img
+							src="css/tramp/s06.png" width="100px" /> <img
 							src="css/tramp/c07.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/c10.png" width="100px" /> <img src="css/tramp/d11.png"
-							width="100px" /> <img src="css/tramp/h12.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/c10.png" width="100px" /> <img
+							src="css/tramp/d11.png" width="100px" /> <img
+							src="css/tramp/h12.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -334,15 +354,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c03.png" width="100px" /> <img
-							src="css/tramp/d03.png" width="100px" /> <img src="css/tramp/h03.png"
-							width="100px" /> <img src="css/tramp/s06.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c03.png" width="100px" />
+							<img src="css/tramp/d03.png" width="100px" /> <img
+							src="css/tramp/h03.png" width="100px" /> <img
+							src="css/tramp/s06.png" width="100px" /> <img
 							src="css/tramp/c07.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/c01.png" width="100px" /> <img src="css/tramp/d13.png"
-							width="100px" /> <img src="css/tramp/h02.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/c01.png" width="100px" /> <img
+							src="css/tramp/d13.png" width="100px" /> <img
+							src="css/tramp/h02.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -368,15 +390,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c03.png" width="100px" /> <img
-							src="css/tramp/d03.png" width="100px" /> <img src="css/tramp/h06.png"
-							width="100px" /> <img src="css/tramp/s06.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c03.png" width="100px" />
+							<img src="css/tramp/d03.png" width="100px" /> <img
+							src="css/tramp/h06.png" width="100px" /> <img
+							src="css/tramp/s06.png" width="100px" /> <img
 							src="css/tramp/c07.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/c01.png" width="100px" /> <img src="css/tramp/d13.png"
-							width="100px" /> <img src="css/tramp/h02.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/c01.png" width="100px" /> <img
+							src="css/tramp/d13.png" width="100px" /> <img
+							src="css/tramp/h02.png" width="100px" /> <img
 							src="css/tramp/s13.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -403,15 +427,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c03.png" width="100px" /> <img
-							src="css/tramp/d03.png" width="100px" /> <img src="css/tramp/h04.png"
-							width="100px" /> <img src="css/tramp/s06.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c03.png" width="100px" />
+							<img src="css/tramp/d03.png" width="100px" /> <img
+							src="css/tramp/h04.png" width="100px" /> <img
+							src="css/tramp/s06.png" width="100px" /> <img
 							src="css/tramp/c07.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/c02.png" width="100px" /> <img src="css/tramp/d13.png"
-							width="100px" /> <img src="css/tramp/h04.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/c02.png" width="100px" /> <img
+							src="css/tramp/d13.png" width="100px" /> <img
+							src="css/tramp/h04.png" width="100px" /> <img
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
@@ -437,15 +463,17 @@
 						<td class="example">カードの例
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/c02.png" width="100px" /> <img
-							src="css/tramp/d03.png" width="100px" /> <img src="css/tramp/h05.png"
-							width="100px" /> <img src="css/tramp/s08.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/c02.png" width="100px" />
+							<img src="css/tramp/d03.png" width="100px" /> <img
+							src="css/tramp/h05.png" width="100px" /> <img
+							src="css/tramp/s08.png" width="100px" /> <img
 							src="css/tramp/c09.png" width="100px" /></td>
 					</tr>
 					<tr>
-						<td class="kard"><img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/c05.png" width="100px" /> <img src="css/tramp/d08.png"
-							width="100px" /> <img src="css/tramp/h11.png" width="100px" /> <img
+						<td class="kard"><img src="css/tramp/d01.png" width="100px" />
+							<img src="css/tramp/c05.png" width="100px" /> <img
+							src="css/tramp/d08.png" width="100px" /> <img
+							src="css/tramp/h11.png" width="100px" /> <img
 							src="css/tramp/s13.png" width="100px" /></td>
 					</tr>
 				</table>
