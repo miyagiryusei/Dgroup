@@ -1,0 +1,67 @@
+.card-img {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    margin-top: 80px;
+}
+
+.button {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: -50px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+.option {
+    margin-left: 100px;
+}
+
+/* .center {
+    text-align: center;
+} */
+
+/* #img {
+    width: 70px;
+    height: 70px;
+} */
+
+.selectnone {
+    user-select: none;
+}
+
+.roledisplay {
+    /* text-align: center; */
+    margin-top: 50px;
+}
+
+.clicked {
+    background-color: blue;
+    opacity: 0.5; /** 画像の透明度 */
+    display: block;
+}
+
+.hold {
+    border: 5px rgb(212,175,55) solid;
+}
+
+body {
+    text-align: center;
+    margin: auto auto;
+	background-image:
+	url(https://us.123rf.com/450wm/oasis15/oasis151507/oasis15150700099/42860026-%E6%9A%97%E3%81%84%E8%B5%A4%E3%81%84%E8%89%B2%E3%81%A7%E3%82%AB%E3%82%B8%E3%83%8E%E3%82%84%E3%83%9D%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E8%83%8C%E6%99%AF%E3%80%82%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9%E3%81%AA%E3%83%99%E3%82%AF%E3%83%88%E3%83%AB.jpg?ver=6);
+}

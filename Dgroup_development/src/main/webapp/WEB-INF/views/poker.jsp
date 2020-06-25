@@ -9,7 +9,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="widht=device-widht, initial-scale=1.0">
-    <link rel="stylesheet" href="poker.css">
+    <link rel="stylesheet" href="css/poker.css">
     <script src="js/jquery.min.js"></script>
     <script src="js/poker.js" defer></script>
     <title>poker</title>

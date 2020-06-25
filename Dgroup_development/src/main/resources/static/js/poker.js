@@ -144,18 +144,18 @@ function firstchangecard() {
 }
 
 function nextchangecard() {
-    // document.card1.src = image[0]['src'];
-    // document.card2.src = image[1]['src'];
-    // document.card3.src = image[2]['src'];
-    // document.card4.src = image[3]['src'];
-    // document.card5.src = image[4]['src'];
+     document.card1.src = image[0]['src'];
+     document.card2.src = image[1]['src'];
+     document.card3.src = image[2]['src'];
+     document.card4.src = image[3]['src'];
+     document.card5.src = image[4]['src'];
 
-    document.card1.src = "css/tramp/s10.png";
-    document.card2.src = "css/tramp/d10.png";
-    document.card3.src = "css/tramp/h10.png";
-    document.card4.src = "css/tramp/s02.png";
+//    document.card1.src = "css/tramp/s10.png";
+//    document.card2.src = "css/tramp/d10.png";
+//    document.card3.src = "css/tramp/h10.png";
+//    document.card4.src = "css/tramp/s02.png";
     // document.card5.src = "css/tramp/d02.png";
-    document.card5.src = "css/tramp/joker.png";
+//    document.card5.src = "css/tramp/joker.png";
 }
 
 function chopcard() {
