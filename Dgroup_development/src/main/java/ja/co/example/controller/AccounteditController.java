@@ -102,7 +102,6 @@ public class AccounteditController {
 		String old = (String) session.getAttribute("pass");
 
 		String name = form.getUserName();
-		System.out.println(form.getUserName());
 		String pass = form.getPass();
 		if (old.equals(pass)) {
 
