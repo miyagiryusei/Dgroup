@@ -94,6 +94,7 @@ public class ItemlistController {
 			model.addAttribute("itemcoin", itemcoin);
 
 			itemservice.Goddess(itemid, userid, itemcoin, user);
+			userDao.rank(user.getUserId());
 
 		}
 		if (itemid == 2) {
@@ -109,7 +110,13 @@ public class ItemlistController {
 			model.addAttribute("itemcoin", itemcoin);
 
 			itemservice.Goddess(itemid, userid, itemcoin, user);
+			userDao.rank(user.getUserId());
 
+		}
+		if (itemid == 3) {
+			model.addAttribute("background" , "背景を変更しました");
+
+			itemservice.backgroundChange(userid, 1 , 3);
 		}
 
 		list = itemservice.Itemlist(userid);
@@ -124,7 +131,7 @@ public class ItemlistController {
 			model.addAttribute("msg", "所持アイテムはありません");
 		}
 
-		userDao.rank(user.getUserId());
+//		userDao.rank(user.getUserId());
 		session.setAttribute("list", list);
 		Users u = userDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
 		session.setAttribute("user", u);

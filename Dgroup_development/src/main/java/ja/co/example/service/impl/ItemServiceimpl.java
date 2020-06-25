@@ -24,4 +24,8 @@ public class ItemServiceimpl implements ItemService{
 	public Integer Goddess(Integer id, Integer userid, Integer itemcoin, Users user) {
 		return itemDao.Goddess(id,userid, itemcoin, user);
 	}
+
+	public void backgroundChange(Integer userId , Integer backgroundId , Integer itemId) {
+		itemDao.backgroundChange(userId, backgroundId ,itemId);
+	}
 }

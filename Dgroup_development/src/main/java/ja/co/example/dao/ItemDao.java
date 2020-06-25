@@ -13,4 +13,6 @@ public interface ItemDao {
 
 	public void itemListDelete(Integer userId,Integer itemId);
 
+	public void backgroundChange(Integer userId , Integer backgroundId , Integer itemId);
+
 }

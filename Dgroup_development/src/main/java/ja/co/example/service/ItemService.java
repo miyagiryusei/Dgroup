@@ -11,4 +11,6 @@ public interface ItemService {
 
 	public Integer Goddess(Integer id, Integer userid, Integer itemcoin, Users user);
 
+	public void backgroundChange(Integer userId , Integer backgroundId , Integer itemId);
+
 }
