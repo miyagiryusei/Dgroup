@@ -35,7 +35,7 @@ public class PokerResultController {
 	@Autowired
 	private UsersDao usersDao;
 
-	@RequestMapping("/pokerGame")
+	@RequestMapping("/poker")
 	public String pokerGame(@ModelAttribute("gameForm") GameForm form, Model model) {
 		List<Integer> coin = new ArrayList<Integer>();
 		Integer i;
@@ -43,7 +43,7 @@ public class PokerResultController {
 			coin.add(i);
 		}
 		session.setAttribute("betCoin", coin);
-		return "pokerGame";
+		return "poker";
 	}
 
 	//ポーカー終了時
