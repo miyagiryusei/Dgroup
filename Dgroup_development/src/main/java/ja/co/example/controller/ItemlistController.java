@@ -46,9 +46,7 @@ public class ItemlistController {
 
 		Integer userid = user.getUserId();
 
-
 		List<Itemlist> list = itemservice.Itemlist(userid);
-
 
 		if (list == null) {
 			model.addAttribute("msg", "所持アイテムはありません");
@@ -62,28 +60,26 @@ public class ItemlistController {
 	}
 
 	@RequestMapping("/itemuse")
-	public String result(@Validated @ModelAttribute("use") ItemlistForm form, BindingResult bindingResult,  Model model) {
+	public String result(@Validated @ModelAttribute("use") ItemlistForm form, BindingResult bindingResult,
+			Model model) {
 		Integer itemid = form.getItemId();
 		Users user = (Users) session.getAttribute("user");
 		Integer userid = user.getUserId();
 		List<Itemlist> list = itemservice.Itemlist(userid);
+		Random random = new Random();
+		Integer itemcoin;
 
 		if (bindingResult.hasErrors()) {
-			model.addAttribute("msgg","アイテムを選択してください");
+			model.addAttribute("msgg", "アイテムを選択してください");
 			return "forward:itemList";
 		}
-
 
 		if (list == null) {
 			model.addAttribute("msg", "所持アイテムはありません");
 		}
 
-
-
 		if (itemid == 1) {
 			//ランダム生成
-			Random random = new Random();
-			Integer itemcoin;
 			int rate = random.nextInt(10);
 
 			if (rate <= 8) {
@@ -99,6 +95,20 @@ public class ItemlistController {
 
 			itemservice.Goddess(itemid, userid, itemcoin, user);
 
+		}
+		if (itemid == 2) {
+			int rate = random.nextInt(100);
+
+			if (rate <= 94) {
+				itemcoin = random.nextInt(10000);
+
+			} else {
+				itemcoin = random.nextInt(9000000) + 1000000;
+
+			}
+			model.addAttribute("itemcoin", itemcoin);
+
+			itemservice.Goddess(itemid, userid, itemcoin, user);
 
 		}
 
@@ -113,11 +123,6 @@ public class ItemlistController {
 		if (list == null) {
 			model.addAttribute("msg", "所持アイテムはありません");
 		}
-
-
-
-
-
 
 		userDao.rank(user.getUserId());
 		session.setAttribute("list", list);
