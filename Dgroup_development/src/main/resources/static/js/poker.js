@@ -330,6 +330,9 @@ function roledisplay() {
 }
 
 function change() {
+	image = [];
+    imagenumber = [];
+    firstword = [];
     let target1 = document.getElementsByClassName('hold');
     for(let i = 0; i < target1.length; i++) {
         imageNo = Math.floor(Math.random() * images.length);
@@ -343,12 +346,9 @@ function change() {
     for(let i = 0; i < target2.length; i++) {
         target2[i].classList.remove("hold");
     }
-    image = [];
     chopcard();
     judgerole();
     roledisplay();
-	imagenumber = [];
-	firstword = [];
     document.getElementById("betmaney").style.visibility = "hidden";
     document.getElementById("betbutton").style.visibility = "hidden";
     document.getElementById("changebutton").style.visibility = "hidden";
@@ -359,6 +359,7 @@ function change() {
     for(let i = 0; i < target.length; i++) {
         target[i].removeEventListener("click", imgchange, false);
     }
+    images = [];
 }
 
 function startgame() {
@@ -372,6 +373,9 @@ function startgame() {
 }
 
 function nextgame() {
+	image = [];
+    imagenumber = [];
+    firstword = [];
     card_dsp();
     shuffle();
     chopcard();
@@ -381,9 +385,6 @@ function nextgame() {
     document.getElementById("nextbutton").style.visibility = "hidden";
     document.getElementById("roledisplay").style.visibility = "hidden";
     document.getElementById("msgdisplay").style.visibility = "visible";
-    image = [];
-    imagenumber = [];
-    firstword = [];
 }
 
 document.addEventListener('DOMContentLoaded', function() {
