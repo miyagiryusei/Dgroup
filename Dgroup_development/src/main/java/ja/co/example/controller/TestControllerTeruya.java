@@ -54,12 +54,18 @@ public class TestControllerTeruya {
 	//ルール
 		@RequestMapping("/pokerRule")
 		public String pokerRole(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+			if(session.getAttribute("user")==null) {
+				return "forward:login";
+			}
 			return "pokerRule";
 		}
 
 	//完了画面へ
 	@RequestMapping("/result")
 	public String result(@ModelAttribute("loginForm") LoginForm loginForm, Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
 		return "result";
 	}
 
@@ -97,11 +103,6 @@ public class TestControllerTeruya {
 		return "blackjack";
 	}
 
-	//確認画面へ
-	@RequestMapping("/check")
-	public String check(@ModelAttribute("checkForm") LoginForm loginForm, Model model) {
-		return "check";
-	}
 
 	//ログアウト画面
 	@RequestMapping("/logout")
@@ -115,18 +116,27 @@ public class TestControllerTeruya {
 	//購入確認画面
 	@RequestMapping("/byResult")
 	public String byResult(Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
 		return "byResult";
 	}
 
 	//アカウント編集確認画面へ
 	@RequestMapping("/account_edit")
 	public String account_edit(Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
 		return "account_edit";
 	}
 
 	//アカウント編集確認画面へ
 	@RequestMapping("/account")
 	public String account(Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
 		return "account";
 	}
 

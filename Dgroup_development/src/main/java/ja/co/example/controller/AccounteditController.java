@@ -37,22 +37,16 @@ public class AccounteditController {
 
 
 
-	//トップ画面へ
-	@RequestMapping("/top")
-	public String index(@ModelAttribute("user") AccounteditForm form, Model model) {
-		return "account_edit";
-	}
 
-	//新規登録画面へ
-	@RequestMapping("/insert")
-	public String account(@ModelAttribute("user") AccountForm form, Model model) {
-		return "account";
-	}
+
 
 	//情報変更
 	@RequestMapping(value = "/accounteditA", method = RequestMethod.POST)
 	public String result(@Validated @ModelAttribute("user") AccounteditForm form, BindingResult bindingResult,
 			Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
 		if (bindingResult.hasErrors()) {
 			return "account_edit";
 		}
