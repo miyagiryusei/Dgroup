@@ -151,10 +151,10 @@ function nextchangecard() {
      document.card5.src = image[4]['src'];
 
 // document.card1.src = "css/tramp/s01.png";
-// document.card2.src = "css/tramp/d02.png";
+// document.card2.src = "css/tramp/d01.png";
 // document.card3.src = "css/tramp/h04.png";
-// document.card4.src = "css/tramp/s05.png";
-// document.card5.src = "css/tramp/d08.png";
+// document.card4.src = "css/tramp/s04.png";
+// document.card5.src = "css/tramp/d05.png";
 // document.card5.src = "css/tramp/joker.png";
 //     image = [];
 //     imagenumber = [];
@@ -240,14 +240,14 @@ function judgerole() {
     console.log(joker_flg);
 
     let isStraightcnt = 0;
-    for (let max = 3; max >= 0; max--) {
-    	let i = 3 - max;
-    	for(let j = 1; j <= max + 1; j++) {
-            if(imagenumber[i] == imagenumber[i + j] - 1) {
+//    for (let max = 3; max >= 0; max--) {
+//    	let i = 3 - max;
+    	for(let i = 0; i <= imagenumber.length; i++) {
+            if(imagenumber[i] == imagenumber[i + 1] - 1) {
                 isStraightcnt++;
             }
         }
-    }
+//    }
     console.log(isStraightcnt);
     if(isStraightcnt == 4) {
         isStraight = 1;
