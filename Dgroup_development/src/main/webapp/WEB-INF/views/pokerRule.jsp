@@ -30,37 +30,84 @@
 		<h1>本アプリにおけるポーカールール</h1>
 		<article>
 			<h2>1. ポーカーとは</h2>
-			<p>5枚の手札の組み合わせで、カードの強さをきそうトランプゲームです。</p>
-			<p>自分の手札で強い組み合わせをつくり、より大きな配当を得ましょう。</p>
-			<br />
-			<h2>2. ポーカーに必要なカード</h2>
-			<p>
-				52枚のカード（1~13の<span style="color: rgb(0, 0, 0);">♠</span>・<span
-					style="color: red;">♥</span>・<span style="color: red;">♦</span>・<span
-					style="color: rgb(0, 0, 0);">♣</span>のカード）とジョーカー1枚を用いてポーカーを行います。
+			<article>
+				<p>5枚の手札の組み合わせで、カードの強さをきそうトランプゲームです。</p>
+				<p>自分の手札で強い組み合わせをつくり、より大きな配当を得ましょう。</p>
+				<br />
+			</article>
 
-			</p>
-			<p>
-				<img src="css/tramp/s01.png" width="150px" /> <img
-					src="css/tramp/s10.png" width="150px" /> <img
-					src="css/tramp/s11.png" width="150px" /> <img
-					src="css/tramp/s12.png" width="150px" /> <img
-					src="css/tramp/s13.png" width="150px" />
-			</p>
-			<br />
+			<h2>2. ポーカーに必要なカード</h2>
+			<article>
+				<p>
+					52枚のカード（1~13の<span style="color: rgb(0, 0, 0);">♠</span>・<span
+						style="color: red;">♥</span>・<span style="color: red;">♦</span>・<span
+						style="color: rgb(0, 0, 0);">♣</span>のカード）とジョーカー1枚を用いてポーカーを行います。
+
+				</p>
+				<p>
+					<img src="css/tramp/s01.png" width="150px" /> <img
+						src="css/tramp/s10.png" width="150px" /> <img
+						src="css/tramp/s11.png" width="150px" /> <img
+						src="css/tramp/s12.png" width="150px" /> <img
+						src="css/tramp/s13.png" width="150px" />
+				</p>
+				<br />
+			</article>
 			<h2>3. ポーカーのカードの強さ</h2>
-			<p>カードは強い方から、A、K、Q、J、10、9、8、7、6、5、4、3、2 の順番になります。</p>
-			<p>
-				スートの強さ順は<span style="color: rgb(0, 0, 0);">♠</span>＞<span
-					style="color: red;">♥</span>＞<span style="color: red;">♦</span>＞<span
-					style="color: rgb(0, 0, 0);">♣</span>
-			</p>
-			<p>ジョーカーはオールマイティーのカードです。ずべてのカードの代わりに使うことができます。</p>
-			<br />
+
+			<article>
+				<p>カードは強い方から、A、K、Q、J、10、9、8、7、6、5、4、3、2 の順番になります。</p>
+				<p>
+					スートの強さ順は<span style="color: rgb(0, 0, 0);">♠</span>＞<span
+						style="color: red;">♥</span>＞<span style="color: red;">♦</span>＞<span
+						style="color: rgb(0, 0, 0);">♣</span>
+				</p>
+				<p>ジョーカーはオールマイティーのカードです。ずべてのカードの代わりに使うことができます。</p>
+				<br />
+			</article>
+
 			<h2>4. ポーカーの組み合わせ</h2>
 
 			<article class="roleExplanation">
 				<h3>強い順に説明します</h3>
+
+				<table>
+					<tr>
+						<th>ファイブカード</th>
+					</tr>
+					<tr>
+						<td class="example">説明
+					</tr>
+					<tr>
+						<td>同じ数字のカードが4枚揃って、かつ残りの１枚がジョーカーの組み合わせによって作られます。</td>
+					</tr>
+					<tr>
+						<td class="example">倍率
+					</tr>
+					<tr>
+						<td>BET額×1000枚
+					</tr>
+					<tr>
+						<td class="example">カードの例
+					</tr>
+					<tr>
+						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
+							<img src="css/tramp/d01.png" width="100px" /> <img
+							src="css/tramp/h01.png" width="100px" /> <img
+							src="css/tramp/s01.png" width="100px" /> <img
+							src="css/tramp/joker.png" width="100px" /></td>
+					</tr>
+					<tr>
+						<td class="kard"><img src="css/tramp/c02.png" width="100px" />
+							<img src="css/tramp/d02.png" width="100px" /> <img
+							src="css/tramp/h02.png" width="100px" /> <img
+							src="css/tramp/s02.png" width="100px" /> <img
+							src="css/tramp/joker.png" width="100px" /></td>
+					</tr>
+				</table>
+
+
+				<br>
 
 				<table>
 					<tr>
@@ -77,7 +124,7 @@
 						<td class="example">倍率
 					</tr>
 					<tr>
-						<td>BET額×1000枚
+						<td>BET額×200枚
 					</tr>
 					<tr>
 						<td class="example">カードの例
@@ -109,41 +156,6 @@
 							src="css/tramp/c11.png" width="100px" /> <img
 							src="css/tramp/c12.png" width="100px" /> <img
 							src="css/tramp/c13.png" width="100px" /></td>
-					</tr>
-				</table>
-				<br>
-				<table>
-					<tr>
-						<th>ファイブカード</th>
-					</tr>
-					<tr>
-						<td class="example">説明
-					</tr>
-					<tr>
-						<td>同じ数字のカードが4枚揃って、かつ残りの１枚がジョーカーの組み合わせによって作られます。</td>
-					</tr>
-					<tr>
-						<td class="example">倍率
-					</tr>
-					<tr>
-						<td>BET額×200枚
-					</tr>
-					<tr>
-						<td class="example">カードの例
-					</tr>
-					<tr>
-						<td class="kard"><img src="css/tramp/c01.png" width="100px" />
-							<img src="css/tramp/d01.png" width="100px" /> <img
-							src="css/tramp/h01.png" width="100px" /> <img
-							src="css/tramp/s01.png" width="100px" /> <img
-							src="css/tramp/joker.png" width="100px" /></td>
-					</tr>
-					<tr>
-						<td class="kard"><img src="css/tramp/c02.png" width="100px" />
-							<img src="css/tramp/d02.png" width="100px" /> <img
-							src="css/tramp/h02.png" width="100px" /> <img
-							src="css/tramp/s02.png" width="100px" /> <img
-							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
 
@@ -183,6 +195,7 @@
 							src="css/tramp/joker.png" width="100px" /></td>
 					</tr>
 				</table>
+
 
 				<br>
 				<table>
@@ -479,24 +492,25 @@
 				</table>
 
 			</article>
+			<h2>5. 本ゲームの進め方</h2>
+			<article>
+				<h3>1. スタートボタンを押してゲームスタート</h3>
+				<p>スタートボタンを押すことでポーカーゲームが開始されます。</p>
+				<h3>自身の手札を確認</h3>
+				<p>表示されている手札の役を確認</p>
+				<h3>3. 賭けるBET額を選択</h3>
+				<p>自身の所持金の額の範囲内で、賭けるコインの枚数を指定します。</p>
+				<h3>4. カードの交換</h3>
+				<p>最初に表示されているカードを確認したうえ、交換したいカードを選び、changeボタンを押してカードを交換してください。</p>
+				<h3>5. 配当の受け取り</h3>
+				<p>
+					交換後のカードの役とBET額に対する配当が表示されます。<br>表示された配当があなたの所持金に追加されます。
+				</p>
+			</article>
+			<br> 以上が本ゲームに置けるポーカーのルールです。ランキング上位を目指しながらゲームを楽しんでください
 		</article>
-		<h2>5. 本ゲームの進め方</h2>
-		<article>
-			<h3>1. スタートボタンを押してゲームスタート</h3>
-			<p>スタートボタンを押すことでポーカーゲームが開始されます。</p>
-			<h3>自身の手札を確認</h3>
-			<p>表示されている手札の役を確認</p>
-			<h3>3. 賭けるBET額を選択</h3>
-			<p>自身の所持金の額の範囲内で、賭けるコインの枚数を指定します。</p>
-			<h3>4. カードの交換</h3>
-			<p>最初に表示されているカードを確認したうえ、交換したいカードを選び、changeボタンを押してカードを交換してください。</p>
-			<h3>5. 配当の受け取り</h3>
-			<p>
-				交換後のカードの役とBET額に対する配当が表示されます。<br>表示された配当があなたの所持金に追加されます。
-			</p>
-		</article>
-		<br> 以上が本ゲームに置けるポーカーのルールです。ランキング上位を目指しながらゲームを楽しんでください
 	</article>
+
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 
 	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
