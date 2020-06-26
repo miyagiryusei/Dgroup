@@ -2,7 +2,7 @@ let images = [];
 let imageNo = 0;
 let image = [];
 let buttoncount = 0;
-let cardREV = "css/tramp/back.png";
+let cardREV = "css/tramp/back1.png";
 let firstword = [];
 let imagenumber = [];
 let hands;
@@ -40,12 +40,12 @@ function imgchange(e) {
             } else {
                 e.target.classList.add("hold");
                 let msg = document.createElement('span');
-                msg.textContent = "CHANGE";
+//                msg.textContent = "CHANGE";
                 msg.classList.add("msg");
                 msg.id = "msg" + (e.target.id.substring(e.target.id.length - 1, 1));
                 e.target.parentNode.insertBefore(msg, e.target.nextSibling);
             }
-//        image = [];
+ image = [];
 }
 
 function card_dsp() {
@@ -112,8 +112,8 @@ function shuffle() {
     } else {
         nextchangecard();
     }
-//    image = [];
-    document.getElementById('roledisplay').innerHTML = "交換するカードを選んでください";
+// image = [];
+    document.getElementById('msgdisplay').innerHTML = "交換するカードを選んでください";
     betmaney.style.visibility = "visible";
     betbutton.style.visibility = "visible";
     changebutton.style.visibility = "visible";
@@ -136,7 +136,7 @@ function firstchangecard() {
         document.card5.src = image[4]['src'];
     }
     buttoncount++;
-    document.getElementById('roledisplay').innerHTML = "交換するカードを選んでください";
+    document.getElementById('msgdisplay').innerHTML = "交換するカードを選んでください";
     document.getElementById('startbutton').style.visibility = "hidden";
     betmaney.style.visibility = "visible";
     betbutton.style.visibility = "visible";
@@ -150,16 +150,19 @@ function nextchangecard() {
      document.card4.src = image[3]['src'];
      document.card5.src = image[4]['src'];
 
-//    document.card1.src = "css/tramp/s10.png";
-//    document.card2.src = "css/tramp/d10.png";
-//    document.card3.src = "css/tramp/h10.png";
-//    document.card4.src = "css/tramp/s02.png";
+// document.card1.src = "css/tramp/s10.png";
+// document.card2.src = "css/tramp/d10.png";
+// document.card3.src = "css/tramp/h10.png";
+// document.card4.src = "css/tramp/s02.png";
     // document.card5.src = "css/tramp/d02.png";
-//    document.card5.src = "css/tramp/joker.png";
+// document.card5.src = "css/tramp/joker.png";
+//     image = [];
+//     imagenumber = [];
+//     firstword = [];
 }
 
 function chopcard() {
-    //カード1をバラバラに取り出す
+    // カード1をバラバラに取り出す
     let slashposition = document.card1.src.lastIndexOf("/");
     let slashword = document.card1.src.substring(slashposition);
     let slashlaterword = slashword.replace(/\//g, "");
@@ -167,7 +170,7 @@ function chopcard() {
     let pointlaterword = slashlaterword.substring(".", pointpotision);
     firstword.push(pointlaterword.charAt(0));
     imagenumber.push(pointlaterword.substring(1, 3));
-    //カード2をバラバラに取り出す
+    // カード2をバラバラに取り出す
     slashposition = document.card2.src.lastIndexOf("/");
     slashword = document.card2.src.substring(slashposition);
     slashlaterword = slashword.replace(/\//g, "");
@@ -175,7 +178,7 @@ function chopcard() {
     pointlaterword = slashlaterword.substring(".", pointpotision);
     firstword.push(pointlaterword.charAt(0));
     imagenumber.push(pointlaterword.substring(1, 3));
-    //カード3をバラバラに取り出す
+    // カード3をバラバラに取り出す
     slashposition = document.card3.src.lastIndexOf("/");
     slashword = document.card3.src.substring(slashposition);
     slashlaterword = slashword.replace(/\//g, "");
@@ -183,7 +186,7 @@ function chopcard() {
     pointlaterword = slashlaterword.substring(".", pointpotision);
     firstword.push(pointlaterword.charAt(0));
     imagenumber.push(pointlaterword.substring(1, 3));
-    //カード4をバラバラに取り出す
+    // カード4をバラバラに取り出す
     slashposition = document.card4.src.lastIndexOf("/");
     slashword = document.card4.src.substring(slashposition);
     slashlaterword = slashword.replace(/\//g, "");
@@ -191,7 +194,7 @@ function chopcard() {
     pointlaterword = slashlaterword.substring(".", pointpotision);
     firstword.push(pointlaterword.charAt(0));
     imagenumber.push(pointlaterword.substring(1, 3));
-    //カード5をバラバラに取り出す
+    // カード5をバラバラに取り出す
     slashposition = document.card5.src.lastIndexOf("/");
     slashword = document.card5.src.substring(slashposition);
     slashlaterword = slashword.replace(/\//g, "");
@@ -344,11 +347,13 @@ function change() {
     chopcard();
     judgerole();
     roledisplay();
-//    imagenumber = [];
-//    firstword = [];
+	imagenumber = [];
+	firstword = [];
     document.getElementById("betmaney").style.visibility = "hidden";
     document.getElementById("betbutton").style.visibility = "hidden";
     document.getElementById("changebutton").style.visibility = "hidden";
+    document.getElementById("msgdisplay").style.visibility = "hidden";
+    document.getElementById("roledisplay").style.visibility = "visible";
     nextbutton.style.visibility = "visible";
     let target = document.getElementsByClassName("card-img");
     for(let i = 0; i < target.length; i++) {
@@ -361,9 +366,9 @@ function startgame() {
     shuffle();
     imgchangecoll();
     console.log(firstword);
-//    image = [];
-//    imagenumber = [];
-//    firstword = [];
+// image = [];
+// imagenumber = [];
+// firstword = [];
 }
 
 function nextgame() {
@@ -374,38 +379,31 @@ function nextgame() {
     imgchangecoll();
     console.log(firstword);
     document.getElementById("nextbutton").style.visibility = "hidden";
+    document.getElementById("roledisplay").style.visibility = "hidden";
+    document.getElementById("msgdisplay").style.visibility = "visible";
     image = [];
     imagenumber = [];
     firstword = [];
 }
 
-//let ajax = new XMLHttpRequest();
-//
-//ajax.open('GET', '', true);
-//ajax.onload == function(e) {
-//    if (ajax.readyState == 4) {
-//        if (ajax.readyState == 200) {
-//            let json = ajax.responseText;
-//            console.log(json);
-//        }
-//    }
-//}
-//ajax.send(null);
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('changebutton').addEventListener('click', function() {
+    	let resultbetmany = document.getElementById('resultbetmany');
+        let xht = new XMLHttpRequest();
 
-$.ajax({
-	  type: "GET",
-	  url: "", // リクエストURL
-	  data: "hands",
-	  dataType: "json",
-	  cache: false,
-
-	  //成功時
-	  success: function (data, status, xhr) {
-
-	  },
-	  //失敗時
-	  error: function (XMLHttpRequest, status, errorThrown) {
-	    alert("fail:" + XMLHttpRequest);
-	    alert("status:" + status);
-	  }
-	});
+        xht.onreadystatechange = function() {
+            if (xht.readyState === 4) {
+                if (xht.status === 200) {
+                	resultbetmany.textContent = xht.responseText;
+                	//TODOここに処理を書く
+                } else {
+                	resultbetmany.textContent = 'サーバーエラーが発生しました';
+                }
+            } else {
+            	resultbetmany.textContent = '通信中...';
+            }
+        };
+        xht.open('GET', '/pokerResult' + "?betmaney=" + document.getElementById("betmaney").value + "&" + "hands=" + hands, true);
+        xht.send(null);
+    }, false);
+}, false);

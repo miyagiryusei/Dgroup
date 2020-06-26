@@ -1,11 +1,111 @@
 .card-img {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
     margin-top: 80px;
 }
 
-.button {
+.msgdisplay {
+    margin     : auto;
+    width      : 72%;
+    font-size  : 500%;
+    line-height: 1.5em;
+    text-align : center;
+    color      : white;
+    background : none;
+    overflow   : hidden;
+    margin-top: 30px;
+    /* display     : inline-block; */
+    white-space : nowrap;
+    line-height : 1em;
+    animation   : scrollAnime 10s linear infinite alternate;
+    /* padding-right: 40px; */
+}
+    @keyframes scrollAnime{
+        0% {
+            margin-left: 100%;
+            transform  : translateX(-100%)
+        }
+    100% {
+            margin-left: 0;
+            transform  : translateX(0)
+        }
+    }
+
+a.myPageBtn {
+	display: inline-block;
+	position: fixed; /* ボタン固定 */
+	top: 103px; /* 下から位置 */
+	right: 14px; /* 右から位置 */
+	width: 200px;
+	height: 50px;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	border: 1px solid #ffffff;
+	cursor: pointer;
+	border-radius: 5px;
+	color: #ffffff;
+	font-family: 'Exo', sans-serif;
+	font-size: 30px;
+	font-weight: 400;
+	padding: 6px;
+	opacity: 0.3;
+	margin-top: 10px;
+	text-align: center;
+}
+
+a.myPageBtn:hover {
+	opacity: 0.9;
+}
+
+.white {
+	color: white;
+	background-image:
+		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6");
+	width: 20%;
+	border-radius: 5px;
+	border: 1px solid #000000;
+}
+
+.roledisplay {
+    margin     : auto;
+    width      : 35%;
+    font-size  : 500%;
+    line-height: 1.5em;
+    text-align : center;
+    /* border     : 1px solid #666; */
+    /* color      : #000000; */
+    background : none;
+    overflow   : hidden;
+    margin-top: 30px;
+    /* display     : inline-block; */
+    white-space : nowrap;
+    line-height : 1em;
+    animation   : scrollAnime 10s linear infinite alternate, blinkAnime 0.5s infinite alternate;
+    /* padding-right: 40px; */
+    }
+    @keyframes scrollAnime{
+        0% {
+            margin-left: 100%;
+            transform  : translateX(-100%)
+        }
+    100% {
+            margin-left: 0;
+            transform  : translateX(0)
+        }
+    }
+        @keyframes blinkAnime{
+            0% { color: white }
+        100% { color: #fdfd05 }
+}
+
+.coindisplay {
+    font-size: 80px;
+    float: left;
+    margin-bottom: 100px;
+}
+
+input {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.5;
@@ -31,22 +131,8 @@
     margin-left: 100px;
 }
 
-/* .center {
-    text-align: center;
-} */
-
-/* #img {
-    width: 70px;
-    height: 70px;
-} */
-
 .selectnone {
     user-select: none;
-}
-
-.roledisplay {
-    /* text-align: center; */
-    margin-top: 50px;
 }
 
 .clicked {

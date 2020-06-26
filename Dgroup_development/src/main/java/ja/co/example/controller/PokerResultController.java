@@ -3,22 +3,20 @@ package ja.co.example.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import ja.co.example.dao.GameResultDao;
 import ja.co.example.dao.UsersDao;
-import ja.co.example.entity.Ranking;
-import ja.co.example.entity.Users;
 import ja.co.example.form.GameForm;
 
 @Controller
@@ -47,74 +45,79 @@ public class PokerResultController {
 	}
 
 	//ポーカー終了時
-	@RequestMapping(value = "/pokerResult", method = RequestMethod.POST)
-	public String gameResult(@Validated @ModelAttribute("gameForm") GameForm form, BindingResult bindingResult,
-			Model model) {
+	@RequestMapping(value = "/pokerResult", method = RequestMethod.GET)
+	@ResponseBody
+	public String gameResult(HttpServletRequest request) {
 
-		double d;
-		Integer pokerRole;
-		d = (int) (Math.random() * 100);
-		if (d == 1) {
-			pokerRole = 11;
+		String betmany = request.getParameter("betmaney");
+		String hands = request.getParameter("hands");
+		Integer handscnt = 0;
 
-		} else if (d >= 2 && d <= 5) {
-			pokerRole = 10;
+		System.out.println(betmany);
+		System.out.println(hands);
 
-		} else if (d >= 6 && d <= 10) {
-			pokerRole = 9;
-
-		} else if (d >= 11 && d <= 16) {
-			pokerRole = 8;
-
-		} else if (d >= 17 && d <= 23) {
-			pokerRole = 7;
-
-		} else if (d >= 24 && d <= 31) {
-			pokerRole = 6;
-
-		} else if (d >= 32 && d <= 40) {
-			pokerRole = 5;
-
-		} else if (d >= 41 && d <= 61) {
-			pokerRole = 4;
-
-		} else if (d >= 62 && d <= 70) {
-			pokerRole = 3;
-
-		} else if (d >= 71 && d <= 85) {
-			pokerRole = 2;
-
-		} else {
-			pokerRole = 1;
-
+		switch (hands) {
+		case "ノーペア":
+			handscnt = 1;
+			break;
+		case "ワンペア":
+			handscnt = 2;
+			break;
+		case "ツーペア":
+			handscnt = 3;
+			break;
+		case "スリーカード":
+			handscnt = 4;
+			break;
+		case "ストレート":
+			handscnt = 5;
+			break;
+		case "フラッシュ":
+			handscnt = 6;
+			break;
+		case "フルハウス":
+			handscnt = 7;
+			break;
+		case "フォーカード":
+			handscnt = 8;
+			break;
+		case "ストレートフラッシュ":
+			handscnt = 9;
+			break;
+		case "ファイブカード":
+			handscnt = 10;
+			break;
+		case "ロイヤルストレートフラッシュ":
+			handscnt = 11;
+			break;
 		}
+		System.out.println(handscnt);
 
-		Users user = (Users) session.getAttribute("user");
-
-		//resultインスタンス作成
-		Ranking result = new Ranking(user.getUserId(), null, 1, pokerRole);
-
-		//所持コインからベットコインマイナス
-		//gameResultDao.userBetCoin(form.getBetCoin(),user.getUserId());
-
-
-		//ゲーム結果入力
-		gameResultDao.pokerResultInsert(result, form.getBetCoin());
-
-		//獲得コインをDBから取得
-		gameResultDao.userGetCoin(user);
-		Ranking re = gameResultDao.getCoin(user.getUserId());
-
-		//ユーザーのランク更新
-		usersDao.rank(user.getUserId());
-		user = usersDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
-
-		//ポーカーの役取得
-		Ranking po = gameResultDao.pokerRoleName(pokerRole);
-
-		model.addAttribute("getCoin", re.getCoin());
-		model.addAttribute("pokerResult", po.getPokerRoleName());
-		session.setAttribute("user", user);
+//		Users user = (Users) session.getAttribute("user");
+//
+//		//resultインスタンス作成
+//		Ranking result = new Ranking(user.getUserId(), null, 1, pokerRole);
+//
+//		//所持コインからベットコインマイナス
+//		//gameResultDao.userBetCoin(form.getBetCoin(),user.getUserId());
+//
+//		//ゲーム結果入力
+//		gameResultDao.pokerResultInsert(result, form.getBetCoin());
+//
+//		//獲得コインをDBから取得
+//		gameResultDao.userGetCoin(user);
+//		Ranking re = gameResultDao.getCoin(user.getUserId());
+//
+//		//ユーザーのランク更新
+//		usersDao.rank(user.getUserId());
+//		user = usersDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
+//
+//		//ポーカーの役取得
+//		Ranking po = gameResultDao.pokerRoleName(pokerRole);
+//
+//		model.addAttribute("getCoin", re.getCoin());
+//		model.addAttribute("pokerResult", po.getPokerRoleName());
+//		session.setAttribute("user", user);
 
 		return "pokerResult";
 
