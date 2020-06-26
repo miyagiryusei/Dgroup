@@ -155,8 +155,13 @@ public class ItemlistController {
 			itemservice.backgroundChange(userid, 6 , 9);
 		}
 
-		list = itemservice.Itemlist(userid);
+		if (itemid == 100) {
+			model.addAttribute("background" , "所持コインが1000になりました");
 
+			userDao.coinUpdateItem(userid,100);
+		}
+
+		list = itemservice.Itemlist(userid);
 		for(Itemlist i: list)
 		if (i.getItemCount() == 0) {
 			itemDao.itemListDelete(userid, itemid);

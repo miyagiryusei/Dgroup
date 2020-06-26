@@ -72,11 +72,11 @@ public class PgItemDao implements ItemDao {
 	public void backgroundChange(Integer userId , Integer backgroundId , Integer itemId) {
 		String sql_back = "update users set background_id = :backgroundId where user_id = :userId ";
 		String sql2 ="update item_list set item_count=item_count-1 " +
-				"where user_id=:userId and item_id =:itemid";
+				"where user_id=:userId and item_id =:itemId";
 
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("userId", userId);
-		param.addValue("itemid", itemId);
+		param.addValue("itemId", itemId);
 		param.addValue("backgroundId", backgroundId);
 
 		jdbcTemplate.update(sql2, param);

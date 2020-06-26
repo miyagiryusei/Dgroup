@@ -8,4 +8,8 @@ public interface UsersDao {
 
 	public void  rank(Integer userId);
 
+	public void rankFailed(Integer userId);
+
+	public void coinUpdateItem(Integer userId,Integer itemId);
+
 }
