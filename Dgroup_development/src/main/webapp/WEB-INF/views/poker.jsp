@@ -32,7 +32,7 @@
 			onclick="startgame()"><br>
 	</div>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
-		<input class="btn btn-border-gradient" id="nextbutton"
+		<input class="btn btn-border-gradient-next" id="nextbutton"
 			type="button" value="NEXT GAME" onclick="nextgame()"><br>
 	</div>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
