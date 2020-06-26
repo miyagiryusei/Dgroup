@@ -132,11 +132,9 @@ public class TestControllerTeruya {
 	}
 
 	//アカウント編集確認画面へ
-	@RequestMapping("/account")
+	@RequestMapping("/insert")
 	public String account(Model model) {
-		if(session.getAttribute("user")==null) {
-			return "forward:login";
-		}
+
 		return "account";
 	}
 
