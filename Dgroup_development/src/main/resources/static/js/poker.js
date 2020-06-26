@@ -9,7 +9,6 @@ let hands;
 let imgechangecnt = 0;
 
 document.getElementById("betmaney").style.visibility = "hidden";
-document.getElementById("betbutton").style.visibility = "hidden";
 document.getElementById("changebutton").style.visibility = "hidden";
 document.getElementById("nextbutton").style.visibility = "hidden";
 
@@ -115,7 +114,6 @@ function shuffle() {
 // image = [];
     document.getElementById('msgdisplay').innerHTML = "交換するカードを選んでください";
     betmaney.style.visibility = "visible";
-    betbutton.style.visibility = "visible";
     changebutton.style.visibility = "visible";
 }
 
@@ -139,7 +137,6 @@ function firstchangecard() {
     document.getElementById('msgdisplay').innerHTML = "交換するカードを選んでください";
     document.getElementById('startbutton').style.visibility = "hidden";
     betmaney.style.visibility = "visible";
-    betbutton.style.visibility = "visible";
     changebutton.style.visibility = "visible";
 }
 
@@ -355,7 +352,6 @@ function change() {
     judgerole();
     roledisplay();
     document.getElementById("betmaney").style.visibility = "hidden";
-    document.getElementById("betbutton").style.visibility = "hidden";
     document.getElementById("changebutton").style.visibility = "hidden";
     document.getElementById("msgdisplay").style.visibility = "hidden";
     document.getElementById("roledisplay").style.visibility = "visible";

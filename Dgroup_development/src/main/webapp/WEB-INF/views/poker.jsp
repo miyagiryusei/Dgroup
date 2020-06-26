@@ -27,13 +27,20 @@
 	<div id="img"></div>
 	<div id="msgdisplay" class="msgdisplay"></div>
 	<div id="roledisplay" class="roledisplay"></div>
-	<div class="button">
-		<input id="startbutton" type="button" value="START"
-			onclick="startgame()"><br> <input id="nextbutton"
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<input class="btn btn-border-gradient" id="startbutton" type="button" value="START"
+			onclick="startgame()"><br>
+	</div>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<input class="btn btn-border-gradient" id="nextbutton"
 			type="button" value="NEXT GAME" onclick="nextgame()"><br>
-		<input type="text" id="betmaney" placeholder="金額を入力して下さい"><br>
-		<input type="button" id="betbutton" value="BET" onclick="bet()"><br>
-		<input type="button" id="changebutton" value="CHANGE"
+	</div>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<input class="btn btn-border-gradient-betmany" type="text" id="betmaney"
+		placeholder="金額を入力して下さい"><br>
+	</div>
+	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+		<input class="btn btn-border-gradient-change" type="button" id="changebutton" value="CHANGE"
 			onclick="change()">
 	</div>
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>

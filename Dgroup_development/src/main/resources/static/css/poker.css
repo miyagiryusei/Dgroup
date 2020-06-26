@@ -58,6 +58,151 @@ a.myPageBtn:hover {
 	opacity: 0.9;
 }
 
+/* .btn-border-gradient-wrap {
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+} */
+
+/* .btn-border-gradient-wrap--gol {
+	position: fixed; ボタン固定
+	top: 73px; ↑から位置
+	left: 14px; 右から位置
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+} */
+
+/* .btn-border-gradient-wrap--gold {
+	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+} */
+
+/* .btn-border-gradient-wrap--gold:hover a.btn {
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
+} */
+
+/* button.btn-border-gradient {
+	font-size: 1.5rem;
+	background: #000;
+	padding: 1px 10px;
+} */
+
+input.btn-border-gradient {
+	height: 50px;
+	width: 150px;
+	margin: 5px;
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+	/* position: fixed; ボタン固定 */
+	/* top: 73px; ↑から位置 */
+	/* left: 14px; 右から位置 */
+	/* background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
+	font-size: 4rem;
+	/* background: #000; */
+	padding: 1px 10px;
+	font-size: 2rem;
+	/* background: #000; */
+	/* font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif; */
+	/* background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422)); */
+	/* background: -webkit-linear-gradient(bottom, #ffffdb, #a16422); */
+	/* background: linear-gradient(to top, #ffffdb, #a16422); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-color: black;
+}
+
+input.btn-border-gradient-change {
+	height: 50px;
+	width: 160px;
+	margin: 5px;
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+	/* position: fixed; ボタン固定 */
+	/* top: 73px; ↑から位置 */
+	/* left: 14px; 右から位置 */
+	/* background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
+	font-size: 4rem;
+	/* background: #000; */
+	padding: 1px 10px;
+	font-size: 2rem;
+	/* background: #000; */
+	/* font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif; */
+	/* background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422)); */
+	/* background: -webkit-linear-gradient(bottom, #ffffdb, #a16422); */
+	/* background: linear-gradient(to top, #ffffdb, #a16422); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-color: black;
+}
+
+input.btn-border-gradient-betmany {
+	height: 50px;
+	width: 320px;
+	margin: 5px;
+	display: inline-block;
+	padding: 0.2rem;
+	border-radius: 0.5rem;
+	/* position: fixed; ボタン固定 */
+	/* top: 73px; ↑から位置 */
+	/* left: 14px; 右から位置 */
+	/* background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
+		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
+	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
+		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
+		rgba(250, 250, 214, 0.5);
+	font-size: 4rem;
+	/* background: #000; */
+	padding: 1px 10px;
+	font-size: 2rem;
+	/* background: #000; */
+	/* font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif; */
+	/* background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422)); */
+	/* background: -webkit-linear-gradient(bottom, #ffffdb, #a16422); */
+	/* background: linear-gradient(to top, #ffffdb, #a16422); */
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-color: black;
+}
+
+/* .btn-text-gradient--gold {
+	font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
+		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif;
+	background: -webkit-gradient(linear, left bottom, left top, from(#ffffdb),
+		to(#a16422));
+	background: -webkit-linear-gradient(bottom, #ffffdb, #a16422);
+	background: linear-gradient(to top, #ffffdb, #a16422);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+} */
+
 .white {
 	color: white;
 	background-image:
@@ -105,7 +250,7 @@ a.myPageBtn:hover {
     margin-bottom: 100px;
 }
 
-input {
+/* input {
     font-size: 1.6rem;
     font-weight: 700;
     line-height: 1.5;
@@ -125,7 +270,7 @@ input {
     letter-spacing: 0.1em;
     color: #212529;
     border-radius: 0.5rem;
-}
+} */
 
 .option {
     margin-left: 100px;
