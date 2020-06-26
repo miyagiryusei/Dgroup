@@ -41,6 +41,11 @@ public class ItemlistController {
 
 	@RequestMapping("/itemList")
 	public String result1(@ModelAttribute("use") ItemlistForm form, Model model) {
+		if(session.getAttribute("user")==null) {
+			return "forward:login";
+		}
+
+
 		//所持アイテムの表示
 		Users user = (Users) session.getAttribute("user");
 
@@ -62,6 +67,7 @@ public class ItemlistController {
 	@RequestMapping("/itemuse")
 	public String result(@Validated @ModelAttribute("use") ItemlistForm form, BindingResult bindingResult,
 			Model model) {
+
 		Integer itemid = form.getItemId();
 		Users user = (Users) session.getAttribute("user");
 		Integer userid = user.getUserId();
