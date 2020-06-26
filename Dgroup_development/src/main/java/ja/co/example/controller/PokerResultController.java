@@ -50,7 +50,7 @@ public class PokerResultController {
 	//ポーカー終了時
 	@RequestMapping(value = "/pokerResult", method = RequestMethod.GET)
 	@ResponseBody
-	public Integer gameResult(@Validated HttpServletRequest request, Model model) {
+	public Users gameResult(@Validated HttpServletRequest request, Model model) {
 
 		String betmany = request.getParameter("betmaney");
 		Integer betMoney = Integer.parseInt(betmany);
@@ -73,25 +73,25 @@ public class PokerResultController {
 		case "スリーカード":
 			handscnt = 4;
 			break;
-		case "ストレート":
+		case "Straight":
 			handscnt = 5;
 			break;
-		case "フラッシュ":
+		case "Flash":
 			handscnt = 6;
 			break;
-		case "フルハウス":
+		case "FullHouse":
 			handscnt = 7;
 			break;
-		case "フォーカード":
+		case "FourCard":
 			handscnt = 8;
 			break;
-		case "ストレートフラッシュ":
+		case "StraightFlash":
 			handscnt = 9;
 			break;
-		case "ロイヤルストレートフラッシュ":
+		case "RoyalStraightFlash":
 			handscnt = 10;
 			break;
-		case "ファイブカード":
+		case "FiveCard":
 			handscnt = 11;
 			break;
 		}
@@ -123,7 +123,9 @@ public class PokerResultController {
 		model.addAttribute("pokerResult", po.getPokerRoleName());
 		session.setAttribute("user", user);
 
-		return user.getCoin();
+		String coin = String.valueOf(user.getCoin());
+
+		return user;
 
 	}
 
