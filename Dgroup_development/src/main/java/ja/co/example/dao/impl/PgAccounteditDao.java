@@ -24,11 +24,9 @@ public class PgAccounteditDao implements AccounteditDao {
 		String  update = "UPDATE users SET user_name=:name, pass=:pass, edit_time=now() WHERE login_id =:loginid";
 
 
-
 		param.addValue("name", name);
 		param.addValue("pass", pass);
 		param.addValue("loginid", logid);
-
 
 			return jdbcTemplate.update(update, param);
 	}

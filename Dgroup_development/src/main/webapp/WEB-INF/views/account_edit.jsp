@@ -12,7 +12,7 @@
 
 <title>Insert title here</title>
 </head>
-<body class="background${fn:escapeXml(user.backgroundId)}">
+<body>
 
 	<form:form action="accounteditA" modelAttribute="user">
 		<h1>アカウント編集</h1>
