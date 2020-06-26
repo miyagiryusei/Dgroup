@@ -157,9 +157,12 @@ public class ItemlistController {
 
 		list = itemservice.Itemlist(userid);
 
-		if (list.get(0).getItemCount() == 0) {
+		for(Itemlist i: list)
+		if (i.getItemCount() == 0) {
 			itemDao.itemListDelete(userid, itemid);
 		}
+
+
 
 		list = itemservice.Itemlist(userid);
 
