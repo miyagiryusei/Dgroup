@@ -400,8 +400,7 @@ document.addEventListener('DOMContentLoaded', function() {
         xht.onreadystatechange = function() {
             if (xht.readyState === 4) {
                 if (xht.status === 200) {
-                	resultbetmany.textContent = xht.responseText;
-                	//TODOここに処理を書く
+                	coin.textContent = xht.responseText;
                 } else {
                 	resultbetmany.textContent = 'サーバーエラーが発生しました';
                 }

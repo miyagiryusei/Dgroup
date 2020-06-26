@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import ja.co.example.dao.GameResultDao;
 import ja.co.example.dao.UsersDao;
+import ja.co.example.entity.Ranking;
+import ja.co.example.entity.Users;
 import ja.co.example.form.GameForm;
 
 @Controller
@@ -47,9 +50,10 @@ public class PokerResultController {
 	//ポーカー終了時
 	@RequestMapping(value = "/pokerResult", method = RequestMethod.GET)
 	@ResponseBody
-	public String gameResult(HttpServletRequest request) {
+	public Integer gameResult(@Validated HttpServletRequest request, Model model) {
 
 		String betmany = request.getParameter("betmaney");
+		Integer betMoney = Integer.parseInt(betmany);
 		String hands = request.getParameter("hands");
 		Integer handscnt = 0;
 
@@ -84,42 +88,42 @@ public class PokerResultController {
 		case "ストレートフラッシュ":
 			handscnt = 9;
 			break;
-		case "ファイブカード":
+		case "ロイヤルストレートフラッシュ":
 			handscnt = 10;
 			break;
-		case "ロイヤルストレートフラッシュ":
+		case "ファイブカード":
 			handscnt = 11;
 			break;
 		}
 		System.out.println(handscnt);
 
-//		Users user = (Users) session.getAttribute("user");
-//
-//		//resultインスタンス作成
-//		Ranking result = new Ranking(user.getUserId(), null, 1, pokerRole);
-//
-//		//所持コインからベットコインマイナス
-//		//gameResultDao.userBetCoin(form.getBetCoin(),user.getUserId());
-//
-//		//ゲーム結果入力
-//		gameResultDao.pokerResultInsert(result, form.getBetCoin());
-//
-//		//獲得コインをDBから取得
-//		gameResultDao.userGetCoin(user);
-//		Ranking re = gameResultDao.getCoin(user.getUserId());
-//
-//		//ユーザーのランク更新
-//		usersDao.rank(user.getUserId());
-//		user = usersDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
-//
-//		//ポーカーの役取得
-//		Ranking po = gameResultDao.pokerRoleName(pokerRole);
-//
-//		model.addAttribute("getCoin", re.getCoin());
-//		model.addAttribute("pokerResult", po.getPokerRoleName());
-//		session.setAttribute("user", user);
+		Users user = (Users) session.getAttribute("user");
 
-		return "pokerResult";
+		//resultインスタンス作成
+		Ranking result = new Ranking(user.getUserId(), null, 1,handscnt );
+
+		//所持コインからベットコインマイナス
+		//gameResultDao.userBetCoin(form.getBetCoin(),user.getUserId());
+
+		//ゲーム結果入力
+		gameResultDao.pokerResultInsert(result,betMoney);
+
+		//獲得コインをDBから取得
+		gameResultDao.userGetCoin(user);
+		Ranking re = gameResultDao.getCoin(user.getUserId());
+
+		//ユーザーのランク更新
+		usersDao.rank(user.getUserId());
+		user = usersDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
+
+		//ポーカーの役取得
+		Ranking po = gameResultDao.pokerRoleName(handscnt);
+
+		model.addAttribute("getCoin", re.getCoin());
+		model.addAttribute("pokerResult", po.getPokerRoleName());
+		session.setAttribute("user", user);
+
+		return user.getCoin();
 
 	}
 

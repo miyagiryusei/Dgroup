@@ -20,7 +20,7 @@
 	</c:if> --%>
 	<div class=white>
 		<h3>${fn:escapeXml(user.userName)}<br>
-			所持コイン：${fn:escapeXml(user.coin)}<br>
+			所持コイン：<span id="coin">${fn:escapeXml(user.coin)}</span><br>
 			ランク：${fn:escapeXml(user.rankName)}
 		</h3>
 	</div>
@@ -36,7 +36,6 @@
 		<input type="button" id="changebutton" value="CHANGE"
 			onclick="change()">
 	</div>
-	<div class="roledisplay" id="resultbetmany"></div>
 	<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 </body>
 </html>
