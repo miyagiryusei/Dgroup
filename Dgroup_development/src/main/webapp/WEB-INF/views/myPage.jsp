@@ -11,7 +11,7 @@
 <title><fmt:message key="title.myPage" /></title>
 <link href="css/myPage.css" rel="stylesheet">
 </head>
-<body>
+<body class="background${fn:escapeXml(user.backgroundId)}">
 	<c:if test="${empty user}">
 　  	<c:redirect url="/login" />
     </c:if>

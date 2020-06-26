@@ -10,7 +10,7 @@
 <title>ポーカールール</title>
 <link rel="stylesheet" href="css/pokerRule.css" />
 </head>
-<body>
+<body class="background${fn:escapeXml(user.backgroundId)}">
 	<a id="top"></a>
 	<c:if test="${empty user}">
 		<c:redirect url="/login" />

@@ -21,7 +21,7 @@ form ~ div, table ~ div {
 .background2 {
 	margin: auto auto;
 	background-image:
-		url(background/background2.jpg);
+		url(background/background7.jpg);
 }
 
 .background3 {
@@ -48,11 +48,17 @@ form ~ div, table ~ div {
 		url(background/background6.jpg);
 }
 
-body {
+.background7 {
 	margin: auto auto;
 	background-image:
-	url(background/background5.jpg);
+		url(background/background7.jpg);
 }
+
+/* body { */
+/* 	margin: auto auto; */
+/* 	background-image: */
+/* 	url(background/background5.jpg); */
+/* } */
 
 table {
 	text-align: center;

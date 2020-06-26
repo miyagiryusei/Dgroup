@@ -18,7 +18,7 @@
 	text-align: center;
 	margin: auto auto;
 	background-image:
-		url(background/background2.jpg);
+		url(background/background7.jpg);
 }
 
 .background3 {
@@ -47,6 +47,13 @@
 	margin: auto auto;
 	background-image:
 		url(background/background6.jpg);
+}
+
+.background7 {
+	text-align: center;
+	margin: auto auto;
+	background-image:
+		url(background/background7.jpg);
 }
 
 body {

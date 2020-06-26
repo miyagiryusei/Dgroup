@@ -11,7 +11,7 @@
 <link href="css/myPage.css" rel="stylesheet">
 <title><fmt:message key="title.byResult" /></title>
 </head>
-<body class="center">
+<body class="background${fn:escapeXml(user.backgroundId)}">
 
 	<br>
 	<br>
