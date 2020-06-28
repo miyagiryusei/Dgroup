@@ -41,7 +41,7 @@ function imgchange(e) {
 	} else {
 		e.target.classList.add("hold");
 		let msg = document.createElement('span');
-		//                msg.textContent = "CHANGE";
+		// msg.textContent = "CHANGE";
 		msg.classList.add("msg");
 		msg.id = "msg" + (e.target.id.substring(e.target.id.length - 1, 1));
 		e.target.parentNode.insertBefore(msg, e.target.nextSibling);
@@ -155,9 +155,9 @@ function nextchangecard() {
 	// document.card4.src = "css/tramp/s04.png";
 	// document.card5.src = "css/tramp/d05.png";
 	// document.card5.src = "css/tramp/joker.png";
-	//     image = [];
-	//     imagenumber = [];
-	//     firstword = [];
+	// image = [];
+	// imagenumber = [];
+	// firstword = [];
 }
 
 function chopcard() {
@@ -211,7 +211,11 @@ function chopcard() {
 	imagenumber.sort(function(a, b) {
 		return (a < b ? -1 : 1);
 	});
+	firstword.sort(function(a, b) {
+		return (a < b ? -1 : 1);
+	});
 	console.log(imagenumber);
+	console.log(firstword);
 }
 
 function judgerole() {
@@ -239,14 +243,14 @@ function judgerole() {
 	console.log(joker_flg);
 
 	let isStraightcnt = 0;
-	//    for (let max = 3; max >= 0; max--) {
-	//    	let i = 3 - max;
+	// for (let max = 3; max >= 0; max--) {
+	// let i = 3 - max;
 	for (let i = 0; i <= imagenumber.length; i++) {
 		if (imagenumber[i] == imagenumber[i + 1] - 1) {
 			isStraightcnt++;
 		}
 	}
-	//    }
+	// }
 	console.log(isStraightcnt);
 	if (isStraightcnt == 4) {
 		isStraight = 1;
@@ -284,17 +288,17 @@ function judgerole() {
 	}
 	console.log(isRoyal);
 
-	if(isRoyal == 1 && isFlush == 1) {
-        return hands = "RoyalStraightFlash";
-    } else if(isStraight == 1 && isFlush == 1) {
-        return hands = "StraightFlash";
-    } else if(isStraight == 1) {
-        return hands = "Straight";
-    } else if(isRoyal == 1) {
-        return hands = "Straight";
-    } else if (isFlush == 1) {
-        return hands = "Flash";
-    } else {
+	if (isRoyal == 1 && isFlush == 1) {
+		return hands = "RoyalStraightFlash";
+	} else if (isStraight == 1 && isFlush == 1) {
+		return hands = "StraightFlash";
+	} else if (isStraight == 1) {
+		return hands = "Straight";
+	} else if (isRoyal == 1) {
+		return hands = "Straight";
+	} else if (isFlush == 1) {
+		return hands = "Flash";
+	} else {
 		let cnt = 0;
 		for (let max = 3; max >= 0; max--) {
 			let i = 3 - max;
@@ -346,6 +350,14 @@ function roledisplay() {
 }
 
 function change() {
+	let betmaney = document.getElementById("betmaney").value;
+	if (betmaney == null || isNaN(betmaney) || betmaney == "") {
+		document.getElementById("resultmany").innerHTML = "BET額を入力して下さい";
+		return;
+	}
+	if (betmaney < 1 || betmaney > document.getElementById("coin").innerText) {
+		return;
+	}
 	image = [];
 	imagenumber = [];
 	firstword = [];
@@ -375,6 +387,7 @@ function change() {
 		target[i].removeEventListener("click", imgchange, false);
 	}
 	images = [];
+	document.getElementById("resultmany").innerHTML = ""
 }
 
 function startgame() {
@@ -402,26 +415,38 @@ function nextgame() {
 	document.getElementById("msgdisplay").style.visibility = "visible";
 }
 
+// function ajax() {
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('changebutton').addEventListener('click', function() {
-    	let resultbetmany = document.getElementById('resultbetmany');
-    	let coin = document.getElementById('coin');
-    	let rank = document.getElementById('rank');
-        let xht = new XMLHttpRequest();
+	document.getElementById('changebutton').addEventListener('click', function() {
+										let resultbetmany = document.getElementById('resultbetmany');
+										let rank = document.getElementById('rank');
+										let coin = document.getElementById('coin');
+										let betmaney = document.getElementById("betmaney").value;
+										let xht = new XMLHttpRequest();
 
-        xht.onreadystatechange = function() {
-            if (xht.readyState === 4) {
-                if (xht.status === 200) {
-                	coin.innerText = JSON.parse(xht.responseText).coin;
-                	rank.innerText = JSON.parse(xht.responseText).rankName;
-                } else {
-                	/*resultbetmany.textContent = 'サーバーエラーが発生しました';*/
-                }
-            } else {
-            	/*resultbetmany.textContent = '通信中...';*/
-            }
-        };
-        xht.open('GET', '/pokerResult' + "?betmaney=" + document.getElementById("betmaney").value + "&" + "hands=" + hands, true);
-        xht.send(null);
-    }, false);
-}, false);
+										if (betmaney == null || isNaN(betmaney) || betmaney == "") {
+											document.getElementById("resultmany").innerHTML = "BET額を入力して下さい";
+											return;
+										}
+										if (betmaney < 1 || betmaney > document.getElementById("coin").innerText) {
+											return
+										}
+
+										xht.onreadystatechange = function() {
+											if (xht.readyState === 4) {
+												if (xht.status === 200) {
+													coin.innerText = JSON.parse(xht.responseText).coin;
+													rank.innerText = JSONparse(xht.responseText).rankName;
+													document.getElementById("resultmany").innerHTML = ""
+												} else {
+													/*resultbetmany.textContent = 'サーバーエラーが発生しました';*/
+												}
+											} else {
+												/*resultbetmany.textContent = '通信中...';*/
+											}
+										};
+										xht.open('GET', '/pokerResult' + "?betmaney=" + betmaney + "&" + "hands=" + hands, true);
+										xht.send(null);
+									}, false);
+				}, false);
+//}

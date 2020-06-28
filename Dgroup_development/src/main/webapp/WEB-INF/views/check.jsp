@@ -94,16 +94,13 @@
 		</div>
 	</form:form>
 
-	<c:if test="${empty flg}">
-		<a href="account" class="myPageBtn">戻る</a>
-	</c:if>
+
+		<a href="insert" class="myPageBtn">戻る</a>
+		<br>
+		<br>
 
 	<c:if test="${not empty flg}">
-		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
-		<br>
-		<br>
-
-		<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+		<a href="myPage" class="logoutBtn"><fmt:message key="btn.menu" /></a>
 	</c:if>
 
 
