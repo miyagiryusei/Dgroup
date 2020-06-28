@@ -436,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function() {
 											if (xht.readyState === 4) {
 												if (xht.status === 200) {
 													coin.innerText = JSON.parse(xht.responseText).coin;
-													rank.innerText = JSONparse(xht.responseText).rankName;
+													rank.innerText = JSON.parse(xht.responseText).rankName;
 													document.getElementById("resultmany").innerHTML = ""
 												} else {
 													/*resultbetmany.textContent = 'サーバーエラーが発生しました';*/
