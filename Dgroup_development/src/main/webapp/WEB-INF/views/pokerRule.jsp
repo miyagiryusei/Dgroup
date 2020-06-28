@@ -73,7 +73,7 @@
 
 				<table>
 					<tr>
-						<th>ファイブカード</th>
+						<th>FiveCard</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -111,7 +111,7 @@
 
 				<table>
 					<tr>
-						<th>ロイヤルストレートフラッシュ</th>
+						<th>RoyalStraightFlash</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -162,7 +162,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>ストレートフラッシュ</th>
+						<th>StraightFlash</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -200,7 +200,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>フォーカード</th>
+						<th>FourCard</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -237,7 +237,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>フルハウス</th>
+						<th>FullHouse</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -274,7 +274,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>フラッシュ</th>
+						<th>Flash</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -311,7 +311,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>ストレート</th>
+						<th>Straight</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -458,7 +458,7 @@
 				<br>
 				<table>
 					<tr>
-						<th>ブタ</th>
+						<th>ノーペア</th>
 					</tr>
 					<tr>
 						<td class="example">説明
@@ -496,7 +496,7 @@
 			<article>
 				<h3>1. スタートボタンを押してゲームスタート</h3>
 				<p>スタートボタンを押すことでポーカーゲームが開始されます。</p>
-				<h3>自身の手札を確認</h3>
+				<h3>2. 自身の手札を確認</h3>
 				<p>表示されている手札の役を確認</p>
 				<h3>3. 賭けるBET額を選択</h3>
 				<p>自身の所持金の額の範囲内で、賭けるコインの枚数を指定します。</p>
