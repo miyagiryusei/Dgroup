@@ -31,13 +31,13 @@
 	</div>
 	<br>
 	<br>
-	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
+	<%-- <div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 		<a href="blackjack" class="btn btn-border-gradient"><span
 			class="btn-text-gradient--gold"><fmt:message
 					key="btn.blackjack" /></span></a>
 	</div>
 	<br>
-	<br>
+	<br> --%>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 
 		<a href="item" class="btn btn-border-gradient"><span
