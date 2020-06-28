@@ -116,6 +116,8 @@ public class PokerResultController {
 		usersDao.rank(user.getUserId());
 		user = usersDao.findByLoginIdAndPassword(user.getLoginId(), user.getPass());
 
+		System.out.println(user.getRankName());
+
 		//ポーカーの役取得
 		Ranking po = gameResultDao.pokerRoleName(handscnt);
 
@@ -123,7 +125,7 @@ public class PokerResultController {
 		model.addAttribute("pokerResult", po.getPokerRoleName());
 		session.setAttribute("user", user);
 
-		String coin = String.valueOf(user.getCoin());
+
 
 		return user;
 
