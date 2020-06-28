@@ -23,10 +23,16 @@
 			ランク：<span id="rank">${fn:escapeXml(user.rankName)}</span>
 		</h3>
 	</div>
-	<div id="resultmany"></div>
+	<div class=whit>
+		<div id="resultmany"></div>
+	</div>
 	<div id="img"></div>
+
 	<div id="msgdisplay" class="msgdisplay"></div>
 	<div id="roledisplay" class="roledisplay"></div>
+
+
+
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 		<input class="btn btn-border-gradient" id="startbutton" type="button"
 			value="START" onclick="startgame()"><br>
@@ -37,7 +43,7 @@
 	</div>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 		<input class="btn btn-border-gradient-betmany" type="number"
-			id="betmaney" placeholder="金額を入力して下さい" ><br>
+			id="betmaney" placeholder="金額を入力して下さい">
 	</div>
 	<div class="btn-border-gradient-wrap btn-border-gradient-wrap--gold">
 		<input class="btn btn-border-gradient-change" type="button"

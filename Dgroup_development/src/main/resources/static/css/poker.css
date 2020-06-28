@@ -5,6 +5,24 @@
     margin-top: 80px;
 }
 
+.whit {
+	font-size:40px;
+	margin: auto;
+	margin-top:30px;
+	color: white;
+/* 	background-image: */
+/* 		url("https://us.123rf.com/450wm/inventoris/inventoris1705/inventoris170500044/77855432-%E3%82%AB%E3%82%B8%E3%83%8E-%E3%83%95%E3%83%AA%E3%83%BC%E3%83%8F%E3%83%B3%E3%83%89%E5%9B%B3%E9%9D%A2%E3%82%B7%E3%83%BC%E3%83%A0%E3%83%AC%E3%82%B9-%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%80%82%E8%90%BD%E6%9B%B8%E3%81%8D%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%AE%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E3%82%92%E8%B3%AD%E3%81%91%E3%81%BE%E3%81%99%E3%80%82%E6%89%8B%E6%8F%8F%E3%81%8D%E3%81%AE%E8%A6%81%E7%B4%A0%E3%81%AF%E3%80%81%E5%8C%85%E8%A3%85%E3%80%81%E7%B9%8A%E7%B6%AD%E3%82%92%E5%8D%B0%E5%88%B7%E3%81%99%E3%82%8B%E3%81%A8%E3%80%81%E8%83%8C%E6%99%AF%E3%81%AE%E5%A3%81%E7%B4%99%E3%83%87%E3%82%B6.jpg?ver=6"); */
+	width: 40%;
+/* 	border-radius: 5px; */
+/* 	border: 1px solid #000000; */
+	animation   :blinkAnime 0.5s infinite alternate;
+}
+
+ @keyframes blinkAnime{
+            0% { color: white }
+        100% { color: #fdfd05 }
+}
+
 .msgdisplay {
     margin     : auto;
     width      : 72%;
@@ -58,44 +76,67 @@ a.myPageBtn:hover {
 	opacity: 0.9;
 }
 
-/* .btn-border-gradient-wrap {
+.btn, a.btn, button.btn {
+	font-size: 1.6rem;
+	font-weight: 700;
+	line-height: 1.5;
+	position: relative;
 	display: inline-block;
-	padding: 0.2rem;
+	padding: 1rem 4rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #212529;
 	border-radius: 0.5rem;
-} */
+}
 
-/* .btn-border-gradient-wrap--gol {
-	position: fixed; ボタン固定
-	top: 73px; ↑から位置
-	left: 14px; 右から位置
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-} */
+/* .btn-border-gradient-wrap { */
+/* 	display: inline-block; */
+/* 	padding: 0.2rem; */
+/* 	border-radius: 0.5rem; */
+/* } */
 
-/* .btn-border-gradient-wrap--gold {
-	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%,
-		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6
-		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%);
-} */
+/* .btn-border-gradient-wrap--gol { */
+/* 	position: fixed; ボタン固定 */
+/* 	top: 73px; ↑から位置 */
+/* 	left: 14px; 右から位置 */
+/* 	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%, */
+/* 		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+/* 	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6 */
+/* 		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+/* } */
 
-/* .btn-border-gradient-wrap--gold:hover a.btn {
-	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
-		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px
-		rgba(250, 250, 214, 0.5);
-} */
+/* .btn-border-gradient-wrap--gold { */
+/* 	background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 37%, #fefeb2 47%, */
+/* 		#fafad6 50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+/* 	background-image: linear-gradient(135deg, #704308 0%, #ffce08 37%, #fefeb2 47%, #fafad6 */
+/* 		50%, #fefeb2 53%, #e1ce08 63%, #704308 100%); */
+/* } */
 
-/* button.btn-border-gradient {
-	font-size: 1.5rem;
-	background: #000;
-	padding: 1px 10px;
-} */
+/* .btn-border-gradient-wrap--gold:hover a.btn { */
+/* 	text-shadow: 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px */
+/* 		rgba(250, 250, 214, 0.5), 0 0 15px rgba(250, 250, 214, 0.5), 0 0 15px */
+/* 		rgba(250, 250, 214, 0.5); */
+/* } */
+
+/* button.btn-border-gradient { */
+/* 	font-size: 1.5rem; */
+/* 	background: #000; */
+/* 	padding: 1px 10px; */
+/* } */
+
 
 input.btn-border-gradient {
-	height: 50px;
-	width: 150px;
+	height: 80px;
+	width: 200px;
 	margin: 5px;
 	display: inline-block;
 	padding: 0.2rem;
@@ -113,7 +154,7 @@ input.btn-border-gradient {
 	font-size: 4rem;
 	/* background: #000; */
 	padding: 1px 10px;
-	font-size: 2rem;
+	font-size: 3rem;
 	/* background: #000; */
 	/* font-family: "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro",
 		"Hiragino Mincho ProN", "HGS明朝E", "ＭＳ Ｐ明朝", serif; */
@@ -123,12 +164,12 @@ input.btn-border-gradient {
 	/* background: linear-gradient(to top, #ffffdb, #a16422); */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-color: black;
+	background-color: white;
 }
 
 input.btn-border-gradient-next {
 	height: 50px;
-	width: 230px;
+	width: 250px;
 	margin: 5px;
 	display: inline-block;
 	padding: 0.2rem;
@@ -156,12 +197,12 @@ input.btn-border-gradient-next {
 	/* background: linear-gradient(to top, #ffffdb, #a16422); */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-color: black;
+	background-color: white;
 }
 
 input.btn-border-gradient-change {
-	height: 50px;
-	width: 160px;
+	height: 80px;
+	width: 200px;
 	margin: 5px;
 	display: inline-block;
 	padding: 0.2rem;
@@ -189,12 +230,12 @@ input.btn-border-gradient-change {
 	/* background: linear-gradient(to top, #ffffdb, #a16422); */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-color: black;
+	background-color: white;
 }
 
 input.btn-border-gradient-betmany {
-	height: 50px;
-	width: 320px;
+	height: 80px;
+	width: 400px;
 	margin: 5px;
 	display: inline-block;
 	padding: 0.2rem;
@@ -222,7 +263,7 @@ input.btn-border-gradient-betmany {
 	/* background: linear-gradient(to top, #ffffdb, #a16422); */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	background-color: black;
+	background-color: white;
 }
 
 /* .btn-text-gradient--gold {
