@@ -133,13 +133,13 @@ a.bottomBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.bottomBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 a.logoutBtn {
@@ -159,13 +159,13 @@ a.logoutBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.logoutBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 a.myPageBtn {
@@ -185,13 +185,13 @@ a.myPageBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.myPageBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 a.topBtn {
@@ -211,13 +211,13 @@ a.topBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.topBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .example {
@@ -243,13 +243,13 @@ a.topBtn:hover {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.5;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.btnBack:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 .border-none {

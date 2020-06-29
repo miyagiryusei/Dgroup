@@ -372,13 +372,13 @@ a.logoutBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.3;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.logoutBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }
 
 a.myPageBtn {
@@ -398,11 +398,11 @@ a.myPageBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.3;
+	opacity: 0.8;
 	margin-top: 10px;
 	text-align: center;
 }
 
 a.myPageBtn:hover {
-	opacity: 0.9;
+	opacity: 1;
 }

@@ -189,7 +189,7 @@
 	<a href="#top" class="topBtn">ページ↑へ</a>
 	<br>
 	<br>
-	<a href="#bottom" class="bottomBtn">ページ下へ</a>
+	<a href="#bottom" class="bottomBtn">ページ↓へ</a>
 	<a id="bottom"></a>
 </body>
 </html>
