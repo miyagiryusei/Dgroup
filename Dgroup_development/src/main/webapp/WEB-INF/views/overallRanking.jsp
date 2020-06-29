@@ -119,7 +119,7 @@
 					<th>ランク名</th>
 					<th>ポーカー総獲得コイン</th>
 					<th>一位との差</th>
-					<th>総ゲーム回数</th>
+					<th>ポーカーの役</th>
 				</tr>
 			</thead>
 			<c:forEach items="${overallPokerOnetime}" var="ranking">
