@@ -102,6 +102,8 @@
 
 
 <c:if test="${not empty flg}">
+
+
 		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
 		<br>
 		<br>

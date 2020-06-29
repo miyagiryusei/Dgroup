@@ -83,7 +83,7 @@
 	<br>
 	<br>
 
-	<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	<a href="logout" class="logoutBtn"><fmt:message key="btn.logout" /></a>
 
 
 
