@@ -350,12 +350,16 @@ function roledisplay() {
 }
 
 function change() {
-	let betmaney = document.getElementById("betmaney").value;
+	let betmaneystr = document.getElementById("betmaney").value;
+	let betmaney = Number(betmaneystr);
+	let coinstr = document.getElementById("coin").innerText;
+	let coin = Number(coinstr);
 	if (betmaney == null || isNaN(betmaney) || betmaney == "") {
 		document.getElementById("resultmany").innerHTML = "BET額を入力して下さい";
 		return;
 	}
-	if (betmaney < 1 || betmaney > document.getElementById("coin").innerText) {
+	if (betmaney < 1 || betmaney > coin) {
+		document.getElementById("resultmany").innerHTML = "金額がオーバーしています";
 		return;
 	}
 	image = [];
