@@ -91,7 +91,7 @@
 
 	<article>
 		<table>
-			<caption>ポーカーコイン獲得ランキング</caption>
+			<caption>ポーカーコイン総合獲得ランキング</caption>
 			<tr>
 				<th>${fn:escapeXml(user.userName)}様のポーカーでの総獲得金額</th>
 				<th>ポーカー総獲得金額ランキング</th>
@@ -134,7 +134,7 @@
 	<article>
 		<table>
 			<tr>
-				<th>${fn:escapeXml(user.userName)}様がポーカーで出したの最高の役</th>
+				<th>${fn:escapeXml(user.userName)}様がポーカーで出した最高の役</th>
 			</tr>
 			<tr>
 				<td><c:if
