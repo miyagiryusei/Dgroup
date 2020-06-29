@@ -133,7 +133,7 @@ a.bottomBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.8;
+	opacity: 1;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -159,7 +159,7 @@ a.logoutBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.8;
+	opacity: 1;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -185,7 +185,7 @@ a.myPageBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.8;
+	opacity: 1;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -211,7 +211,7 @@ a.topBtn {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.8;
+	opacity: 1;
 	margin-top: 10px;
 	text-align: center;
 }
@@ -243,7 +243,7 @@ a.topBtn:hover {
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	opacity: 0.8;
+	opacity: 1;
 	margin-top: 10px;
 	text-align: center;
 }
