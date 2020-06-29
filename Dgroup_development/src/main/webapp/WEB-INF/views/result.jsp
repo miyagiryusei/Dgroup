@@ -20,8 +20,29 @@
 		<h3>正常に登録できました。</h3>
 	</div>
 
+<c:if test="${empty flg}">
+		<a href="account" class="myPageBtn">戻る</a>
+	</c:if>
 
-	<a href="myPage" class="logoutBtn">戻る</a>
+	<c:if test="${not empty flg}">
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
+		<br>
+		<br>
+
+		<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	</c:if>
+<c:if test="${empty flg}">
+		<a href="account" class="myPageBtn">戻る</a>
+	</c:if>
+
+	<c:if test="${not empty flg}">
+		<a href="myPage" class="myPageBtn"><fmt:message key="btn.myPage" /></a>
+		<br>
+		<br>
+
+		<a href="login" class="logoutBtn"><fmt:message key="btn.logout" /></a>
+	</c:if>
+
 
 
 
