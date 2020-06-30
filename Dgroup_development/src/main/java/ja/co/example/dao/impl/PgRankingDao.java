@@ -39,7 +39,7 @@ public class PgRankingDao implements RankingDao {
 			"where u.user_status !=2 and r.division_id != 3 " +
 			"group by u.user_id , u.user_name , u.coin , u.rank_id ,ra.rank_name, u.insert_time ) ran " +
 			"where user_name = case when :flg = 1 then :userName else user_name end " +
-			"FETCH FIRST 50 ROWS ONLY ";
+			"FETCH FIRST 10 ROWS ONLY ";
 
 	//ブラックジャック OR ポーカー合計
 	private static final String SELECT_SUM = "select rank , user_name , rank_name , coin , division_name , difference ,count "
@@ -54,7 +54,7 @@ public class PgRankingDao implements RankingDao {
 			"where d.division_name = :divisionName and r.coin is not null and u.user_status !=2 " +
 			"group by user_name , d.division_name ,u.rank_id ,ra.rank_name, u.insert_time ) ran " +
 			"where user_name = case when :flg = 1 then :userName else user_name end " +
-			"FETCH FIRST 50 ROWS ONLY ";
+			"FETCH FIRST 10 ROWS ONLY ";
 
 	//ポーカー役ランキング
 	private static final String SELECT_POKER_ROLE = "select rank , user_name , rank_name , poker_role_name " +
@@ -86,7 +86,7 @@ public class PgRankingDao implements RankingDao {
 			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 " +
 			") ran " +
 			"where user_name = case when :flg = 1 then :userName else user_name end " +
-			"FETCH FIRST 50 ROWS ONLY ";
+			"FETCH FIRST 10 ROWS ONLY ";
 
 	//ポーカー役カウント
 	private static final String SELECT_POKER_ROLE_COUNT = "select p.poker_role_name ,count(p.poker_role_id) count " +
@@ -97,9 +97,9 @@ public class PgRankingDao implements RankingDao {
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
 			"where d.division_name = 'ポーカー' and r.coin IS NOT NULL and u.user_status !=2 and u.user_name= case when :flg = 1 then "
 			+ ":userName else u.user_name end " +
-			"group by p.poker_role_name " +
-			"order by p.poker_role_name desc " +
-			"FETCH FIRST 50 ROWS ONLY ";
+			"group by p.poker_role_name , p.poker_role_id " +
+			"order by p.poker_role_id DESC " +
+			"FETCH FIRST 10 ROWS ONLY ";
 
 	//試合数合計
 	private static final String SELECT_SUM_MATCH = "select count(r.result_id) count " +
@@ -109,7 +109,7 @@ public class PgRankingDao implements RankingDao {
 			"join division d on d.division_id = r.division_id " +
 			"join poker_role p on p.poker_role_id = r.poker_role_id " +
 			"where d.division_name = case when :flg = 1 then :divisionName else d.division_name end and r.coin IS NOT NULL and u.user_status !=2 and r.division_id != 3 " +
-			"FETCH FIRST 50 ROWS ONLY ";
+			"FETCH FIRST 10 ROWS ONLY ";
 
 	//---------------------------------------------------------------------------------------------------------------------
 
@@ -202,7 +202,7 @@ public class PgRankingDao implements RankingDao {
 		param.addValue("flg", 2);
 		param.addValue("userName", "user_name");
 
-		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE+"FETCH FIRST 50 ROWS ONLY ", param,
+		List<Ranking> resultList = jdbcTemplate.query(SELECT_POKER_ROLE+"FETCH FIRST 10 ROWS ONLY ", param,
 				new BeanPropertyRowMapper<Ranking>(Ranking.class));
 
 		return resultList;

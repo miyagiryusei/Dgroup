@@ -85,7 +85,7 @@
 
 	<div class=overall>
 		<table>
-			<caption>ポーカーコイン獲得ランキング-50位まで表示-</caption>
+			<caption>ポーカーコイン獲得ランキング-10位まで表示-</caption>
 			<thead>
 				<tr>
 					<th class=borderleft>順位</th>
@@ -111,7 +111,7 @@
 
 	<div class=overall>
 		<table>
-			<caption>ポーカー１試合コイン最高獲得ランキング-50位まで表示-</caption>
+			<caption>ポーカー１試合コイン最高獲得ランキング-10位まで表示-</caption>
 			<thead>
 				<tr>
 					<th class=borderleft>順位</th>
@@ -138,7 +138,7 @@
 
 	<div class=overall>
 		<table>
-			<caption>ポーカー出した役ランキング-50位まで表示-</caption>
+			<caption>ポーカー出した役ランキング-10位まで表示-</caption>
 			<thead>
 				<tr>
 					<th class=borderleft>順位</th>
